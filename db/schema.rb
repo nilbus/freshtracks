@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20091117191852) do
     t.string   "subject"
     t.string   "number"
     t.string   "description"
-    t.string   "searchkey"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

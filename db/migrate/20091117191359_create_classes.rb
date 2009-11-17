@@ -5,7 +5,6 @@ class CreateClasses < ActiveRecord::Migration
       t.string :subject
       t.string :number
       t.string :description
-      t.string :searchkey
 
       t.timestamps
     end
