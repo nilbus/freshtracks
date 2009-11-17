@@ -1,7 +1,0 @@
-actions: :index, :show, :new, :create, :edit, :update, :destroy
-
-/semesters :index
-/classes :index, :autocomplete
-/degree_requirements :index
-/wishlist_classes :index, :create, :update, :destroy
-/registered_classes :index, :create, :update, :destroy

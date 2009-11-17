@@ -6,7 +6,7 @@
 - adder - wants to add classes to the latest available semester
 - planner - wants to prepare a class schedule for next semester before registration opens
 
-== Epics
+== Epics:
 
 ===  As a student, I can schedule classes for different semesters, so they're separate.
 - <tt>1</tt> As a student, I can choose which semester's schedule to modify immediately after login, so the context is clear.
