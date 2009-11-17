@@ -1,15 +1,37 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  subject: MyString
-  number: MyString
-  description: MyString
-  searchkey: MyString
+csc116:
+  id: 1
+  name: Introduction to Computing - Java
+  subject: CSC
+  number: 116
+  description: An introductory course in computing in Java. Emphasis on algorithm development and problem solving. Careful and methodical development of Java applications and applets from specifications; documentation and style; appropriate use of control structures; classes and methods; data types and data abstraction; object-oriented programming and design; graphical user interface design.
 
-two:
-  name: MyString
-  subject: MyString
-  number: MyString
-  description: MyString
-  searchkey: MyString
+csc216:
+  id: 2
+  name: Programming Concepts - Java
+  subject: CSC
+  number: 216
+  description: The second course in computing, intended for majors. Emphasis is placed on interpretation of inductive definitions (functions and data types); testing strategies; specification and implementation of finite-state machine; encapsulation; polymorphism;inheritance; class invariants; and resource management
+
+csc226:
+  id: 3
+  name: Discrete Mathematics for Computer Scientists
+  subject: CSC
+  number: 226
+  description: Propositional logic and the predicate calculus. Logic gates and circuits. Methods of proof. Elementary set theory. Mathematical induction. Recursive definitions and algorithms. Solving recurrences. The analysis of algorithms and asymptotic growth of functions. Elementary combinatorics. Introduction to graph theory. Ordered sets, including posets and equivalence relations. Introduction to formal languages and automata.
+
+csc316:
+  id: 4
+  name: Data Structures for Computer Scientists
+  subject: CSC
+  number: 316
+  description: Abstract data types; abstract and implementation-level views of data types. Linear and branching data structures, including stacks, queues, trees, heaps, hash tables, graphs, and others at discretion of instructor. Best, worst, and average case asymptotic time and space complexity as a means of formal analysis of iterative and recursive algorithms.
+
+csc326:
+  id: 5
+  name: Software Engineering
+  subject: CSC
+  number: 326
+  description: Application of product engineering methods to software: quality assurance, project management, requirements analysis, specifications, design, development, testing, production and maintenance.
+

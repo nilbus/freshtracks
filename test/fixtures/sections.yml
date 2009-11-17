@@ -1,23 +1,45 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+csc116_001:
   class_id: 1
   semester_id: 1
-  room: MyString
-  professor: MyString
-  number: MyString
-  begin_time: 2009-11-17 14:16:04
-  end_time: 2009-11-17 14:16:04
-  days: MyString
-  seats: 1
+  room: EB2 1231
+  professor: Jamison
+  number: 001
+  begin_time: 2009-11-17 09:10:00 # Dates are unused and arbitrary
+  end_time: 2009-11-17 10:00:00
+  days: MWF
+  seats: 30
 
-two:
+csc116_002:
   class_id: 1
   semester_id: 1
-  room: MyString
-  professor: MyString
-  number: MyString
-  begin_time: 2009-11-17 14:16:04
-  end_time: 2009-11-17 14:16:04
-  days: MyString
-  seats: 1
+  room: EB2 1231
+  professor: Jamison
+  number: 002
+  begin_time: 2009-11-17 09:00:00
+  end_time: 2009-11-17 10:30:00
+  days: TH
+  seats: 30
+
+csc216_001:
+  class_id: 2
+  semester_id: 1
+  room: EB2 1231
+  professor: Jamison
+  number: 001
+  begin_time: 2009-11-17 09:10:00
+  end_time: 2009-11-17 10:00:00
+  days: MWF
+  seats: 30
+
+csc216_002:
+  class_id: 2
+  semester_id: 1
+  room: EB2 1231
+  professor: Jamison
+  number: 002
+  begin_time: 2009-11-17 09:00:00
+  end_time: 2009-11-17 10:30:00
+  days: TH
+  seats: 30

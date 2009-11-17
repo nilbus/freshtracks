@@ -1,7 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+fall2009:
+  id: 1
+  name: Fall 2009
 
-two:
-  name: MyString
+spring2010:
+  id: 2
+  name: Spring 2010
