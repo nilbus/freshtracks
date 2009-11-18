@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20091118042426) do
   end
 
   create_table "degree_requirements", :force => true do |t|
-    t.integer  "class_id"
+    t.integer  "course_id"
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(:version => 20091118042426) do
   end
 
   create_table "requirements", :force => true do |t|
-    t.integer  "class_id"
+    t.integer  "course_id"
     t.integer  "needs_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sections", :force => true do |t|
-    t.integer  "class_id"
+    t.integer  "course_id"
     t.integer  "semester_id"
     t.string   "room"
     t.string   "professor"
