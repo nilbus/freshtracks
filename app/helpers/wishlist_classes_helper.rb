@@ -1,0 +1,2 @@
+module WishlistClassesHelper
+end
