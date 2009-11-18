@@ -1,4 +1,5 @@
 class ClassesController < ApplicationController
+  # search classes; returns matching
   def index
   end
 
