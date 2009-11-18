@@ -1,21 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 java1:
-  class_id: 1
+  course_id: 1
   group_id: 1
 
 java2:
-  class_id: 2
+  course_id: 2
   group_id: 1
 
 appl1:
-  class_id: 3
+  course_id: 3
   group_id: 2
 
 appl2:
-  class_id: 4
+  course_id: 4
   group_id: 2
 
 appl3:
-  class_id: 5
+  course_id: 5
   group_id: 2

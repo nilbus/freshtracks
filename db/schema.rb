@@ -11,7 +11,7 @@
 
 ActiveRecord::Schema.define(:version => 20091118042426) do
 
-  create_table "classes", :force => true do |t|
+  create_table "courses", :force => true do |t|
     t.string   "name"
     t.string   "subject"
     t.string   "number"

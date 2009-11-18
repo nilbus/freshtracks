@@ -1,4 +1,4 @@
-class Class < ActiveRecord::Base
+class Course < ActiveRecord::Base
   def searchkey
     subject + number + ' - ' + name
   end

@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 csc116_001:
-  class_id: 1
+  course_id: 1
   semester_id: 1
   room: EB2 1231
   professor: Jamison
@@ -12,7 +12,7 @@ csc116_001:
   seats: 30
 
 csc116_002:
-  class_id: 1
+  course_id: 1
   semester_id: 1
   room: EB2 1231
   professor: Jamison
@@ -23,7 +23,7 @@ csc116_002:
   seats: 30
 
 csc216_001:
-  class_id: 2
+  course_id: 2
   semester_id: 1
   room: EB2 1231
   professor: Jamison
@@ -34,7 +34,7 @@ csc216_001:
   seats: 30
 
 csc216_002:
-  class_id: 2
+  course_id: 2
   semester_id: 1
   room: EB2 1231
   professor: Jamison
