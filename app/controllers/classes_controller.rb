@@ -1,9 +1,10 @@
 class ClassesController < ApplicationController
-  # search classes; returns matching
-  def index
-  end
+  autocomplete_for :searchkey
 
-  def autocomplete_for_searchkey
+  # search classes; returns matching
+  # Currently only uses one search term
+  def index
+    @classes = Class.all(:conditions => ['CONCAT(CONCAT(CONCAT(subject, number), " - "), name) LIKE "%?%"'], params[:search])
   end
 
 end
