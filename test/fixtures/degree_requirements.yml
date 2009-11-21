@@ -19,3 +19,23 @@ appl2:
 appl3:
   course_id: 5
   group_id: 2
+
+history1:
+  course_id: 8
+  group_id: 3
+
+history2:
+  course_id: 9
+  group_id: 3
+
+advanced1:
+  course_id: 10
+  group_id: 4
+
+advanced2:
+  course_id: 11
+  group_id: 4
+
+advanced3:
+  course_id: 12
+  group_id: 4
