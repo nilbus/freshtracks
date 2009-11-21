@@ -9,3 +9,13 @@ grp002:
   id: 2
   name: Application Course
   number: 002
+
+grpHistory:
+  id: 3
+  name: History Elective
+  number: 003
+
+grpAdvancedCSC"
+  id: 4
+  name: Advanced CSC Elective
+  number: 004
