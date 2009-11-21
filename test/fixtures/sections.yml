@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 csc116_001:
+  id: 1
   course_id: 1
   semester_id: 1
   room: EB2 1231
@@ -11,35 +12,231 @@ csc116_001:
   days: MWF
   seats: 30
 
-csc116_002:
-  course_id: 1
-  semester_id: 1
-  room: EB2 1231
-  professor: Jamison
-  number: 002
-  begin_time: 2009-11-17 09:00:00
-  end_time: 2009-11-17 10:30:00
-  days: TH
-  seats: 30
-
 csc216_001:
+  id: 2
   course_id: 2
   semester_id: 1
   room: EB2 1231
-  professor: Jamison
+  professor: Bob Dylan
   number: 001
-  begin_time: 2009-11-17 09:10:00
-  end_time: 2009-11-17 10:00:00
+  begin_time: 2009-11-17 10:15:00
+  end_time: 2009-11-17 11:30:00
   days: MWF
-  seats: 30
+  seats: 10
 
 csc216_002:
+  id: 3
   course_id: 2
   semester_id: 1
   room: EB2 1231
-  professor: Jamison
+  professor: Brian May
   number: 002
   begin_time: 2009-11-17 09:00:00
   end_time: 2009-11-17 10:30:00
   days: TH
-  seats: 30
+  seats: 15
+  
+csc216_003:
+  id: 4
+  course_id: 2
+  semester_id: 1
+  room: EB1 1006
+  number: 003
+  professor: Michael Scott
+  days: MWF
+  begin_time: 2009-11-17 08:00:00
+  end_time: 2009-11-17 08:50:00
+  seats: 20
+  
+csc226_001:
+  id: 5
+  course_id: 3
+  semester_id: 1
+  room: EB2 2235
+  number: 001
+  professor: Malcolm Reynolds
+  days: MW
+  begin_time: 2009-11-17 09:00:00
+  end_time: 2009-11-17 10:15:00
+  seats: 2
+  
+csc226_002:
+  id: 6
+  course_id: 3
+  semester_id: 1
+  room: EB2 1234
+  number: 002
+  professor: Jayne Cobb
+  days: TH
+  begin_time: 2009-11-17 08:00:00
+  end_time: 2009-11-17 09:15:00
+  seats: 4
+
+csc316_001:
+  id: 7
+  course_id: 4
+  semester_id: 1
+  room: EB1 1111
+  number: 001
+  professor: Fwiffo Spathi
+  days: WF
+  begin_time: 2009-11-17 11:45:00
+  end_time: 2009-11-17 13:00:00
+  seats: 9
+
+csc316_002:
+  id: 8
+  course_id: 4
+  semester_id: 1
+  room: EB2 2222
+  number: 002
+  professor: Sauron
+  days: TH
+  begin_time: 2009-11-17 11:45:00
+  end_time 2009-11-17 13:00:00
+  seats: 0
+  
+csc326_001:
+  id: 9
+  course_id: 5
+  semester_id: 1
+  room: EB1 2222
+  number: 001
+  professor: Harper Lee
+  days: MWF
+  begin_time: 2009-11-17 13:45:00
+  end_time: 2009-11-17 14:35:00
+  seats: 24
+  
+csc333_001:
+  id: 10
+  course_id: 6
+  semester_id: 1
+  room: EB1 1045
+  number: 001
+  professor: Shusaku Endo
+  days: TH
+  begin_time: 2009-11-17 12:15:00
+  end_time: 2009-11-17 13:30:00
+  seats: 6
+  
+eng101_001:
+  id: 11
+  course_id: 7
+  semester_id: 1
+  room: WI 106
+  number: 001
+  professor: Bob Woodward
+  days: MTWH
+  begin_time: 2009-11-17 08:00:00
+  end_time: 2009-11-17 08:50:00
+  seats: 10
+  
+eng101_002:
+  id: 12
+  course_id: 7
+  semester_id: 1
+  room: DAB 202
+  number: 002
+  professor: William Shakespeare
+  days: MTWF
+  begin_time: 2009-11-17 09:15:00
+  end_time: 2009-11-17 10:30:00
+  seats: 0
+  
+eng101_003:
+  id: 13
+  course_id: 7
+  semester_id: 1
+  room: WI 102G
+  number: 003
+  professor: JRR Tolkien
+  days: MTWF
+  begin_time: 2009-11-17 18:15:00
+  end_time: 2009-11-17 19:30:00
+  seats: 28
+  
+hi208_001:
+  id: 14
+  course_id: 8
+  semester_id: 1
+  room: HA 123
+  number: 001
+  professor: El Cid
+  days: MW
+  begin_time: 2009-11-17 14:00:00
+  end_time: 2009-11-17 15:15:00
+  seats: 3
+
+hi208_002:
+  id: 15
+  course_id: 8
+  semester_id: 1
+  room: WI 150
+  number: 002
+  professor: Peter Abelard
+  days: TH
+  begin_time: 2009-11-17 14:00:00
+  end_time: 2009-11-17 15:15:00
+  seats: 1
+
+hi208_003:
+  id: 16
+  course_id: 8
+  semester_id: 1
+  room: HA 111
+  number: 003
+  professor: Frederick Barbarossa
+  days: MW
+  begin_time: 2009-11-17 13:45:00
+  end_time: 2009-11-17 15:00:00
+  seats: 0
+  
+hi210_001:
+  id: 17
+  course_id: 9
+  semester: 1
+  room: HA 128
+  number: 001
+  professor: Otto von Bismarck
+  days: MW
+  begin_time: 2009-11-17 14:30:00
+  end_time: 2009-11-17 15:45:00
+  seats: 2
+  
+csc440_001:
+  id: 18
+  course_id: 10
+  semester: 1
+  room: EB2 1984
+  professor: Freddie Mercury
+  number: 001
+  days: MW
+  begin_time: 2009-11-17 14:30:00
+  end_time: 2009-11-17 15:45:00
+  seats: 5
+  
+csc454_001:
+  id: 19
+  course_id: 11
+  semester: 1
+  room: EB1 1029
+  professor: Darth Vader
+  number: 001
+  days: TH 
+  begin_time: 2009-11-17 14:30:00
+  end_time: 2009-11-17 15:45:00
+  seats: 9
+
+csc405_001:
+  id: 20
+  course_id: 12
+  semester: 1
+  room: EB2 1228
+  professor: Groucho Marx
+  number: 001
+  days: MW
+  begin_time: 2009-11-17 16:00:00
+  end_time: 2009-11-17 17:30:00
+  seats: 2
+  
