@@ -80,4 +80,7 @@ csc454:
 csc405:
   id: 12
   name: Computer Security
+  subject: CSC
+  number: 405
+  description: Basic concepts and techniques in information security and management such as risks and vulnerabilities, applied cryptography, program security, malicious software, authentication, access control, operating systems security, multilevel security, trusted operating systems, database security, inference control, physical security, and system assurance and evaluation. Coverage of high-level concepts such as confidentiality, integrity, and availability applied to hardware, software, and data.
   
