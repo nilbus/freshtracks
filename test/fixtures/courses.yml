@@ -12,7 +12,7 @@ csc216:
   name: Programming Concepts - Java
   subject: CSC
   number: 216
-  description: 'The second course in computing, intended for majors. Emphasis is placed on interpretation of inductive definitions (functions and data types); testing strategies; specification and implementation of finite-state machine; encapsulation; polymorphism;inheritance; class invariants; and resource management'
+  description: 'The second course in computing, intended for majors. Emphasis is placed on interpretation of inductive definitions (functions and data types); testing strategies; specification and implementation of finite-state machine; encapsulation; polymorphism;inheritance; class invariants; and resource management. Prerequisite: CSC 116.'
 
 csc226:
   id: 3
@@ -35,3 +35,49 @@ csc326:
   number: 326
   description: 'Application of product engineering methods to software: quality assurance, project management, requirements analysis, specifications, design, development, testing, production and maintenance.'
 
+csc333:
+  id: 6
+  name: Automata, Grammars, and Computability
+  subject: CSC
+  number: 333
+  description: 'Study of three classical formal models of computation--finite state machines, context-free grammars, and Turing machines--and the corresponding families of formal languages. Power and limitations of each model. Parsing. Non-determinism. The Halting Problem and undecidability. The classes P and NP, and NP-completeness. Prerequisite: CSC 226.'
+
+eng101:
+  id: 7
+  name: Academic Writing and Research
+  subject: ENG
+  number: 101
+  description: 'Intensive instruction in academic writing and research. Basic principles of rhetoric and strategies for academic inquiry and argument. Instruction and practice in critical reading, including the generative and responsible use of print and electronic sources for academic research. Exploration of literate practices across a range of academic domains, laying the foundation for further writing development in college. Continued attention to grammar and conventions of standard written English.'
+
+hi208:
+  id: 8
+  name: The Middle Ages
+  subject: HI
+  number: 208
+  description: 'Medieval civilization as it emerged from the declining Roman Empire through its apogee in the 13th century. The transition from the classical to the medieval world, the impact of the Germanic influx, the Islamic influence, the Crusades, and the political, economic, and social institutions of the High Middle Ages.'
+
+hi210:
+  id: 9
+  name: Modern Europe 1815-Present
+  subject: HI
+  number: 210
+  description: 'Survey of the history of European societies and political systems from 1815 to the present.'
+
+csc440:
+  id: 10
+  name: Database Management Systems
+  subject: CSC
+  number: 440
+  description: A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.
+
+csc454:
+  id: 11
+  name: Human-Computer Interaction
+  subject: CSC
+  number: 454
+  description: A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.
+
+csc405:
+  id: 12
+  name: Computer Security
+  
