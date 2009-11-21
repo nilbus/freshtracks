@@ -15,7 +15,7 @@ grpHistory:
   name: History Elective
   number: 003
 
-grpAdvancedCSC"
+grpAdvancedCSC:
   id: 4
   name: Advanced CSC Elective
   number: 004
