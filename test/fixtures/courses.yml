@@ -68,19 +68,19 @@ csc440:
   name: Database Management Systems
   subject: CSC
   number: 440
-  description: A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.
+  description: 'A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.'
 
 csc454:
   id: 11
   name: Human-Computer Interaction
   subject: CSC
   number: 454
-  description: A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.
+  description: 'A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.'
 
 csc405:
   id: 12
   name: Computer Security
   subject: CSC
   number: 405
-  description: Basic concepts and techniques in information security and management such as risks and vulnerabilities, applied cryptography, program security, malicious software, authentication, access control, operating systems security, multilevel security, trusted operating systems, database security, inference control, physical security, and system assurance and evaluation. Coverage of high-level concepts such as confidentiality, integrity, and availability applied to hardware, software, and data.
+  description: 'Basic concepts and techniques in information security and management such as risks and vulnerabilities, applied cryptography, program security, malicious software, authentication, access control, operating systems security, multilevel security, trusted operating systems, database security, inference control, physical security, and system assurance and evaluation. Coverage of high-level concepts such as confidentiality, integrity, and availability applied to hardware, software, and data.'
   
