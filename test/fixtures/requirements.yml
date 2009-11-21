@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  course_id: 1
+  course_id: 2
   needs_id: 1
 
 two:
-  course_id: 1
-  needs_id: 1
+  course_id: 6
+  needs_id: 3
