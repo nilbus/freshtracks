@@ -5,6 +5,7 @@ csc116:
   name: Introduction to Computing - Java
   subject: CSC
   number: 116
+  credits: 3
   description: 'An introductory course in computing in Java. Emphasis on algorithm development and problem solving. Careful and methodical development of Java applications and applets from specifications; documentation and style; appropriate use of control structures; classes and methods; data types and data abstraction; object-oriented programming and design; graphical user interface design.'
 
 csc216:
@@ -12,6 +13,7 @@ csc216:
   name: Programming Concepts - Java
   subject: CSC
   number: 216
+  credits: 3
   description: 'The second course in computing, intended for majors. Emphasis is placed on interpretation of inductive definitions (functions and data types); testing strategies; specification and implementation of finite-state machine; encapsulation; polymorphism;inheritance; class invariants; and resource management. Prerequisite: CSC 116.'
 
 csc226:
@@ -19,6 +21,7 @@ csc226:
   name: Discrete Mathematics for Computer Scientists
   subject: CSC
   number: 226
+  credits: 3
   description: 'Propositional logic and the predicate calculus. Logic gates and circuits. Methods of proof. Elementary set theory. Mathematical induction. Recursive definitions and algorithms. Solving recurrences. The analysis of algorithms and asymptotic growth of functions. Elementary combinatorics. Introduction to graph theory. Ordered sets, including posets and equivalence relations. Introduction to formal languages and automata.'
 
 csc316:
@@ -26,6 +29,7 @@ csc316:
   name: Data Structures for Computer Scientists
   subject: CSC
   number: 316
+  credits: 3
   description: 'Abstract data types; abstract and implementation-level views of data types. Linear and branching data structures, including stacks, queues, trees, heaps, hash tables, graphs, and others at discretion of instructor. Best, worst, and average case asymptotic time and space complexity as a means of formal analysis of iterative and recursive algorithms.'
 
 csc326:
@@ -33,6 +37,7 @@ csc326:
   name: Software Engineering
   subject: CSC
   number: 326
+  credits: 3
   description: 'Application of product engineering methods to software: quality assurance, project management, requirements analysis, specifications, design, development, testing, production and maintenance.'
 
 csc333:
@@ -40,6 +45,7 @@ csc333:
   name: Automata, Grammars, and Computability
   subject: CSC
   number: 333
+  credits: 3
   description: 'Study of three classical formal models of computation--finite state machines, context-free grammars, and Turing machines--and the corresponding families of formal languages. Power and limitations of each model. Parsing. Non-determinism. The Halting Problem and undecidability. The classes P and NP, and NP-completeness. Prerequisite: CSC 226.'
 
 eng101:
@@ -47,6 +53,7 @@ eng101:
   name: Academic Writing and Research
   subject: ENG
   number: 101
+  credits: 4
   description: 'Intensive instruction in academic writing and research. Basic principles of rhetoric and strategies for academic inquiry and argument. Instruction and practice in critical reading, including the generative and responsible use of print and electronic sources for academic research. Exploration of literate practices across a range of academic domains, laying the foundation for further writing development in college. Continued attention to grammar and conventions of standard written English.'
 
 hi208:
@@ -54,6 +61,7 @@ hi208:
   name: The Middle Ages
   subject: HI
   number: 208
+  credits: 3
   description: 'Medieval civilization as it emerged from the declining Roman Empire through its apogee in the 13th century. The transition from the classical to the medieval world, the impact of the Germanic influx, the Islamic influence, the Crusades, and the political, economic, and social institutions of the High Middle Ages.'
 
 hi210:
@@ -61,6 +69,7 @@ hi210:
   name: Modern Europe 1815-Present
   subject: HI
   number: 210
+  credits: 3
   description: 'Survey of the history of European societies and political systems from 1815 to the present.'
 
 csc440:
@@ -68,6 +77,7 @@ csc440:
   name: Database Management Systems
   subject: CSC
   number: 440
+  credits: 3
   description: 'A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.'
 
 csc454:
@@ -75,6 +85,7 @@ csc454:
   name: Human-Computer Interaction
   subject: CSC
   number: 454
+  credits: 3
   description: 'A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.'
 
 csc405:
@@ -82,5 +93,6 @@ csc405:
   name: Computer Security
   subject: CSC
   number: 405
+  credits: 3
   description: 'Basic concepts and techniques in information security and management such as risks and vulnerabilities, applied cryptography, program security, malicious software, authentication, access control, operating systems security, multilevel security, trusted operating systems, database security, inference control, physical security, and system assurance and evaluation. Coverage of high-level concepts such as confidentiality, integrity, and availability applied to hardware, software, and data.'
   
