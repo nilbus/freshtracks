@@ -6,7 +6,7 @@ class SemestersController < ApplicationController
   
   def show
   	session[:semester] = params[:id]
-  	redirect_to :controller => :courses, :action => :index
+  	redirect_to "/"
   end
 
 end

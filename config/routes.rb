@@ -5,5 +5,5 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :wishlist_classes, :only => [ :index, :create, :update, :destroy ]
   map.resources :registered_classes, :only => [ :index, :create, :update, :destroy ]
 
-  map.root :controller => :semesters, :action => :index
+  map.root :controller => :courses, :action => :index
 end

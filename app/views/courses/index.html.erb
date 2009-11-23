@@ -13,4 +13,5 @@ Searching for: <%= searchtext %><p/>
 <%= course.name %><br>
 <% end %>
 <br/>
-Courses for: <%=session[:semester]%>
+Courses for: <%=session[:semester]%> <br/>
+<%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %>
