@@ -1,2 +1,7 @@
 <h1>Semesters#index</h1>
-<p>Find me in app/views/semesters/index.html.erb</p>
+
+<ul>
+<% for semester in @semesters %>
+<li><%= link_to semester.name, semester %></li>
+<% end %>
+</ul>

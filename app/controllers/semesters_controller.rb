@@ -1,7 +1,12 @@
 class SemestersController < ApplicationController
   # list upcoming semesters available for registration
   def index
-    @semesters = Semesters.all
+    @semesters = Semester.all(:order => "updated_at")
+  end
+  
+  def show
+  	session[:semester] = params[:id]
+  	redirect_to :controller => :courses, :action => :index
   end
 
 end
