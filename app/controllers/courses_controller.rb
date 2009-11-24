@@ -8,13 +8,15 @@ class CoursesController < ApplicationController
   		redirect_to :controller => :semester, :action => :index
   	end
   
-  	if (params[:search].nil?)
-  		filter = ''
-  	else
-  		filter = params[:search]
-  	end	
-  	
-    @courses = Course.all(:conditions => ['(subject || number || " - " || name) LIKE ?', '%' + filter + '%'])
+    begin
+                                           # sqlite query
+      @courses = Course.all(:conditions => ['(subject || number || " - " || name) LIKE ?', '%' + params[:search] + '%'])
+    rescue TypeError # when params[:search].nil?
+      # Don't search for courses if they haven't searched for them
+      # The view should display instructions if @courses.nil?
+      # and show that there were no results  if @courses.empty?
+      @courses = nil
+    end
   end
 
 end

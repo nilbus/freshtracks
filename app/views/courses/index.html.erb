@@ -1,17 +1,16 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
-<% 
-if (params[:search].nil?)
-	searchtext = "All courses"
-else
-	searchtext = h(params[:search])
-end
-%>
-	
-Searching for: <%= searchtext %><p/>
-<% for course in @courses %>
-<%= course.name %><br>
+<h1>Courses</h1>
+
+<% if @courses.nil? %>
+  <% form_tag '/courses', :method => :get do -%>
+    <%= text_field_tag 'search' %> <%= submit_tag 'Submit', :name => nil %>
+    <div>Instructions: use the search box</div>
+  <% end -%>
+<% else %>
+  Searching for: <%= (params[:search].empty? ? 'All courses' : h(params[:search]) ) %><p/>
+  <% for course in @courses %>
+    <%= course.name %><br>
+  <% end -%>
+  <br/>
+  Courses for: <%= session[:semester]%> <br/>
+  <%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %>
 <% end %>
-<br/>
-Courses for: <%=session[:semester]%> <br/>
-<%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %>
