@@ -1,5 +1,8 @@
 <html>
 <body>
+<div class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>tab1</div>
+<div class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>tab2</div>
+<div class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>tab3</div>
 <%= yield %>
 </body>
 </html>
