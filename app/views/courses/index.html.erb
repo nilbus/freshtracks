@@ -12,5 +12,4 @@
   <% end -%>
   <br/>
   Courses for: <%= Semester.find(session[:semester]).name %> <br/>
-  <%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %>
 <% end %>
