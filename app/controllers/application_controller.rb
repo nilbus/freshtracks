@@ -8,4 +8,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  before_filter :choose_semester
+
+  def choose_semester
+  	if session[:semester].nil? && !choosing_semester? && !request.xhr? # don't redirect on AJAX req's
+  		redirect_to :controller => :semesters, :action => :index
+  	end
+  end
+
+  def choosing_semester?
+    /semester/.match(request.request_uri)
+  end
+
 end
