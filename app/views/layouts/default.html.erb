@@ -16,11 +16,14 @@ ul.tabList li#selectedTab{
 	border: 2px #36F solid;
 }
 </style>
+
 <ul class="tabList">
 <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>tab 1</li>
 <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>tab 2</li>
 <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>tab 3</li>
 </ul>
+<span style="width: 10em">&nbsp;</span>  <%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %></span>
+
 <%= yield %>
 </body>
 </html>
