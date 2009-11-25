@@ -1,10 +1,11 @@
 <h1>Courses</h1>
 
+<% form_tag '/courses', :method => :get do -%>
+    <%= text_field_tag 'search', h(params[:search]) %> <%= submit_tag 'Submit', :name => nil %>
+<% end -%>
+
 <% if @courses.nil? %>
-  <% form_tag '/courses', :method => :get do -%>
-    <%= text_field_tag 'search' %> <%= submit_tag 'Submit', :name => nil %>
-    <div>Instructions: use the search box</div>
-  <% end -%>
+  <div>Instructions: use the search box</div>
 <% else %>
   Searching for: <%= (params[:search].empty? ? 'All courses' : h(params[:search]) ) %><p/>
 
