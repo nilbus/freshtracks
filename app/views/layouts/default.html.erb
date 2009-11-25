@@ -1,22 +1,13 @@
 <html>
-<%= javascript_include_tag 'jquery-1.3.2.min', 'application' %>
+<head>
+  <%= javascript_include_tag 'jquery-1.3.2.min', 'application' %>
+  <%= stylesheet_link_tag 'application' %>
+  <% # helper methods below are defined in app/helpers/application_helper.rb %>
+  <% include_filename = current_action_include_filename(controller) %>
+  <%= stylesheet_link_tag include_filename if css_exists?(include_filename) %>
+  <%= javascript_include_tag include_filename if js_exists?(include_filename) %>
+</head>
 <body>
-<style>
-ul.tabList {
-	list-style: none;
-	display: inline;
-}
-
-ul.tabList li {
-	display: inline;
-	padding: .1em;
-	border: 1px #69F solid;
-}
-
-ul.tabList li#selectedTab{
-	border: 2px #36F solid;
-}
-</style>
 
 <ul class="tabList">
 <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>tab 1</li>
