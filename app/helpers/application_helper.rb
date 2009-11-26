@@ -24,6 +24,11 @@ module ApplicationHelper
     resource_exists?(base_name, 'javascripts', 'js')
   end
 
+  # Time format for dateTime.strftime
+  def time_format
+    '%I:%M%p'
+  end
+
   private
     def resource_exists?(base_name, subdir, extention)
       FileTest.exists?("public/#{subdir}/#{base_name}.#{extention}")

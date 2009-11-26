@@ -2,9 +2,8 @@
   <td><%=section.professor%></td>    
   <td><%=section.room%></td>
   <td>
-    <% fmtstr = "%I:%M%p" %>
     <%=section.days%> 
-    <%=section.begin_time.strftime(fmtstr)%>-<%=section.end_time.strftime(fmtstr)%>
+    <%=section.begin_time.strftime(time_format)%>-<%=section.end_time.strftime(time_format)%>
   </td>
   <td class="button">
     <input  type="button" 
