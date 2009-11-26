@@ -8,9 +8,9 @@
 
 == Epics:
 
-===  As a student, I can schedule classes for different semesters, so they're separate.
-- <tt>1</tt> As a student, I can choose which semester's schedule to modify immediately after login, so the context is clear.
-- <tt>2</tt> As a student, I can change which semester I am working with, so I can accomplish all my goals with one login.
+===  <em>As a student, I can schedule classes for different semesters, so they're separate.</em>
+- <em><tt>1</tt> As a student, I can choose which semester's schedule to modify immediately after login, so the context is clear.</em>
+- <em><tt>2</tt> As a student, I can change which semester I am working with, so I can accomplish all my goals with one login.</em>
 
 ===  As a planner, I can prepare a wishlist for the upcoming semester before registration opens, so I can register instantly when my date comes.
 - <tt>1</tt> As a planner, I can add sections of classes without restriction to a wishlist, so I can flexibly view and weigh my scheduling options.
@@ -21,10 +21,10 @@
 - <tt>5</tt> As a planner, I am notified when I add a class to my wishlist that I am not eligible to take, so I am not surprised when I can't add it.
 
 ===  As a student, I can search through available classes by major and class number or title, so I can plan or add classes to my schedule.
-- <tt>1</tt> As a student, I can type part of a course code or title and see the matching classes, so I can find classes that I want.
+- <em><tt>1</tt> As a student, I can type part of a course code or title and see the matching classes, so I can find classes that I want.</em>
 - <tt>1</tt> As a student, I can sign up for dummy classes, so I can quickly see how usable the interface is.
 - <tt>2</tt> As a student, each word in my search terms can independently match anywhere in the course code and title.
-- <tt>2</tt> As a student, courses that I search for appear in list form where each item can be expanded in-page to show details, so I can get information without leaving the page.
+- <em><tt>2</tt> As a student, courses that I search for appear in list form where each item can be expanded in-page to show details, so I can get information without leaving the page.</em>
 - <tt>3</tt> As a student, I can expand all search results in one click, so I can quickly compare the details of all results.
 - <tt>4</tt> As a student, I can see preview search results immediately using a Google style auto-complete input box, so the search terms are easily discoverable.
 - <tt>4</tt> As a student, I can filter the list to display any combination of open, waitlisted, and full classes, so I can be aware of classes that may open in the future.
@@ -32,7 +32,7 @@
 
 ===  As a student, I can use my degree plan to register for classes, so I don't have to use a separate website to determine which classes I need to take.
 - <tt>1</tt> As a student, I can see my current degree plan, so I know which classes I ought to register for.
-- <tt>1</tt> As a student, I have dummy degree requirements, so I can quickly see how usable the interface is.
+- <em><tt>1</tt> As a student, I have dummy degree requirements, so I can quickly see how usable the interface is.</em>
 - <tt>2</tt> As a student, I can expand requirement groups to see which courses I can add that match the requirement, so the information is immediately available.
 - <tt>5</tt> As a student, I can see actual NCSU degree requirements and groups, so this system is more realistic.
 
