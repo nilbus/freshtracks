@@ -4,5 +4,23 @@
   <td><%=course.name%></td>
 </tr>
 <tr id="<%=course.id%>extra" class="extra">
-  <td colspan=3><%=course.description%></td>
+  <td colspan=3><%=course.description%>
+  <table class='sectionList'>
+  <% for section in course.sections %>
+    <tr>
+      <td><%=section.professor%></td>    
+      <td><%=section.room%></td>
+      <td>
+        <% fmtstr = "%I:%M%p" %>
+        <%=section.days%> 
+        <%=section.begin_time.strftime(fmtstr)%>-<%=section.end_time.strftime(fmtstr)%>
+      </td>
+      <td><input type="button" value="Add to Wishlist"></td>
+      <td><input type="button" value="Add to Schedule"></td>
+    </tr>
+  <% end %>
+  </table>
+  
+  </td>
+
 </tr>

@@ -6,10 +6,10 @@ class CoursesController < ApplicationController
   def index
     begin
                                            # sqlite query
-      @courses = Course.all(:conditions => ['semester_id = ? AND (courses.subject || courses.number || " - " || courses.name) LIKE ?',
-                                            session[:semester],
+      @courses = Course.all(:conditions => ['(courses.subject || courses.number || " - " || courses.name) LIKE ?',
+                                            
                                             '%' + params[:search] + '%'],
-                            :joins => :sections,
+                            #:joins => :sections,
                             :order => "courses.subject || courses.number")
     rescue TypeError # when params[:search].nil?
       # Don't search for courses if they haven't searched for them

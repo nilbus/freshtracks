@@ -7,11 +7,12 @@
   width:1em;
 }
 
-.courseList {
+.courseList, .sectionList {
   width: 100%;
 }
 
-tr.main td {
+
+tr.main td, .sectionList td {
   border: 1px #36F solid;
   padding: .1em;
 }
