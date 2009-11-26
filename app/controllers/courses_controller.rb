@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
                                             session[:semester],
                                             '%' + params[:search] + '%'],
                             :joins => :sections,
+                            :include => :sections,
                             :group => 'courses.id',
                             :order => "courses.subject || courses.number")
     rescue TypeError # when params[:search].nil?
