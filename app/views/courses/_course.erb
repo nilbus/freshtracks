@@ -1,10 +1,11 @@
 <tr id="<%=course.id%>main" class="main">
   <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle('<%=course.id%>')">+</a></td>
   <td><%= course.subject%><%=course.number%></td>
-  <td><%=course.name%></td>
+  <td><%= course.name%></td>
+  <td><%= pluralize(course.sections.length, "section") %> 
 </tr>
 <tr id="<%=course.id%>extra" class="extra">
-  <td colspan=3><%=course.description%>
+  <td colspan=4><%=course.description%>
   <table class='sectionList'>
     <%= render :partial => "sections/section", :collection => course.sections.find_all_by_semester_id(session[:semester]) %>
   </table>
