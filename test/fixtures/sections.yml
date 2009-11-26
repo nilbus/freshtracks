@@ -15,8 +15,8 @@ fa09csc116_001:
   days: MWF
   seats: 30
 
-fa09csc216_001:
-  course: csc216
+fa09csc116_001:
+  course: csc116
   semester: fall2009
   room: EB2 1231
   professor: Bob Dylan
@@ -26,8 +26,8 @@ fa09csc216_001:
   days: MWF
   seats: 10
 
-fa09csc216_002:
-  course: csc216
+fa09csc116_002:
+  course: csc116
   semester: fall2009
   room: EB2 1231
   professor: Brian May
@@ -37,8 +37,8 @@ fa09csc216_002:
   days: TH
   seats: 15
 
-fa09csc216_003:
-  course: csc216
+fa09csc116_003:
+  course: csc116
   semester: fall2009
   room: EB1 1006
   number: 003
@@ -227,8 +227,8 @@ fa09csc405_001:
 
 # spring 2010 sections
 
-sp10csc116_001:
-  course: csc116
+sp10csc216_001:
+  course: csc216
   semester: spring2010
   room: EB2 1231
   professor: Jamison
