@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  course_id: 2
-  needs_id: 1
+req1:
+  course: csc216
+  needs: csc116
 
-two:
-  course_id: 6
-  needs_id: 3
+req2:
+  course: csc333
+  needs: csc226

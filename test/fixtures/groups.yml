@@ -1,21 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-grp001:
-  id: 1
+grpJava:
   name: Java Course
   number: 001
 
-grp002:
-  id: 2
+grpApplication:
   name: Application Course
   number: 002
 
 grpHistory:
-  id: 3
   name: History Elective
   number: 003
 
 grpAdvancedCSC:
-  id: 4
   name: Advanced CSC Elective
   number: 004
