@@ -1,0 +1,14 @@
+ul.tabList {
+	list-style: none;
+	display: inline;
+}
+
+ul.tabList li {
+	display: inline;
+	padding: .1em;
+	border: 1px #69F solid;
+}
+
+ul.tabList li#selectedTab{
+	border: 2px #36F solid;
+}

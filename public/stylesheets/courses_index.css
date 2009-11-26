@@ -1,0 +1,17 @@
+.extra {
+  display: none;
+}
+
+.expander {
+  text-align: center; 
+  width:1em;
+}
+
+.courseList {
+  width: 100%;
+}
+
+tr.main td {
+  border: 1px #36F solid;
+  padding: .1em;
+}

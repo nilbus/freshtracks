@@ -1,0 +1,8 @@
+<tr id="<%=course.id%>main" class="main">
+  <td><a href="javascript:void(0)" onclick="this.innerHTML = toggle('<%=course.id%>')">+</a></td>
+  <td><%= course.subject%><%=course.number%></td>
+  <td><%=course.name%></td>
+</tr>
+<tr id="<%=course.id%>extra" class="extra">
+  <td colspan=3><%=course.description%></td>
+</tr>
