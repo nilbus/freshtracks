@@ -8,12 +8,12 @@
   </td>
   <td class="button">
     <input  type="button" 
-            onclick="$.post('<%= url_for :controller => 'sections', :action => 'wishlist_add' %>')" 
+            onclick="$.post('<%= url_for :controller => 'wishlist_classes', :action => 'create' %>')"
             value="Add to Wishlist">
   </td>
   <td class="button">
     <input  type="button" 
-            onclick="$.post('<%= url_for(:controller => 'sections', :action => 'schedule_add') %>')" 
+            onclick="$.post('<%= url_for(:controller => 'registered_classes', :action => 'create') %>')"
             value="Add to Schedule">
   </td>
 </tr>
