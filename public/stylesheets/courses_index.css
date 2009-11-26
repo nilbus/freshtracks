@@ -11,6 +11,9 @@
   width: 100%;
 }
 
+td.button {
+  width: 1em;
+}
 
 tr.main td, .sectionList td {
   border: 1px #36F solid;

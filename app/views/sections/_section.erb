@@ -1,0 +1,19 @@
+<tr>
+  <td><%=section.professor%></td>    
+  <td><%=section.room%></td>
+  <td>
+    <% fmtstr = "%I:%M%p" %>
+    <%=section.days%> 
+    <%=section.begin_time.strftime(fmtstr)%>-<%=section.end_time.strftime(fmtstr)%>
+  </td>
+  <td class="button">
+    <input  type="button" 
+            onclick="$.post('<%= url_for :controller => 'sections', :action => 'wishlist_add' %>')" 
+            value="Add to Wishlist">
+  </td>
+  <td class="button">
+    <input  type="button" 
+            onclick="$.post('<%= url_for(:controller => 'sections', :action => 'schedule_add') %>')" 
+            value="Add to Schedule">
+  </td>
+</tr>
