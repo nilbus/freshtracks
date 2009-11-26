@@ -20,7 +20,8 @@
   <%= link_to "Wishlist", {:controller => 'wishlist_classes', :action => 'index'} %>
   </li>
 </ul>
-<span style="width: 10em">&nbsp;</span>  <%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %></span>
+<span style="width: 10em">&nbsp;</span>
+<%= link_to Semester.find(session[:semester]).name, semesters_path if session[:semester] %>
 
 <%= yield %>
 </body>
