@@ -1,41 +1,31 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 java1:
-  course: csc116
-  group: grpJava
+  required: csc116
 
 java2:
-  course_id: csc216
-  group_id: grpJava
+  required: csc216
 
 appl1:
-  course_id: csc226
-  group_id: grpApplication
+  required: csc226
 
 appl2:
-  course_id: csc316
-  group_id: grpApplication
+  required: csc316
 
 appl3:
-  course_id: csc326
-  group_id: grpApplication
+  required: csc326
 
 history1:
-  course_id: hi208
-  group_id: grpHistory
+  required: grpHistory
 
 history2:
-  course_id: hi210
-  group_id: grpHistory
+  required: grpHistory
 
 advanced1:
-  course_id: csc440
-  group_id: grpAdvancedCSC
+  required: grpAdvancedCSC
 
 advanced2:
-  course_id: csc454
-  group_id: grpAdvancedCSC
+  required: grpAdvancedCSC
 
 advanced3:
-  course_id: csc405
-  group_id: grpAdvancedCSC
+  required: grpAdvancedCSC
