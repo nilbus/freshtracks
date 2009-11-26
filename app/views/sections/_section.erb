@@ -7,7 +7,7 @@
   </td>
   <td class="button">
     <input  type="button" 
-            onclick="$.post('<%= url_for :controller => 'wishlist_classes', :action => 'create' %>')"
+            onclick="$.post('<%= url_for :controller => 'wishlist_classes', :action => 'create', :id => section.id %>')"
             value="Add to Wishlist">
   </td>
   <td class="button">
