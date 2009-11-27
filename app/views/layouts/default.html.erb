@@ -10,15 +10,9 @@
 <body>
 
 <ul class="tabList">
-  <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Browse", {:controller => 'courses', :action => 'index'} %>
-  </li>
-  <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Plan of Work", {:controller => 'requirements', :action => 'index'} %>
-  </li>
-  <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Wishlist", {:controller => 'wishlist_classes', :action => 'index'} %>
-  </li>
+<li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>tab 1</li>
+<li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>tab 2</li>
+<li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>tab 3</li>
 </ul>
 <span style="width: 10em">&nbsp;</span>  <%= link_to 'Change semester', {:controller => 'semesters', :action => 'index'} %></span>
 

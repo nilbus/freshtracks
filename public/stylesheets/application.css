@@ -7,7 +7,6 @@ ul.tabList li {
 	display: inline;
 	padding: .1em;
 	border: 1px #69F solid;
-	margin-left: .3em;
 }
 
 ul.tabList li#selectedTab{

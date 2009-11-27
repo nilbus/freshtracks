@@ -1,7 +1,7 @@
 class WishlistClassesController < ApplicationController
   # show wishlist
   def index
-    @wishlist_classes = WishlistClass.all
+    @wishlist_classes = WishlistClasses.all
   end
 
   # add a class to wishlist
