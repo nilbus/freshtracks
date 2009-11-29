@@ -1,6 +1,6 @@
-class CreateRequirements < ActiveRecord::Migration
+class CreatePrerequisites < ActiveRecord::Migration
   def self.up
-    create_table :requirements do |t|
+    create_table :prerequisites do |t|
       t.integer :class_id
       t.integer :needs_id
 
@@ -9,6 +9,6 @@ class CreateRequirements < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :requirements
+    drop_table :prerequisites
   end
 end

@@ -41,15 +41,15 @@ ActiveRecord::Schema.define(:version => 20091126055151) do
     t.datetime "updated_at"
   end
 
-  create_table "registered_classes", :force => true do |t|
-    t.integer  "section_id"
+  create_table "prerequisites", :force => true do |t|
+    t.integer  "class_id"
+    t.integer  "needs_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "requirements", :force => true do |t|
-    t.integer  "course_id"
-    t.integer  "needs_id"
+  create_table "registered_classes", :force => true do |t|
+    t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
