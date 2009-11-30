@@ -1,4 +1,5 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+csc216_003:      #timing conflict with eng 101
+  section_id: 11
 
-#one:
-#  section_id: 1
+csc440_001:
+  section_id: 18

@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-req1:
+prereq1:
   course: csc216
   needs: csc116
 
-req2:
+prereq2:
   course: csc333
   needs: csc226

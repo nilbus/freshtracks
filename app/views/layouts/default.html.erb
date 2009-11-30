@@ -11,13 +11,13 @@
 
 <ul class="tabList">
   <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Browse", {:controller => 'courses', :action => 'index'} %>
+  <%= link_to "Browse", courses_path %>
   </li>
   <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Plan of Work", {:controller => 'degree_requirements', :action => 'index'} %>
+  <%= link_to "Plan of Work", degree_requirements_path %>
   </li>
   <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Wishlist", {:controller => 'wishlist_classes', :action => 'index'} %>
+  <%= link_to "Wishlist", wishlist_classes_path %>
   </li>
 </ul>
 <span style="width: 10em">&nbsp;</span>
