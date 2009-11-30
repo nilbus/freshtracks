@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20091130200950) do
     t.datetime "updated_at"
   end
 
-  create_table "passed_classes", :force => true do |t|
+  create_table "passed_courses", :force => true do |t|
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20091130200950) do
     t.datetime "updated_at"
   end
 
-  create_table "registered_classes", :force => true do |t|
+  create_table "registered_sections", :force => true do |t|
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20091130200950) do
     t.datetime "updated_at"
   end
 
-  create_table "wishlist_classes", :force => true do |t|
+  create_table "wishlist_sections", :force => true do |t|
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
