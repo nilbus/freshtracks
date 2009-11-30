@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<% if session[:semester] %>
 <ul class="tabList">
   <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>
   <%= link_to "Browse", courses_path %>
@@ -20,8 +21,10 @@
   <%= link_to "Wishlist", wishlist_classes_path %>
   </li>
 </ul>
-<span style="width: 10em">&nbsp;</span>
-<%= link_to Semester.find(session[:semester]).name, semesters_path if session[:semester] %>
+&nbsp;
+Current semester: <%= Semester.find(session[:semester]).name %>
+<%= link_to "(Change semester)", semesters_path%>
+<% end %>
 
 <%= yield %>
 </body>
