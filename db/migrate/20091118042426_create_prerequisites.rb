@@ -1,7 +1,7 @@
 class CreatePrerequisites < ActiveRecord::Migration
   def self.up
     create_table :prerequisites do |t|
-      t.integer :class_id
+      t.integer :course_id
       t.integer :needs_id
 
       t.timestamps

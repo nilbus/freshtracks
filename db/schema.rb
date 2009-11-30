@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20091126055151) do
   end
 
   create_table "prerequisites", :force => true do |t|
-    t.integer  "class_id"
+    t.integer  "course_id"
     t.integer  "needs_id"
     t.datetime "created_at"
     t.datetime "updated_at"

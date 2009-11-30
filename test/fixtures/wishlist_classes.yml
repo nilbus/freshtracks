@@ -1,5 +1,5 @@
-csc216_003:      #timing conflict with eng 101
-  section_id: 11
+wish_csc216_003:      #timing conflict with eng 101
+  section: sp10csc216_003
 
-csc440_001:
-  section_id: 18
+wish_csc440_001:
+  section: sp10csc440_001
