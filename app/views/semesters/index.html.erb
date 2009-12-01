@@ -1,7 +1,11 @@
-<h1>Choose a semester</h1>
 
-<ul>
-<% for semester in @semesters %>
-<li><%= link_to semester.name, semester %></li>
-<% end %>
-</ul>
+
+<div style="width:25em;">
+<center>
+<h1>Choose a semester</h1>
+<%= link_to image_tag("next_semester.png", :border => 0), @semesters[0] %><br/>
+(Spring 2010)<br/><br/>
+<%= link_to image_tag("this_semester.png", :border => 0), @semesters[1] %><br/>
+(Fall 2009)<br/>
+</center>
+</div>
