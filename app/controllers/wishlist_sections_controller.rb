@@ -1,9 +1,7 @@
 class WishlistSectionsController < ApplicationController
   # show wishlist
   def index
-    @wishlist_sections = WishlistSection.all
-    section_ids = @wishlist_sections.map{ |c| c.section_id}
-    @wishlist_courses = Course.all(:joins => :sections, :conditions => ['sections.id in (?)', section_ids])   
+    @wishlist_sections = WishlistSection.all#(:conditions => { :semester_id => session[:semester] })
   end
 
   # add a class to wishlist
