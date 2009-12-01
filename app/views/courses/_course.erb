@@ -1,6 +1,32 @@
+<%
+# This partial can be passed a course or a section.
+# When passed a course, it will include all sections for that course.
+# When passed a section, it will display the course the section belongs to and the details for that section.
+
+unless (course.is_a?(Section))
+  sections = course.sections.find_all_by_semester_id(session[:semester])
+  show_section_count = true
+else
+  sections = [course]
+  course = sections[0].course
+  show_section_count = false
+end
+%>
 <tr id="<%=course.id%>main" class="main">
   <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=course.id%>')">+</a></td>
   <td><%= course.subject%><%=course.number%></td>
-  <td><%= course.name%></td>
-  <td><%= pluralize(course.sections.length, "section") %> 
+  <td<%= ' colspan="2"' unless show_section_count %>><%= course.name%></td>
+  <%- if show_section_count -%>
+  <td><%= pluralize(sections.length, "section") %> 
+  <%- end -%>
+</tr>
+<tr id="<%=course.id%>extra" class="extra">
+  <td colspan="4">
+  <div class="slider">
+    <%=course.description%>
+    <table class="sectionList">
+      <%= render :partial => "sections/section", :collection => sections %>
+    </table>
+  </div>
+  </td>
 </tr>

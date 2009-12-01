@@ -1,7 +1,8 @@
 class RegisteredSectionsController < ApplicationController
   # classes registered for current semester
   def index
-    @registered_sections = RegisteredSections.all
+    @registered_sections = RegisteredSections.all(:joins => :section,
+                                                  :conditions => { 'sections.semester_id' => session[:semester] })
   end
 
   # register for a class
