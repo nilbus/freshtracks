@@ -1,15 +1,14 @@
 <h1>WishlistSections#index</h1>
 <p>Find me in app/views/wishlist_sections/index.html.erb</p>
 
-<table>
+<table class="sectionList">
 <% oldname = "" %>
 <% for section in @wishlist_sections %>
    
-  <% if(section.course.name != oldname)%>
-    <%=render :partial => "courses/course", :object => section.course %>
-    <%=render :partial => "sections/section", :object => section, :locals => {:show_remove_button => "true"} %>
-    <% oldname = section.course.name%>
-  <% end %>
+  <tr>
+    <td><%=section.course.searchkey%></td>
+    <td><%=section.timeslot%>
+  </tr>
   
 <% end %>
 </table>

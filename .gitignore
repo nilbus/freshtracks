@@ -4,3 +4,4 @@ log
 *.swp
 *~
 *.sqlite3
+*.orig
