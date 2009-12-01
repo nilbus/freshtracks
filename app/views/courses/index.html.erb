@@ -10,7 +10,10 @@
   Searching for: <%= (params[:search].empty? ? 'All courses' : h(params[:search]) ) %><p/>
 
   <table class="courseList">
-    <%= render :partial => "course", :collection => @courses %>
+  <% for course in @courses %>
+    <%= render :partial => "course", :object => course %>
+    <%= render :partial => "sections/section_list", :locals => {:course => course} %>
+  <% end %>
   </table>
   <br/>
 

@@ -4,14 +4,3 @@
   <td><%= course.name%></td>
   <td><%= pluralize(course.sections.length, "section") %> 
 </tr>
-<tr id="<%=course.id%>extra" class="extra">
-  <td colspan=4>
-  <div>
-    <%=course.description%>
-    <table class='sectionList'>
-      <%= render :partial => "sections/section", :collection => course.sections.find_all_by_semester_id(session[:semester]) %>
-    </table>
-  </div>
-  </td>
-
-</tr>

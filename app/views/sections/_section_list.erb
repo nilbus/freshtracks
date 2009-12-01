@@ -1,0 +1,12 @@
+<tr id="<%=course.id%>extra" class="extra">
+
+  <td colspan=4><div><%=course.description%>
+  <table class='sectionList'>
+    <%= render  :partial => "sections/section", 
+                :collection => course.sections.find_all_by_semester_id(session[:semester]),
+                :locals => {:show_wishlist_button => "true", :show_schedule_button => "true"} %>
+  </table>
+  
+  </div></td>
+
+</tr>
