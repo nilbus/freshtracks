@@ -1,2 +1,8 @@
-<h1>DegreeRequirements#index</h1>
-<p>Find me in app/views/degree_requirements/index.html.erb</p>
+<h1>Degree Requirements</h1>
+
+<table class="courseList">
+  <% for req in @degree_requirements %>
+    <% classname = req.required.class.name.underscore %>
+    <%= render :partial => "#{classname.pluralize}/#{classname}", :object => req.required %>
+  <% end %>
+</table>
