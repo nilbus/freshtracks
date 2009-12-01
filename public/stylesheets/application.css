@@ -13,3 +13,25 @@ ul.tabList li {
 ul.tabList li#selectedTab{
 	border: 2px #36F solid;
 }
+
+.extra td div {
+  display: none;
+}
+
+.expander {
+  text-align: center; 
+  width:1em;
+}
+
+.courseList, .sectionList {
+  width: 100%;
+}
+
+td.button {
+  width: 1em;
+}
+
+tr.main td, .sectionList td {
+  border: 1px #36F solid;
+  padding: .1em;
+}
