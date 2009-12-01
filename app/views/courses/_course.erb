@@ -16,6 +16,7 @@ end
   <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=course.id%>')">+</a></td>
   <td><%= course.subject%><%=course.number%></td>
   <td<%= ' colspan="2"' unless show_section_count %>><%= course.name%></td>
+  <td><%= pluralize(course.credits, "Credit hour") %></td>
   <%- if show_section_count -%>
   <td><%= pluralize(sections.length, "section") %> 
   <%- end -%>
