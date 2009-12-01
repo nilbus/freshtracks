@@ -1,0 +1,8 @@
+<tr id="group<%= group.id %>main" class="main">
+  <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('group<%=group.id%>')">+</a></td>
+  <td>GRP <%=group.number%></td>
+  <td><%= group.name%></td>
+</tr>
+<tr><td colspan="3">
+<%= render :partial => 'courses/course_list', :object => group.group_members.map(&:course) %>
+</td></tr>

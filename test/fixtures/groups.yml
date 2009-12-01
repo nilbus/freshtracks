@@ -1,15 +1,15 @@
 grpJava:
   name: Java Course
-  number: 001
+  number: '001'
 
 grpApplication:
   name: Application Course
-  number: 002
+  number: '002'
 
 grpHistory:
   name: History Elective
-  number: 003
+  number: '003'
 
 grpAdvancedCSC:
   name: Advanced CSC Elective
-  number: 004
+  number: '004'
