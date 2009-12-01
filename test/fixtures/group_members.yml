@@ -1,0 +1,44 @@
+java_csc116:
+  group: grpJava
+  course: csc116
+
+java_csc116:
+  group: grpJava
+  course: csc216
+
+application_csc226:
+  group: grpApplication
+  course: csc226
+
+application_csc316:
+  group: grpApplication
+  course: csc316
+
+application_csc326:
+  group: grpApplication
+  course: csc326
+
+application_csc333:
+  group: grpApplication
+  course: csc333
+
+history_hi208:
+  group: grpHistory
+  course: hi208
+
+history_hi210:
+  group: grpHistory
+  course: hi210
+
+advancedcsc_csc405:
+  group: grpAdvancedCSC
+  course: csc405
+
+advancedcsc_csc440:
+  group: grpAdvancedCSC
+  course: csc440
+
+advancedcsc_csc454:
+  group: grpAdvancedCSC
+  course: csc454
+

@@ -1,5 +1,3 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 csc116:
   name: Introduction to Computing - Java
   subject: CSC
@@ -63,6 +61,12 @@ hi210:
   credits: 3
   description: 'Survey of the history of European societies and political systems from 1815 to the present.'
 
+csc405:
+  name: Computer Security
+  subject: CSC
+  number: 405
+  credits: 3
+
 csc440:
   name: Database Management Systems
   subject: CSC
@@ -76,11 +80,5 @@ csc454:
   number: 454
   credits: 3
   description: 'A survey of concepts and techniques for user interface design and human computer interaction. Emphasizes user-centered design, interface development techniques, and usability evaluation.'
-
-csc405:
-  name: Computer Security
-  subject: CSC
-  number: 405
-  credits: 3
   description: 'Basic concepts and techniques in information security and management such as risks and vulnerabilities, applied cryptography, program security, malicious software, authentication, access control, operating systems security, multilevel security, trusted operating systems, database security, inference control, physical security, and system assurance and evaluation. Coverage of high-level concepts such as confidentiality, integrity, and availability applied to hardware, software, and data.'
   
