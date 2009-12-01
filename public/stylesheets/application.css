@@ -3,18 +3,18 @@ ul.tabList {
 	display: inline;
 }
 
-ul.tabList li {
+ul.tabList > li {
 	display: inline;
 	padding: .1em;
 	border: 1px #69F solid;
 	margin-left: .3em;
 }
 
-ul.tabList li#selectedTab{
+ul.tabList > li#selectedTab {
 	border: 2px #36F solid;
 }
 
-.extra td div {
+.extra > td > div {
   display: none;
 }
 
@@ -23,7 +23,8 @@ ul.tabList li#selectedTab{
   width:1em;
 }
 
-.courseList, .sectionList {
+.courseList,
+.sectionList {
   width: 100%;
 }
 
@@ -31,7 +32,8 @@ td.button {
   width: 1em;
 }
 
-tr.main td, .sectionList td {
+tr.main > td,
+.sectionList td {
   border: 1px #36F solid;
   padding: .1em;
 }
