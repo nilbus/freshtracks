@@ -1,29 +1,39 @@
 java1:
   required: csc116
+  required_type: 'Course'
 
 java2:
   required: csc216
+  required_type: 'Course'
 
 appl1:
   required: csc226
+  required_type: 'Course'
 
 appl2:
   required: csc316
+  required_type: 'Course'
 
 appl3:
   required: csc326
+  required_type: 'Course'
 
 history1:
   required: grpHistory
+  required_type: 'Group'
 
 history2:
   required: grpHistory
+  required_type: 'Group'
 
 advanced1:
   required: grpAdvancedCSC
+  required_type: 'Group'
 
 advanced2:
   required: grpAdvancedCSC
+  required_type: 'Group'
 
 advanced3:
   required: grpAdvancedCSC
+  required_type: 'Group'
