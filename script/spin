@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/srv/rails/theninthcut/current/script/process/spawner \
+/srv/rails/freshtracks/current/script/process/spawner \
   mongrel -e production -p 3910 --instances=1
