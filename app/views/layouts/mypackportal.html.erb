@@ -1,0 +1,132 @@
+<html>
+<head>
+  <%= javascript_include_tag 'jquery-1.3.2.min', 'application' %>
+  <%= stylesheet_link_tag 'application' %>
+  <% # helper methods below are defined in app/helpers/application_helper.rb %>
+  <% include_filename = current_action_include_filename(controller) %>
+  <%= stylesheet_link_tag include_filename if css_exists?(include_filename) %>
+  <%= javascript_include_tag include_filename if js_exists?(include_filename) %>
+</head>
+
+<LINK REL="stylesheet" HREF="/stylesheets/ncsu/EPPSTYLEDEF_1.css" TYPE="text/css"> 
+<LINK REL="stylesheet" HREF="/stylesheets/ncsu/NC_REDSTYLEDEF_2.css" TYPE="text/css"> 
+<style type='text/css'> 
+#empty{ width: 0; height: 0; margin: 0; position: absolute; left: -10px; top: -10px; overflow: hidden; }
+#skip_nav{ width: 0; height: 0; margin: 0; position: absolute; left: -10px; top: -10px; overflow: hidden; }
+form{ margin-top: 0; margin-bottom: 0; }
+form.search{ margin-bottom: 0; margin-top: 0; }
+</style> 
+</head> 
+
+<body style='background-image:url("https://portal.acs.ncsu.edu/EPPRD/images/nc_mypack_background.gif")'; bgcolor="#e4e4e4" text="#000000" leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0" marginwidth="0" marginheight="0"> 
+
+<div id='empty'></div> 
+<div id='skip_nav'> 
+<a href='#tabs'>Skip to tabs</a>          
+</div> 
+<table width='100%' cellspacing='0%' cellpadding='0%' style='background-color: #202020';> 
+<td width="2%"></td>    
+<td width="43%"><a href="http://www.ncsu.edu" target=_blank><img src="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_BRICK_RED_1.gif" border=0 alt="" alt=""></a></td> 
+    <td width="50%" align="Middle"><table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr nowrap class="SIGN_OUT2"> 
+<td nowrap class="SIGN_OUT"><nobr><a class='SIGN_OUT' href="http://www.ncsu.edu/directory/" target=_blank">FIND PEOPLE</a></td><td>|</td><td nowrap class="SIGN_OUT"><nobr><a class='SIGN_OUT' href="http://www.lib.ncsu.edu/" target=_blank">LIBRARIES</a></td><td>|</td><td nowrap class="SIGN_OUT"><nobr><a class='SIGN_OUT' href="http://news.ncsu.edu/" target=_blank">NEWS</a></td><td>|</td><td nowrap class="SIGN_OUT"><nobr><a class='SIGN_OUT' href="http://calendar.activedatax.com/ncstate/" target=_blank">CALENDAR</a></td><td>|</td><td nowrap class="SIGN_OUT"><nobr><a class='SIGN_OUT' href="http://www.ncsu.edu/campus_map/" target=_blank">CAMPUS MAPS</a></td><td>|</td><td nowrap class="SIGN_OUT"><nobr><a class="SIGN_OUT" style="background: transparent" href="#">MYPACK HOME</a></td><td>|</td><td nowrap class="SIGN_OUT"><nobr><a class="SIGN_OUT" style="background: transparent" proxied=false href="#">SIGN OUT</a></td> 
+</tr> 
+</table></td> 
+    <td align="Right" valign="Middle"> 
+          <form method=GET name='mysearch' class='search' action=http://www.google.com/search target="_blank"> 
+          <input type="text" name="q" class="SEARCH_BOX" size="22" id="q"  maxlength="100" value="search ncsu.edu"> 
+      <input type=hidden name="as_sitesearch" value="ncsu.edu"> 
+          </form> 
+    </td> 
+    <td align="left" valign="middle" style='padding-left: 2px; padding-right: 5px;'> 
+      <a href='#'> 
+      <img src='https://portal.acs.ncsu.edu/EPPRD/images/nc_search.gif' border='0' alt="Search" /></a>  
+</td> 
+  <tr> 
+    <td colspan=7 class="HEADER_BACKGROUND4"></td> 
+  </tr> 
+</table> 
+ 
+<table width='100%' cellspacing='0%' cellpadding='0%' style='background-color: #990000';> 
+    <td><img src="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_MYPACK_HEADER_PRD_1.gif" alt="" alt="" ></td> 
+    <td align="Center">
+<FORM name="MySCForm" style="margin-bottom: 0px"><TABLE border=0><TR><TD valign=middle CLASS=NC_MY_LINKS><A HREF="#"><label for = 'MyLinks'><NOBR><H2 CLASS=NC_MY_LINKS>my links</H2></NOBR></label></A></TD><TD> 
+<select class="EPPBRSHORTCUTSELECT" name="MyShortcuts"><option class="EPPBRSHORTCUTCOLLECTION" selected="True">MyLinks:<br/></option><option class="EPPBRSHORTCUTCOLLECTION" value="AddLink()">Add to MyLinks</option><option class="EPPBRSHORTCUTCOLLECTION" value="parent.location='https://portal.acs.ncsu.edu/psp/EPPRD/EMPLOYEE/EMPL/c/PORTAL_COMPONENTS.EPPSC_EDIT_MYSC.'">Edit MyLinks</option><option class="EPPBRSHORTCUTCOLLECTION" value="location.reload(true)">Refresh MyLinks...</option></select><input type='image' name='MyLinks' value='Go' img=<img src='https://portal.acs.ncsu.edu/EPPRD/images/nc_go_button.gif' alt='Go'></TD></TR></TABLE></FORM></td> 
+  <tr> 
+    <td colspan=7></td> 
+  </tr> 
+</table> 
+<table width='100%' cellspacing='0%' cellpadding='0%' class="PSPAGE"> 
+    <td width="1%"></td> 
+    <td width="18%"><h2></h2></td> 
+    <td width="2%"><div id='tabs' name='tabs' style='color: #dddddd;'>.</div></td> 
+    <td width="72%" align="Left"><h2><table  class="NC_HEADER_TABS"   border="0" cellspacing="0" cellpadding="0" > 
+ 
+  <tr> 
+   <td alt=""><img src="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_LEFT_INACTIVE_1.gif" alt=""></td><td class="EPPBRHDRTABNONSELECTED" nowrap>&nbsp;&nbsp;<a   class="EPPBRHDRTABNONSELECTED" style="background:transparent" proxied=false href="https://portal.acs.ncsu.edu/psp/EPPRD/EMPLOYEE/EMPL/h/?tab=DEFAULT" target=_parent>MyPACK HOME </a>&nbsp;&nbsp;</td><td alt=""><img src="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_INACTIVE_INACTIVE_1.gif" alt=""></td><td class="EPPBRHDRTABNONSELECTED" nowrap>&nbsp;&nbsp;<a   class="EPPBRHDRTABNONSELECTED" style="background:transparent" proxied=false href="https://portal.acs.ncsu.edu/psp/EPPRD/EMPLOYEE/EMPL/h/?tab=NC_TAB2" target=_parent>FOR STUDENTS </a>&nbsp;&nbsp;</td><td alt=""><img src="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_INACTIVE_INACTIVE_1.gif" alt=""></td><td class="EPPBRHDRTABNONSELECTED" nowrap>&nbsp;&nbsp;<a   class="EPPBRHDRTABNONSELECTED" style="background:transparent" proxied=false href="https://portal.acs.ncsu.edu/psp/EPPRD/EMPLOYEE/EMPL/h/?tab=NC_TAB3" target=_parent>MyTAB </a>&nbsp;&nbsp;</td><td alt=""><img src="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_RIGHT_INACTIVE_1.gif" alt=""></td> 
+ </tr> 
+ 
+</table></h2></td> 
+    <td width="7%" valign="Middle" align="Right"><table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr nowrap class="HEADER_MIDDLE"> 
+<td nowrap class="HEADER_MIDDLE"><nobr>Logged in as:</td><td nowrap class="HEADER_MIDDLE"><nobr>UNITYID</td> 
+</tr> 
+</table></td> 
+</table> 
+ 
+<table width='100%' cellspacing='0%' cellpadding='0%' class="PSPAGE"> 
+&nbsp;
+</table> 
+ 
+ 
+<!-- bar %bind6 --> 
+<!-- %bind31 --> 
+<!-- bar %bind7 --> 
+<!-- image %bind32 --> 
+<!-- homepage tabs %bind5 --> 
+<!-- personalization %bind4 --> 
+<!-- my links %bind1 --> 
+ 
+<!-- system generated HTML %bind28--> 
+ 
+<!--system generated HTML %bind29, %bind30--> 
+ 
+ 
+<!--system reserved elements HTML %bind19, %bind20--> 
+ 
+ 
+<DIV ID="SHOW"  STYLE="position:absolute; left:0; top:97;z-index:1; visibility:hidden;"> 
+<A href='#'><IMG SRC="https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_OPEN_MENU_1.gif"  border=0 Alt="Expand (Ctrl+Y) &nbsp"></A> 
+</DIV> 
+<DIV ID="NAVHDR"  STYLE="position:absolute; left:0; top:97;z-index:1; visibility:visible;"> 
+<TABLE CLASS="PTPAGELET" WIDTH="178" CELLPADDING="0" CELLSPACING="0" BORDER="1"> 
+<TR><TD CLASS="PTPAGELETHEADER"><A HREF="#"><IMG SRC='https://portal.acs.ncsu.edu/cs/EPPRD/cache/NC_CLOSE_MENU_1.gif' NAME='21p' BORDER='0' Alt='Collapse (Ctrl+Y) &nbsp' align='right'></A>&nbsp;</TD></TR> 
+</TABLE> 
+</DIV> 
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td valign="top">
+  <img src="/images/enrollment.png" style="float: left;">
+</td><td valign="top" cellpadding="5" width="100%">
+
+<% if session[:semester] %>
+<ul class="tabList">
+  <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>
+  <%= link_to "Search", courses_path %>
+  </li>
+  <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>
+  <%= link_to "Plan of Work", degree_requirements_path %>
+  </li>
+  <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>
+  <%= link_to "Wishlist", wishlist_sections_path %>
+  </li>
+</ul>
+&nbsp;
+Current semester: <%= Semester.find(session[:semester]).name %>
+<%= link_to "(Change semester)", semesters_path%>
+<% end %>
+
+<%= yield %>
+
+</td></tr></table>
+</body>
+</html>
