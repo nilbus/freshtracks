@@ -29,6 +29,10 @@ module ApplicationHelper
     '%I:%M%p'
   end
 
+  def generate_unique_id(base)
+    "#{base}#{(rand*1000000).to_i}"
+  end
+
   private
     def resource_exists?(base_name, subdir, extention)
       FileTest.exists?("public/#{subdir}/#{base_name}.#{extention}")

@@ -12,8 +12,9 @@ else
   show_section_count = false
 end
 %>
-<tr id="<%=course.id%>main" class="main">
-  <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=course.id%>')">+</a></td>
+<%- unique_id = generate_unique_id course.id -%>
+<tr id="<%=unique_id%>main" class="main">
+  <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=unique_id%>')">+</a></td>
   <td><%= course.subject%><%=course.number%></td>
   <td<%= ' colspan="2"' unless show_section_count %>><%= course.name%></td>
   <td><%= pluralize(course.credits, "Credit hour") %></td>
@@ -21,7 +22,7 @@ end
   <td colspan="100"><%= pluralize(sections.length, "section") %>
   <%- end -%>
 </tr>
-<tr id="<%=course.id%>extra" class="extra">
+<tr id="<%=unique_id%>extra" class="extra">
   <td colspan="100">
   <div class="slider">
     <%=course.description%>
