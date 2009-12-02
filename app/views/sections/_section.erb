@@ -16,15 +16,24 @@
   <% if options["show_schedule_button"] %>
   <td class="button">
     <input  type="button" 
-            onclick="$.post('<%= url_for(:controller => 'registered_sections', :action => 'create') %>')"
+            onclick="$.post('<%= url_for(:controller => 'registered_sections', :action => 'create', :id => section.id) %>')"
             value="Add to Schedule">
   </td>
   <% end %>
   <% if options["show_remove_button"] %>
   <td class="button">
     <input  type="button" 
-            onclick="$.post('<%= url_for(:controller => 'wishlist_sections', :action => 'destroy', :id => section.id) %>')"
+            onclick="$.ajax({ type: 'delete',
+                              url:  '<%= url_for(:controller => 'wishlist_sections', :action => 'destroy', :id => section.id) %>'})"
             value="Remove from wishlist">
+  </td>
+  <% end %>
+  <% if options["show_drop_button"] %>
+  <td class="button">
+    <input  type="button" 
+            onclick="$.ajax({ type: 'delete',
+                              url:  '<%= url_for(:controller => 'registered_sections', :action => 'destroy', :id => section.id) %>'})"
+            value="Remove from schedule">
   </td>
   <% end %>
 </tr>
