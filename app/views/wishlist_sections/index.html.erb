@@ -6,12 +6,15 @@
   <!-- <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %> -->
   <% for wsection in @wishlist_sections %>
     <tr id="<%=wsection.id%>main" class="main">
-      <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=wsection.id%>')"><%= expand_button %></a></td>
-      <td><%= wsection.section.course.searchkey %></td>
-      <td><%= wsection.section.timeslot %></td>
-      <td class="button">
+      <td style="width:1%" class="expander">
+        <a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=wsection.id%>')"><%= expand_button %></a>
+      </td>
+      <td style="width:55%"><%= wsection.section.course.searchkey %></td>
+      <td style="width:35%"><%= wsection.section.timeslot %></td>
+      <td style="width:1%" class="button">
 
-      <%= link_to "Delete from wishlist", wishlist_section_path(wsection.id), :method => :delete %>
+      
+      <nobr><%= link_to "Delete from wishlist", wishlist_section_path(wsection.id), :method => :delete %></nobr>
 
       </td>
     </tr>
