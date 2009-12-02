@@ -18,11 +18,11 @@ end
   <td<%= ' colspan="2"' unless show_section_count %>><%= course.name%></td>
   <td><%= pluralize(course.credits, "Credit hour") %></td>
   <%- if show_section_count -%>
-  <td><%= pluralize(sections.length, "section") %> 
+  <td colspan="100"><%= pluralize(sections.length, "section") %>
   <%- end -%>
 </tr>
 <tr id="<%=course.id%>extra" class="extra">
-  <td colspan="5">
+  <td colspan="100">
   <div class="slider">
     <%=course.description%>
     <table class="sectionList">
@@ -30,8 +30,8 @@ end
             options = {}
           end
       %>
-      <%= render  :partial => "sections/section", 
-                  :collection => sections, 
+      <%= render  :partial => "sections/section",
+                  :collection => sections,
                   :locals => {:options => options} %>
     </table>
   </div>
