@@ -30,7 +30,10 @@ ul.tabList > li#selectedTab {
 
 .courseList,
 .sectionList {
+  border-spacing: 0px;
+  border-spacing-bottom: 0px;
   width: 100%;
+  border: 2px solid black;
 }
 
 td.button {
@@ -39,6 +42,18 @@ td.button {
 
 tr.main > td,
 .sectionList td {
-  border: 1px #36F solid;
   padding: .1em;
+}
+
+tr.main,
+tr.extra {
+  border: 2px solid black;
+}
+
+tr.main {
+  background-color: #eef;
+}
+
+tr.extra {
+  background-color: #fff;
 }

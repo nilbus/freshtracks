@@ -20,9 +20,9 @@ function toggle_row(id)
 
 
 function expand_button() {
-  return '+';
+  return '<img src="/images/add_greyscale.png">';
 }
 
 function collapse_button() {
-  return '--';
+  return '<img src="/images/delete_greyscale.png">';
 }

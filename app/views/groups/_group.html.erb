@@ -1,6 +1,6 @@
 <%- unique_id = generate_unique_id "group#{group.id}" -%>
 <tr id="group<%= unique_id %>main" class="main">
-  <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('group<%=unique_id%>')">+</a></td>
+  <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('group<%=unique_id%>')"><img src="/images/add_greyscale.png"></a></td>
   <td>GRP <%=group.number%></td>
   <td colspan="100"><%= group.name%></td>
 </tr>
