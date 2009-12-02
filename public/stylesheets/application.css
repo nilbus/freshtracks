@@ -80,3 +80,12 @@ tr.main {
 tr.extra {
   background-color: #fff;
 }
+
+.sectionlist {
+  background-color: #fff;
+}
+
+.sectionlist td {
+  background-color: #ddf;
+  border-bottom: 2px white solid;
+}
