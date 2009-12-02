@@ -1,5 +1,31 @@
 <h1>Wishlist</h1>
 
 <table class="courseList">
-  <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %>
+  <!-- <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %> -->
+  <% for wsection in @wishlist_sections %>
+    <tr id="<%=wsection.id%>main" class="main">
+      <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=wsection.id%>')">+</td>
+      <td><%= wsection.section.course.searchkey %></td>
+      <td><%= wsection.section.timeslot %></td>
+      <td class="button">
+
+      <%= link_to "Delete from wishlist", wishlist_section_path(wsection.id), :method => :delete %>
+
+      </td>
+    </tr>
+      
+    <tr id="<%=wsection.id%>extra" class="extra">
+      <td colspan=5>
+        <div class="slider">
+          <table class="sectionList">
+          <tr>
+          <td><%= wsection.section.room %></td>
+          <td><%= wsection.section.professor %></td>
+          <td><%= wsection.section.number %></td>
+          </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  <% end %> 
 </table>

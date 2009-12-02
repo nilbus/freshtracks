@@ -20,7 +20,8 @@ class WishlistSectionsController < ApplicationController
 
   # remove from wishlist
   def destroy
-    @wishlist_section.find(params[:id]).destroy
+    WishlistSection.find(params[:id]).destroy
+    redirect_to wishlist_sections_path
   end
 
 end
