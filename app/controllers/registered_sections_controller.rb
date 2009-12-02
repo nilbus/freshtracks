@@ -20,7 +20,7 @@ class RegisteredSectionsController < ApplicationController
 
   # unregister
   def destroy
-    @registred_class.find(params[:id]).destroy
+    RegisteredSection.find(:first, :conditions => ["section_id = ?", params[:id]]).destroy
   end
 
 end
