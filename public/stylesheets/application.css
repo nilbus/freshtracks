@@ -25,7 +25,23 @@ ul.tabList > li#selectedTab {
 
 .expander {
   text-align: center; 
-  width: 1em;
+  width: 1%;
+}
+
+.expander + td {
+  width: 10%;
+}
+
+.expander + td + td {
+  width: 50%;
+}
+
+.expander + td + td + td {
+  width: 20%;
+}
+
+.expander + td + td + td + td {
+  width: 20%;
 }
 
 .courseList,
