@@ -1,4 +1,4 @@
-<h1>Courses</h1>
+<h1>Course Search</h1>
 
 <% form_tag '/courses', :method => :get do -%>
     <%= text_field_tag 'search', h(params[:search]) %> <%= submit_tag 'Submit', :name => nil %>
