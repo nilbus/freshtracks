@@ -26,7 +26,13 @@ end
   <div class="slider">
     <%=course.description%>
     <table class="sectionList">
-      <%= render :partial => "sections/section", :collection => sections %>
+      <% if not defined? options
+            options = {}
+          end
+      %>
+      <%= render  :partial => "sections/section", 
+                  :collection => sections, 
+                  :locals => {:options => options} %>
     </table>
   </div>
   </td>

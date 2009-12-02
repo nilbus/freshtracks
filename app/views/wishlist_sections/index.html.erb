@@ -1,5 +1,7 @@
 <h1>Wishlist</h1>
 
+<%=flash[:notice]%>
+
 <table class="courseList">
   <!-- <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %> -->
   <% for wsection in @wishlist_sections %>

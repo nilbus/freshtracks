@@ -5,21 +5,22 @@
     <%=section.days%> 
     <%=section.begin_time.strftime(time_format)%>-<%=section.end_time.strftime(time_format)%>
   </td>
-  <% if defined? show_wishlist_button %>
+  <% if options["show_wishlist_button"] %>
+
   <td class="button">
     <input  type="button" 
             onclick="$.post('<%= url_for :controller => 'wishlist_sections', :action => 'create', :id => section.id %>')"
             value="Add to Wishlist">
   </td>
   <% end %>
-  <% if defined? show_schedule_button %>
+  <% if options["show_schedule_button"] %>
   <td class="button">
     <input  type="button" 
             onclick="$.post('<%= url_for(:controller => 'registered_sections', :action => 'create') %>')"
             value="Add to Schedule">
   </td>
   <% end %>
-  <% if defined? show_remove_button %>
+  <% if options["show_remove_button"] %>
   <td class="button">
     <input  type="button" 
             onclick="$.post('<%= url_for(:controller => 'wishlist_sections', :action => 'destroy', :id => section.id) %>')"
