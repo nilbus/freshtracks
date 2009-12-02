@@ -25,7 +25,9 @@ end
 <tr id="<%=unique_id%>extra" class="extra">
   <td colspan="100">
   <div class="slider">
-    <%=course.description%>
+    <div class="description">
+      <%=course.description%>
+    </div>
     <table class="sectionList">
       <% if not defined? options
             options = {}

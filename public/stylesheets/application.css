@@ -25,15 +25,22 @@ ul.tabList > li#selectedTab {
 
 .expander {
   text-align: center; 
-  width:1em;
+  width: 1em;
 }
 
 .courseList,
 .sectionList {
   border-spacing: 0px;
   border-spacing-bottom: 0px;
-  width: 100%;
   border: 2px solid black;
+  margin-left: 1em;
+  margin-bottom: .2em;
+  width: 95%;
+}
+
+.description {
+  margin-left: 1em;
+  margin-bottom: .2em;
 }
 
 td.button {
@@ -51,7 +58,7 @@ tr.extra {
 }
 
 tr.main {
-  background-color: #eef;
+  background-color: #ddf;
 }
 
 tr.extra {

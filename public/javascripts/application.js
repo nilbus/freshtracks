@@ -13,7 +13,7 @@ function toggle_row(id)
     // shrink
     // also shrink descendents
     setTimeout(function() { $("tr#" + id + "extra .expander a").html(expand_button()); }, 500);
-    $("tr#" + id + "extra td div").slideUp();
+    $("tr#" + id + "extra td > div").slideUp();
     return expand_button();
   }
 }
