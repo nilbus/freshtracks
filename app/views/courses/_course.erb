@@ -29,13 +29,9 @@ end
       <%=course.description%>
     </div>
     <table class="sectionList">
-      <% if not defined? options
-            options = {}
-          end
-      %>
       <%= render  :partial => "sections/section",
                   :collection => sections,
-                  :locals => {:options => options} %>
+                  :locals => {:options => defined?(options) ? options : {} } %>
     </table>
   </div>
   </td>

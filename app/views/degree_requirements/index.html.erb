@@ -3,7 +3,14 @@
 <table class="courseList">
   <% for req in @degree_requirements %>
     <% classname = req.required.class.name.underscore %>
-    <%= render :partial => "#{classname.pluralize}/#{classname}", :object => req.required %>
+    <% # classname will be either group or section %>
+    
+    <% options = {"show_wishlist_button" => true,
+                  "show_schedule_button" => true} %>
+                  
+    <%= render  :partial => "#{classname.pluralize}/#{classname}", 
+                :object => req.required,
+                :locals => {:options => options} %>
   <% end %>
 </table>
 

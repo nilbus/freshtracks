@@ -1,3 +1,4 @@
   <table class="courseList">
-    <%= render :partial => "courses/course", :collection => course_list %>
+    
+    <%= render :partial => "courses/course", :collection => course_list, :locals => {:options => defined?(options) ? options : {} } %>
   </table>

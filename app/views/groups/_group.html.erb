@@ -7,6 +7,12 @@
 <tr id="group<%= unique_id %>extra" class="extra">
 <td colspan="5">
   <div class="slider">
-    <%= render :partial => 'courses/course_list', :object => group.group_members.map(&:course) -%>
+    <% if not defined? options
+          options = {}
+       end
+    %>
+    <%= render  :partial => 'courses/course_list', 
+                :object => group.group_members.map(&:course),
+                :locals => {:options => defined?(options) ? options : {} } -%>
   </div>
 </td></tr>
