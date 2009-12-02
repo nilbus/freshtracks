@@ -1,2 +1,9 @@
-<h1>RegisteredSections#index</h1>
-<p>Find me in app/views/registered_sections/index.html.erb</p>
+<h1>Current Schedule</h1>
+
+<p align="center">
+<img src="/images/schedule.png">
+</p>
+
+<table class="courseList">
+  <%= render :partial => 'courses/course', :collection => @registered_sections.map(&:section) %>
+</table>

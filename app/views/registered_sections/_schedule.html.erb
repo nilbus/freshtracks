@@ -1,0 +1,11 @@
+<%- if @registered_sections.empty? -%>
+<h1>No classes registered for this semester</h1>
+<%- else -%>
+<h1>Current Schedule</h1>
+
+<table class="courseList">
+  <%= render :partial => 'courses/course', :collection => @registered_sections.map(&:section) %>
+</table>
+
+<%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' %>
+<%- end -%>

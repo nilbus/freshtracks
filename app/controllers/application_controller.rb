@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   before_filter :choose_semester
+  before_filter :load_schedule
 
   def choose_semester
   	if session[:semester].nil? && !choosing_semester? && !request.xhr? # don't redirect on AJAX req's
@@ -19,6 +20,12 @@ class ApplicationController < ActionController::Base
 
   def choosing_semester?
     /semester/.match(request.request_uri)
+  end
+
+  def load_schedule
+    # returns [] when session[:semester].nil?
+    @registered_sections ||= RegisteredSection.all(:joins => :section,
+                                                   :conditions => { 'sections.semester_id' => session[:semester] })
   end
 
 end

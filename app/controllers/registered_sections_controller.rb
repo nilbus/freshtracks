@@ -1,8 +1,8 @@
 class RegisteredSectionsController < ApplicationController
   # classes registered for current semester
   def index
-    @registered_sections = RegisteredSections.all(:joins => :section,
-                                                  :conditions => { 'sections.semester_id' => session[:semester] })
+    # @registered_sections is loaded in application_controller#load_schedule,
+    # since it's used on nearly every page.
   end
 
   # register for a class
