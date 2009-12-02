@@ -2,10 +2,10 @@
 <tr id="group<%= unique_id %>main" class="main">
   <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('group<%=unique_id%>')"><img src="/images/add_greyscale.png"></a></td>
   <td>GRP <%=group.number%></td>
-  <td colspan="100"><%= group.name%></td>
+  <td colspan="5"><%= group.name%></td>
 </tr>
 <tr id="group<%= unique_id %>extra" class="extra">
-<td colspan="100">
+<td colspan="5">
   <div class="slider">
     <%= render :partial => 'courses/course_list', :object => group.group_members.map(&:course) -%>
   </div>
