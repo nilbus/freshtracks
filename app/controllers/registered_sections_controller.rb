@@ -8,6 +8,7 @@ class RegisteredSectionsController < ApplicationController
   # register for a class
   def create
     @registered_section = RegisteredSection.new(params[:registered_section])
+    @registered_section.section_id = params[:id]
     @registered_section.save
   end
 

@@ -4,7 +4,10 @@
 <h1>Current Schedule</h1>
 
 <table class="courseList">
-  <%= render :partial => 'courses/course', :collection => @registered_sections.map(&:section) %>
+  <% options = {"show_drop_button" => true} %>
+  <%= render  :partial => 'courses/course', 
+              :collection => @registered_sections.map(&:section),
+              :locals => {:options => options} %>
 </table>
 
 <%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' %>
