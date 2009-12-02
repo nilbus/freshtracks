@@ -19,10 +19,11 @@ function toggle_row(id)
 }
 
 
+// These are also defined in helpers/application.rb
 function expand_button() {
-  return '<img src="/images/add_greyscale.png">';
+  return '<img border="0" src="/images/add_greyscale.png">';
 }
 
 function collapse_button() {
-  return '<img src="/images/delete_greyscale.png">';
+  return '<img border="0" src="/images/delete_greyscale.png">';
 }
