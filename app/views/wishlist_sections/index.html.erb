@@ -6,7 +6,7 @@
   <!-- <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %> -->
   <% for wsection in @wishlist_sections %>
     <tr id="<%=wsection.id%>main" class="main">
-      <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=wsection.id%>')">+</td>
+      <td class="expander"><a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=wsection.id%>')">+</a></td>
       <td><%= wsection.section.course.searchkey %></td>
       <td><%= wsection.section.timeslot %></td>
       <td class="button">
@@ -31,3 +31,5 @@
     </tr>
   <% end %> 
 </table>
+
+<%= render :partial => 'registered_sections/schedule' %>
