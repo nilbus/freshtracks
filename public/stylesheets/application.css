@@ -25,7 +25,23 @@ ul.tabList > li#selectedTab {
 
 .expander {
   text-align: center; 
-  width: 1em;
+  width: 1%;
+}
+
+.expander + td {
+  width: 10%;
+}
+
+.expander + td + td {
+  width: 50%;
+}
+
+.expander + td + td + td {
+  width: 20%;
+}
+
+.expander + td + td + td + td {
+  width: 20%;
 }
 
 .courseList,
@@ -63,4 +79,13 @@ tr.main {
 
 tr.extra {
   background-color: #fff;
+}
+
+.sectionlist {
+  background-color: #fff;
+}
+
+.sectionlist td {
+  background-color: #ddf;
+  border-bottom: 2px white solid;
 }
