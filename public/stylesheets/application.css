@@ -63,6 +63,11 @@ td.button {
   width: 1em;
 }
 
+tr.main a {
+  text-decoration: none;
+  color: #000;
+}
+
 tr.main > td,
 .sectionList td {
   padding: .1em;
