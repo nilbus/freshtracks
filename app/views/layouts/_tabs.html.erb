@@ -1,4 +1,22 @@
+<% 
+if(params[:action] == "index")
+  case params[:controller]
+    when "courses"
+      @selected_tab = 'tab1'
+    when "degree_requirements"
+      @selected_tab = 'tab2'
+    when "wishlist_sections"
+      @selected_tab = 'tab3'
+  end
+end
+%>
+
 <% if session[:semester] %>
+<div style="float:right; margin-right: 1em;">
+Current semester: <%= Semester.find(session[:semester]).name %>
+<%= link_to "(Change semester)", semesters_path%>
+</div>
+
 <ul class="tabList">
   <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>
   <%= link_to "Search", courses_path %>
@@ -10,9 +28,7 @@
   <%= link_to "Wishlist", wishlist_sections_path %>
   </li>
 </ul>
-&nbsp;
-Current semester: <%= Semester.find(session[:semester]).name %>
-<%= link_to "(Change semester)", semesters_path%>
+
 <% end %>
 
 <%= yield %>
