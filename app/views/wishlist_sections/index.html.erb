@@ -2,8 +2,14 @@
 
 <%=flash[:notice]%>
 
+<% if @wishlist_sections.length == 0 %>
+  <h3>You don't currently have any classes on your wishlist.</h3>
+<% else %>
+
 <table class="courseList">
   <!-- <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %> -->
+
+  
   <% for wsection in @wishlist_sections %>
     <tr id="<%=wsection.id%>main" class="main">
       <td style="width:1%" class="expander">
@@ -12,10 +18,11 @@
       <td style="width:55%"><%= wsection.section.course.searchkey %></td>
       <td style="width:35%"><%= wsection.section.timeslot %></td>
       <td style="width:1%" class="button">
-
-      
-      <nobr><%= link_to "Delete from wishlist", wishlist_section_path(wsection.id), :method => :delete %></nobr>
-
+        <input  type="button" 
+                onclick="$.ajax({ type: 'delete',
+                                  url:  '<%= url_for(:controller => 'wishlist_sections', :action => 'destroy', :id => wsection.id) %>'});
+                         window.location.reload()"
+                value="Remove from wishlist">
       </td>
     </tr>
       
@@ -34,5 +41,5 @@
     </tr>
   <% end %> 
 </table>
-
+<% end %>
 <%= render :partial => 'registered_sections/schedule' %>
