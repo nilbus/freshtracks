@@ -13,10 +13,15 @@ ul.tabList > li {
 	padding: .1em;
 	border: 1px #69F solid;
 	margin-left: .3em;
+	background: #CDF;
 }
 
 ul.tabList > li#selectedTab {
 	border: 2px #36F solid;
+}
+
+ul.tabList > li:hover {
+	background: #EEF;
 }
 
 .extra > td > div {
