@@ -8,16 +8,18 @@
   <% if options["show_wishlist_button"] %>
 
   <td class="button">
-    <input  type="button" 
-            onclick="$.post('<%= url_for :controller => 'wishlist_sections', :action => 'create', :id => section.id %>')"
-            value="Add to Wishlist">
+    <% form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
+      <%= f.hidden_field :section_id, :value => section.id, :id => nil %>
+      <%= f.submit 'Add to Wishlist', :name => nil, :id => nil %>
+    <% end %>
   </td>
   <% end %>
   <% if options["show_schedule_button"] %>
   <td class="button">
-    <input  type="button" 
-            onclick="$.post('<%= url_for(:controller => 'registered_sections', :action => 'create', :id => section.id) %>')"
-            value="Add to Schedule">
+    <% form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+      <%= f.hidden_field :section_id, :value => section.id, :id => nil %>
+      <%= f.submit 'Add to Schedule', :name => nil, :id => nil %>
+    <% end %>
   </td>
   <% end %>
   <% if options["show_remove_button"] %>

@@ -7,9 +7,11 @@ class RegisteredSectionsController < ApplicationController
 
   # register for a class
   def create
-    @registered_section = RegisteredSection.new(params[:registered_section])
-    @registered_section.section_id = params[:id]
-    @registered_section.save
+    @registered_section = RegisteredSection.create(params[:registered_section])
+    respond_to do |format|
+      format.html { redirect_to registered_sections_path }
+      format.js { render :partial => 'created', :object => @registered_section }
+    end
   end
 
   # change attributes of registered class, like credit/audit
