@@ -13,7 +13,10 @@
                 "show_schedule_button" => true} %>
   
   <table class="courseList">
-    <%= render :partial => "courses/course", :collection => @courses, :locals => {:options => options} %>
+    <%= render :partial => "courses/course", :collection => @courses,
+               :locals => { :options => options,
+                            :wishlist_section_ids => @wishlist_section_ids,
+                            :registered_section_ids => @registered_section_ids } %>
   </table>
   <br/>
 

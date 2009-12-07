@@ -11,6 +11,9 @@ else
   course = sections[0].course
   show_section_count = false
 end
+
+wishlist_section_ids = [] unless defined?(wishlist_section_ids)
+registered_section_ids = [] unless defined?(registered_section_ids)
 %>
 <%- unique_id = generate_unique_id course.id -%>
 <tr id="<%=unique_id%>main" class="main">
@@ -31,7 +34,9 @@ end
     <table class="sectionList">
       <%= render  :partial => "sections/section",
                   :collection => sections,
-                  :locals => {:options => defined?(options) ? options : {} } %>
+                  :locals => { :options => defined?(options) ? options : {},
+                               :wishlist_section_ids => wishlist_section_ids,
+                               :registered_section_ids => registered_section_ids } %>
     </table>
   </div>
   </td>

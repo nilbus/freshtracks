@@ -13,6 +13,11 @@ class CoursesController < ApplicationController
                             :include => :sections,
                             :group => 'courses.id',
                             :order => "courses.subject || courses.number")
+
+      # Load schedule so we don't display buttons for things already added
+      @registered_section_ids = RegisteredSection.all.map &:section_id
+      @wishlist_section_ids = WishlistSection.all.map &:section_id
+
     rescue TypeError # when params[:search].nil?
       # Don't search for courses if they haven't searched for them
       # The view should display instructions if @courses.nil?

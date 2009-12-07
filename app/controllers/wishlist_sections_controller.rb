@@ -7,9 +7,11 @@ class WishlistSectionsController < ApplicationController
 
   # add a class to wishlist
   def create
-    @wishlist_section = WishlistSection.new(params[:wishlist_section])
-    @wishlist_section.section_id = params[:id]
-    @wishlist_section.save
+    @wishlist_section = WishlistSection.create(params[:wishlist_section])
+    respond_to do |format|
+      format.html { redirect_to wishlist_sections_path }
+      format.js { render :partial => 'created', :object => @wishlist_section }
+    end
   end
 
   # change attributes of wishlisted class, like credit/audit

@@ -64,6 +64,10 @@ ul.tabList > li:hover {
   margin-bottom: .2em;
 }
 
+.loaded {
+  color: #070;
+}
+
 td.button {
   width: 1em;
 }
