@@ -1,5 +1,7 @@
 <hr/>
-<h3>Current Schedule</h3>
+<h3 class="inline">Current Schedule</h3>
+<div class="rightAlign"><%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' %></div>
+
 <%- if @registered_sections.empty? -%>
 <h4>You haven't registered for any classes this semester.</h4>
 <%- else -%>
@@ -12,5 +14,4 @@
               :locals => {:options => options} %>
 </table>
 
-<%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' %>
 <%- end -%>
