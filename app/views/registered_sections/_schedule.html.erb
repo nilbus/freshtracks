@@ -1,7 +1,9 @@
+<hr/>
+<h3>Current Schedule</h3>
 <%- if @registered_sections.empty? -%>
-<h1>No classes registered for this semester</h1>
+<h4>You haven't registered for any classes this semester.</h4>
 <%- else -%>
-<h1>Current Schedule</h1>
+
 
 <table class="courseList">
   <% options = {"show_drop_button" => true} %>
