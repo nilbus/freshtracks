@@ -27,7 +27,7 @@ jQuery.fn.submitWithAjax = function() {
 
 $(document).ready(function() {
   var preloaded_spinner = new Image();
-  preloaded_spinner.src = '/images/ajax-spinner.gif';
+  preloaded_spinner.src = '/images/ajax-loader.gif';
   $(".newWishlistSection, .newRegisteredSection").submitWithAjax();
 })
 
