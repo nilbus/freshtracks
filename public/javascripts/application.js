@@ -49,11 +49,15 @@ jQuery.fn.makeRowExpander = function() {
     } else {
       // shrink
       // also shrink descendents
-      setTimeout(function() { $("#" + id + " + .extra .expander").html(expandButton()); }, 500);
+      setTimeout(function() {
+        $("#" + id + " + .extra .expander").html(expandButton());
+        button.html(expandButton());
+      }, 400);
       $("#" + id + " + .extra td > div").slideUp();
-      button.html(expandButton());
     }
   })
+  this.children('.button').children("input").click(function() { return false; });
+  
   return this;
 };
 
