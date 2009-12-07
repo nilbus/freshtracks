@@ -24,7 +24,7 @@ class WishlistSectionsController < ApplicationController
   def destroy
     WishlistSection.find(params[:id]).destroy
     flash[:notice] = "Class successfully removed from wishlist."
-    redirect_to wishlist_sections_path
+    #redirect_to wishlist_sections_path
   end
 
 end
