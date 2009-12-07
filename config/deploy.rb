@@ -23,7 +23,13 @@ namespace :deploy do
   task :reset_db, :roles => :db do
     run "cd #{current_path}; rake db:reset RAILS_ENV=production"
   end
+
+  desc "Set proper permissions for the sqlite database"
+  task :own_database, :roles => :db do
+    sudo "chown -R www-data #{current_path}/db"
+  end
 end
 
 after "deploy:symlink", "deploy:reset_db"
 after "deploy:symlink", "deploy:load_fixtures"
+after "deploy:symlink", "deploy:own_database"
