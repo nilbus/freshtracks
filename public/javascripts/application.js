@@ -10,7 +10,8 @@ jQuery.ajaxSetup({
 $(document).ready(function() {
   var preloaded_spinner = new Image();
   preloaded_spinner.src = '/images/ajax-loader.gif';
-  $(".newWishlistSection, .newRegisteredSection").submitWithAjax();
+  $(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section").submitWithAjax();
+  $(".rowRemover").makeRowRemover();
   $(".main").makeRowExpander();
 })
 
@@ -28,6 +29,16 @@ jQuery.fn.submitWithAjax = function() {
     $.post(this.action, $(this).serialize(), function(data) {showLoadedStatus(form, data);});
     $(this).makeIntoSpiner();
     return false;
+  })
+  return this;
+};
+
+// Row Remover
+
+jQuery.fn.makeRowRemover = function() {
+  this.click(function() {
+    $(this).parent('form').parent('td').parent('tr').next('tr.extra').hide();
+    $(this).parent('form').parent('td').parent('tr').hide();
   })
   return this;
 };

@@ -7,7 +7,14 @@
 <% else %>
 
 <table class="courseList">
-  <!-- <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %> -->
+<%
+=begin
+# Ruby block comment until =end
+%>
+  <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %>
+<%
+=end
+%>
 
   
   <% for wsection in @wishlist_sections %>
@@ -16,11 +23,9 @@
       <td style="width:55%"><%= wsection.section.course.searchkey %></td>
       <td style="width:35%"><%= wsection.section.timeslot %></td>
       <td style="width:1%" class="button">
-        <input  type="button" 
-                onclick="$.ajax({ type: 'delete',
-                                  url:  '<%= url_for(:controller => 'wishlist_sections', :action => 'destroy', :id => wsection.id) %>'});
-                         window.location.reload()"
-                value="Remove from wishlist">
+        <% form_for wsection, :html => { :method => :delete } do |f| %>
+          <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
+        <% end %>
       </td>
     </tr>
       
@@ -31,7 +36,7 @@
           <tr>
           <td><%= wsection.section.room %></td>
           <td><%= wsection.section.professor %></td>
-          <td><%= wsection.section.number %></td>
+          <td>Section <%= wsection.section.number %></td>
           </tr>
           </table>
         </div>

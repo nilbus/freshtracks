@@ -34,10 +34,10 @@
   <% end %>
   <% if options["show_remove_button"] %>
   <td class="button">
-    <input  type="button" 
-            onclick="$.ajax({ type: 'delete',
-                              url:  '<%= url_for(:controller => 'wishlist_sections', :action => 'destroy', :id => section.id) %>'})"
-            value="Remove from wishlist">
+    <% form_for WishlistSection.new, :html => { :method => :delete } do |f| %>
+      <%= f.hidden_field :section_id, :value => section.id %>
+      <%= f.submit 'Remove from Wishlist' %>
+    <% end %>
   </td>
   <% end %>
   <% if options["show_drop_button"] %>

@@ -23,8 +23,13 @@ class WishlistSectionsController < ApplicationController
   # remove from wishlist
   def destroy
     WishlistSection.find(params[:id]).destroy
-    flash[:notice] = "Class successfully removed from wishlist."
-    #redirect_to wishlist_sections_path
+    respond_to do |format|
+      format.html {
+        flash[:notice] = "Class successfully removed from wishlist."
+        redirect_to wishlist_sections_path
+      }
+       format.js { render :text => ''}
+    end
   end
 
 end
