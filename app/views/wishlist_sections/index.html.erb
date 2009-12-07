@@ -12,9 +12,7 @@
   
   <% for wsection in @wishlist_sections %>
     <tr id="<%=wsection.id%>main" class="main">
-      <td style="width:1%" class="expander">
-        <a href="javascript:void(0)" onclick="this.innerHTML = toggle_row('<%=wsection.id%>')"><%= expand_button %></a>
-      </td>
+      <td style="width:1%" class="expander"><%= expand_button %></td>
       <td style="width:55%"><%= wsection.section.course.searchkey %></td>
       <td style="width:35%"><%= wsection.section.timeslot %></td>
       <td style="width:1%" class="button">

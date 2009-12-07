@@ -7,7 +7,14 @@ jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
 
-jQuery.fn.showLoadingStatus = function() {
+$(document).ready(function() {
+  var preloaded_spinner = new Image();
+  preloaded_spinner.src = '/images/ajax-loader.gif';
+  $(".newWishlistSection, .newRegisteredSection").submitWithAjax();
+  $(".main").makeRowExpander();
+})
+
+jQuery.fn.makeIntoSpiner = function() {
   this.html('<img src="/images/ajax-loader.gif" title="loading">');
 };
 
@@ -19,41 +26,42 @@ jQuery.fn.submitWithAjax = function() {
   this.submit(function() {
     var form = this;
     $.post(this.action, $(this).serialize(), function(data) {showLoadedStatus(form, data);});
-    $(this).showLoadingStatus();
+    $(this).makeIntoSpiner();
     return false;
   })
   return this;
 };
 
-$(document).ready(function() {
-  var preloaded_spinner = new Image();
-  preloaded_spinner.src = '/images/ajax-loader.gif';
-  $(".newWishlistSection, .newRegisteredSection").submitWithAjax();
-})
+// Row Expander
 
-function toggle_row(id) 
-{
-  var row = $("tr#" + id + "extra > td > div");
-  var display = row.css("display");
-  row.slideToggle();
-  if (display == "none") {
-    // expand
-    return collapse_button();
-  } else {
-    // shrink
-    // also shrink descendents
-    setTimeout(function() { $("tr#" + id + "extra .expander a").html(expand_button()); }, 500);
-    $("tr#" + id + "extra td > div").slideUp();
-    return expand_button();
-  }
-}
+jQuery.fn.makeRowExpander = function() {
+  this.click(function() {
+    var row = $(this);
+    var slider = row.next().children().children(".slider");
+    var button = row.children(".expander");
+    var id = row.attr("id");
 
+    var displayStatus = slider.css("display");
+    slider.slideToggle();
+    if (displayStatus == "none") {
+      // expand
+      button.html(collapseButton());
+    } else {
+      // shrink
+      // also shrink descendents
+      setTimeout(function() { $("#" + id + " + .extra .expander").html(expandButton()); }, 500);
+      $("#" + id + " + .extra td > div").slideUp();
+      button.html(expandButton());
+    }
+  })
+  return this;
+};
 
 // These are also defined in helpers/application.rb
-function expand_button() {
+function expandButton() {
   return '<img border="0" src="/images/add_greyscale.png">';
 }
 
-function collapse_button() {
+function collapseButton() {
   return '<img border="0" src="/images/delete_greyscale.png">';
 }

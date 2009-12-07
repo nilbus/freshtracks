@@ -72,9 +72,8 @@ td.button {
   width: 1em;
 }
 
-tr.main a {
-  text-decoration: none;
-  color: #000;
+tr.main {
+  cursor: pointer;
 }
 
 tr.main > td,
