@@ -9,7 +9,9 @@
     <% for wsection in @wishlist_sections %>
       <%= render :partial => "courses/course",
                  :object => wsection.section,
-                 :locals => { :options => { :added => true, :added_object => wsection } } %>
+                 :locals => { :options => { :added => true,
+                                            :added_object => wsection,
+                                            :show_remove_button => true } } %>
     <% end %> 
   </table>
 <% end %>
