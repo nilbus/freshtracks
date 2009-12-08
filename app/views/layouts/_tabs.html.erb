@@ -13,8 +13,8 @@ end
 
 <% if session[:semester] %>
 <div class="rightAlign">
-Current semester: <%= Semester.find(session[:semester]).name %>
-<%= link_to "(Change semester)", semesters_path%>
+Current semester: <%= Semester.find(session[:semester]).name %><br>
+<%= link_to "Change semester", semesters_path%>
 </div>
 
 <ul class="tabList">
@@ -22,7 +22,7 @@ Current semester: <%= Semester.find(session[:semester]).name %>
   <%= link_to "Search", courses_path %>
   </li>
   <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selectedtab"' : '' %>>
-  <%= link_to "Degree Requirements", degree_requirements_path %>
+  <%= link_to "<nobr>Degree Requirements</nobr>", degree_requirements_path %>
   </li>
   <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selectedtab"' : '' %>>
   <%= link_to "Wishlist", wishlist_sections_path %>

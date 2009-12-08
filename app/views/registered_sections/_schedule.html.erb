@@ -1,6 +1,6 @@
-<hr/>
-<h3 class="inline">Current Schedule</h3>
-<div class="rightAlign"><%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' %></div>
+<div class="spacer"></div>
+<h1 class="inline">Your Current Schedule</h1>
+<div class="rightAlign scheduleLink"><%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' unless @registered_sections.empty? %></div>
 
 <%- if @registered_sections.empty? -%>
 <h4>You haven't registered for any classes this semester.</h4>

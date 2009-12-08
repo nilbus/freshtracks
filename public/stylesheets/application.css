@@ -1,3 +1,8 @@
+a {
+  color: #900;
+  font-size: .8em;
+}
+
 body {
   font-family: Arial,Helvetica,sans-serif;
   font-size: 10pt;
@@ -43,6 +48,10 @@ body {
   width: 20%;
 }
 
+h1, h2, h3 {
+  color: #900;
+}
+
 .inline {
   display: inline;
 }
@@ -54,6 +63,11 @@ body {
 .rightAlign {
   float: right;
   margin-right: 1em;
+  text-align: right;
+}
+
+.scheduleLink {
+  margin: 2em 2em 0 0;
 }
 
 .sectionlist {
@@ -61,8 +75,14 @@ body {
 }
 
 .sectionlist td {
-  background-color: #ddf;
+  background-color: #f7f3d9;
   border-bottom: 2px white solid;
+}
+
+.spacer {
+  display: block;
+  height: 2em;
+  width: 100%;
 }
 
 td.button {
@@ -84,7 +104,7 @@ tr.extra {
 }
 
 tr.main {
-  background-color: #ddf;
+  background-color: #f7f3d9;
 }
 
 tr.extra {
@@ -92,23 +112,29 @@ tr.extra {
 }
 
 ul.tabList {
-	list-style: none;
 	display: inline;
+	list-style: none;
+  margin-left: -2em;
+}
+
+ul.tabList a {
+  color: #000;
+  font-size: 1.1em;
+  /*font-weight: bold;*/
+	text-decoration: none;
 }
 
 ul.tabList > li {
+	background: #f7f3d9;
+	border: 1px #000 solid;
 	display: inline;
-	padding: .1em;
-	border: 1px #69F solid;
-	margin-left: .3em;
-	background: #CDF;
+	margin: 2px;
+	padding: .2em .6em .2em .6em;
 }
 
+ul.tabList > li:hover,
 ul.tabList > li#selectedTab {
-	border: 2px #36F solid;
-}
-
-ul.tabList > li:hover {
-	background: #EEF;
+	border: 2px #900 solid;
+  margin: 1px;
 }
 

@@ -1,11 +1,15 @@
-<h1>Course Search</h1>
+<h1>Register for a Course</h1>
 
 <% form_tag '/courses', :method => :get do -%>
-    <%= text_field_tag 'search', h(params[:search]) %> <%= submit_tag 'Submit', :name => nil %>
+    <%= text_field_tag 'search', h(params[:search]) %> <%= submit_tag 'Search', :name => nil %>
 <% end -%>
 
 <% if @courses.nil? %>
-  <div>Instructions: use the search box</div>
+  <div>
+    <p>Instructions: Type any part of the course name, number, or code.</p>
+    <p>Example: <tt>csc3</tt> - Find CSC 300 level courses.<br>
+       Example: <tt>computer</tt> - Find courses with Computer in the title.</p>
+  </div>
 <% else %>
   Searching for: <%= (params[:search].empty? ? 'All courses' : h(params[:search]) ) %><p/>
 
