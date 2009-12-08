@@ -5,5 +5,11 @@
 </p>
 
 <table class="courseList">
-  <%= render :partial => 'courses/course', :collection => @registered_sections.map(&:section) %>
+  <% for reg_section in @registered_sections %>
+  <%= render  :partial => 'courses/course', 
+              :object => reg_section.section,
+              :locals => { :options => { :show_drop_button => true,
+                                         :added => true,
+                                         :added_object => reg_section } } %>
+  <% end %>
 </table>
