@@ -8,47 +8,51 @@
 
 == Epics:
 
-===  <em>As a student, I can schedule classes for different semesters, so they're separate.</em>
-- <em><tt>1</tt> As a student, I can choose which semester's schedule to modify immediately after login, so the context is clear.</em>
-- <em><tt>2</tt> As a student, I can change which semester I am working with, so I can accomplish all my goals with one login.</em>
+===  <tt>Done!</tt> As a student, I can schedule classes for different semesters, so they're separate.
+- <tt>1!</tt> As a student, I can choose which semester's schedule to modify immediately after login, so the context is clear.
+- <tt>2!</tt> As a student, I can change which semester I am working with, so I can accomplish all my goals with one login.
 
 ===  As a planner, I can prepare a wishlist for the upcoming semester before registration opens, so I can register instantly when my date comes.
-- <tt>1</tt> As a planner, I can add sections of classes without restriction to a wishlist, so I can flexibly view and weigh my scheduling options.
+- <tt>1!</tt> As a planner, I can add sections of classes without restriction to a wishlist, so I can flexibly view and weigh my scheduling options.
 - <tt>2</tt> As a planner, I can attempt to add an individual class in my wishlist, so I don't have to add every class in my wishlist.
 - <tt>2</tt> As a planner, I can attempt to add my entire wishlist, so I can register quickly when my date comes.
-- <tt>3</tt> As a planner, I can remove classes from my wishlist, so my wishlist can match what I actually want to register for.
+- <tt>3!</tt> As a planner, I can remove classes from my wishlist, so my wishlist can match what I actually want to register for.
 - <tt>4</tt> As a planner, conflicts in adding my schedule are highlighted or noted, so I know to resolve them before registration time
 - <tt>5</tt> As a planner, I am notified when I add a class to my wishlist that I am not eligible to take, so I am not surprised when I can't add it.
 
 ===  As a student, I can search through available classes by major and class number or title, so I can plan or add classes to my schedule.
-- <em><tt>1</tt> As a student, I can type part of a course code or title and see the matching classes, so I can find classes that I want.</em>
-- <tt>1</tt> As a student, I can sign up for dummy classes, so I can quickly see how usable the interface is.
+- <tt>1!</tt> As a student, I can type part of a course code or title and see the matching classes, so I can find classes that I want.
+- <tt>1!</tt> As a student, I can sign up for dummy classes, so I can quickly see how usable the interface is.
 - <tt>2</tt> As a student, each word in my search terms can independently match anywhere in the course code and title.
-- <em><tt>2</tt> As a student, courses that I search for appear in list form where each item can be expanded in-page to show details, so I can get information without leaving the page.</em>
+- <tt>2!</tt> As a student, courses that I search for appear in list form where each item can be expanded in-page to show details, so I can get information without leaving the page.
 - <tt>3</tt> As a student, I can expand all search results in one click, so I can quickly compare the details of all results.
 - <tt>4</tt> As a student, I can see preview search results immediately using a Google style auto-complete input box, so the search terms are easily discoverable.
 - <tt>4</tt> As a student, I can filter the list to display any combination of open, waitlisted, and full classes, so I can be aware of classes that may open in the future.
 - <tt>5</tt> As a student, I can sign up for actual NCSU course offerings, so this system is more realistic.
+- <tt>5</tt> As a student, I can log in with my unity ID, so my classes are separated from others'.
 
 ===  As a student, I can use my degree plan to register for classes, so I don't have to use a separate website to determine which classes I need to take.
-- <tt>1</tt> As a student, I can see my current degree plan, so I know which classes I ought to register for.
-- <em><tt>1</tt> As a student, I have dummy degree requirements, so I can quickly see how usable the interface is.</em>
-- <tt>2</tt> As a student, I can expand requirement groups to see which courses I can add that match the requirement, so the information is immediately available.
+- <tt>1!</tt> As a student, I can see my current degree plan, so I know which classes I ought to register for.
+- <tt>1!</tt> As a student, I have dummy degree requirements, so I can quickly see how usable the interface is.
+- <tt>2!</tt> As a student, I can expand requirement groups to see which courses I can add that match the requirement, so the information is immediately available.
+- <tt>3</tt> As a student, I see my degree plan in an organized manner, so I can understand what order I have might want to take classes.
 - <tt>5</tt> As a student, I can see actual NCSU degree requirements and groups, so this system is more realistic.
 
 ===  As a student, I can take action on a class in my degree plan or search, such as adding it, so the degree plan and search is integrated with course registration.
-- <tt>1</tt> As an adder, I can attempt to add a class that I find to my schedule, so I can take a class.
+- <tt>1!</tt> As an adder, I can attempt to add a class that I find to my schedule, so I can take a class.
 - <tt>2</tt> As an adder, I see clear explanations of why I can't add a class, so I understand and resolve the problem.
 - <tt>3</tt> As an adder, I can waitlist a section of a class that is full, so I get in if enough others drop the class.
 
 ===  As a student, I can see my schedule with classes I have added, so I know what my schedule is.
-- <tt>1</tt> As a student, I can click "view schedule" at any time to open my schedule in a new window.
-- <tt>2</tt> As a student, my schedule is visible on all pages where reasonable, so I can see where classes will fit in my schedule while I am browsing.
-- <tt>2</tt> As a student, I can see a dummy graphical representation of a schedule in the View Schedule window, so I can see where it would be if implemented.
+- <tt>1!</tt> As a student, I can click "view schedule" at any time to open my schedule in a new window.
+- <tt>2!</tt> As a student, my schedule is visible on all pages where reasonable, so I can see where classes will fit in my schedule while I am browsing.
+- <tt>2!</tt> As a student, I can see a dummy graphical representation of a schedule in the View Schedule window, so I can see where it would be if implemented.
 - <tt>4</tt> As a student, I can view a graphical representation of my schedule on a calendar.
 
 ===  As a student, I can modify my schedule, so I can optimize my schedule.
-- <tt>1</tt> As a dropper, I can drop a class from my schedule, but not without confirming, so I can remove classes only when I want to.
+- <tt>1!</tt> As a dropper, I can drop a class from my schedule, so I have control of the classes I take.
+- <tt>2</tt> As a dropper, I can't drop a class from my schedule without confirming, so I remove classes only when I want to.
+- <tt>3</tt> As an adder, I can change options for a class after adding it, so I can take classes credit-only, audit, etc.
 - <tt>3</tt> As a dropper, I am prompted to drop co-requisites or associated labs when removing a class, so I am aware of a potential problem and can fix it without dropping the other.
 - <tt>4</tt> As a student, I can attempt to switch a co-requisite or lab for another one, so that if the switch is not successful, I will not lose my original class registration.
 
