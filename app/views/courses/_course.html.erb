@@ -1,15 +1,17 @@
 <%
+options = {} unless defined?(options)
+
 # This partial can be passed a course or a section.
 # When passed a course, it will include all sections for that course.
 # When passed a section, it will display the course the section belongs to and the details for that section.
 
 unless (course.is_a?(Section))
   sections = course.sections.find_all_by_semester_id(session[:semester])
-  show_section_count = true
+  options[:show_section_count] = true
 else
   sections = [course]
   course = sections[0].course
-  show_section_count = false
+  options[:show_section_count] = false
 end
 
 wishlist_section_ids = [] unless defined?(wishlist_section_ids)
@@ -19,22 +21,38 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 <tr id="<%=unique_id%>main" class="main">
   <td class="expander"><%= expand_button %></td>
   <td><%= course.subject%><%=course.number%></td>
-  <td<%= ' colspan="2"' unless show_section_count %>><%= course.name%></td>
-  <td><%= pluralize(course.credits, "Credit hour") %></td>
-  <%- if show_section_count -%>
+  <td<%= ' colspan="2"' unless options[:show_section_count] || options[:added] %>><%= course.name%></td>
+  <td>
+    <%- if options[:added] -%>
+      <nobr>
+      <%= sections.first.days %> 
+      <%= sections.first.begin_time.strftime(time_format) %>-<%= sections.first.end_time.strftime(time_format) %>
+      </nobr>
+      </td>
+      <td style="width:1%" class="button">
+        <% form_for options[:added_object], :html => { :method => :delete } do |f| %>
+          <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
+        <% end %>
+    <%- else -%>
+      <%= pluralize(course.credits, "Credit hour") %>
+    <%- end -%>
+  </td>
+  <%- if options[:show_section_count] -%>
   <td colspan="100"><%= pluralize(sections.length, "section") %>
   <%- end -%>
 </tr>
 <tr id="<%=unique_id%>extra" class="extra">
   <td colspan="100">
   <div class="slider">
-    <div class="description">
-      <%=course.description%>
-    </div>
+    <% unless false && options[:added] # I'm undecided whether or not this should be included in wishlist and registered course lists. %>
+      <div class="description">
+        <%=course.description%>
+      </div>
+    <% end %>
     <table class="sectionList">
       <%= render  :partial => "sections/section",
                   :collection => sections,
-                  :locals => { :options => defined?(options) ? options : {},
+                  :locals => { :options => options,
                                :wishlist_section_ids => wishlist_section_ids,
                                :registered_section_ids => registered_section_ids } %>
     </table>

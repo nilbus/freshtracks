@@ -5,44 +5,12 @@
 <% if @wishlist_sections.length == 0 %>
   <h3>You don't currently have any classes on your wishlist.</h3>
 <% else %>
-
-<table class="courseList">
-<%
-=begin
-# Ruby block comment until =end
-%>
-  <%= render :partial => "courses/course", :collection => @wishlist_sections.map(&:section) %>
-<%
-=end
-%>
-
-  
-  <% for wsection in @wishlist_sections %>
-    <tr id="<%=wsection.id%>main" class="main">
-      <td style="width:1%" class="expander"><%= expand_button %></td>
-      <td style="width:55%"><%= wsection.section.course.searchkey %></td>
-      <td style="width:35%"><%= wsection.section.timeslot %></td>
-      <td style="width:1%" class="button">
-        <% form_for wsection, :html => { :method => :delete } do |f| %>
-          <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
-        <% end %>
-      </td>
-    </tr>
-      
-    <tr id="<%=wsection.id%>extra" class="extra">
-      <td colspan=5>
-        <div class="slider">
-          <table class="sectionList">
-          <tr>
-          <td><%= wsection.section.room %></td>
-          <td><%= wsection.section.professor %></td>
-          <td>Section <%= wsection.section.number %></td>
-          </tr>
-          </table>
-        </div>
-      </td>
-    </tr>
-  <% end %> 
-</table>
+  <table class="courseList">
+    <% for wsection in @wishlist_sections %>
+      <%= render :partial => "courses/course",
+                 :object => wsection.section,
+                 :locals => { :options => { :added => true, :added_object => wsection } } %>
+    <% end %> 
+  </table>
 <% end %>
 <%= render :partial => 'registered_sections/schedule' %>

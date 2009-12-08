@@ -6,8 +6,12 @@
   <td><%=section.professor%></td>    
   <td><%=section.room%></td>
   <td>
-    <%=section.days%> 
-    <%=section.begin_time.strftime(time_format)%>-<%=section.end_time.strftime(time_format)%>
+    <%- if options[:added] -%>
+      Section <%= section.number %>
+    <%- else -%>
+      <%= section.days %> 
+      <%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
+    <%- end -%>
   </td>
   <% if options["show_wishlist_button"] %>
 
