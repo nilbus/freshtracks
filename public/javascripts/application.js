@@ -10,7 +10,7 @@ jQuery.ajaxSetup({
 $(document).ready(function() {
   var preloaded_spinner = new Image();
   preloaded_spinner.src = '/images/ajax-loader.gif';
-  $(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section").submitWithAjax();
+  $(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section, .edit_registered_section").submitWithAjax();
   $(".rowRemover").makeRowRemover();
   $(".main").makeRowExpander();
 })

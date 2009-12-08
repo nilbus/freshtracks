@@ -28,7 +28,7 @@ class WishlistSectionsController < ApplicationController
         flash[:notice] = "Class successfully removed from wishlist."
         redirect_to wishlist_sections_path
       }
-       format.js { render :text => ''}
+      format.js { render :text => ''}
     end
   end
 

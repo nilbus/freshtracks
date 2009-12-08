@@ -13,19 +13,18 @@
       <%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
     <%- end -%>
   </td>
-  <% if options["show_wishlist_button"] %>
-
-  <td class="button">
-    <% if wishlist_section_ids.include? section.id %>
-      Wishlisted&nbsp;&nbsp;
-    <% else %>
-      <% form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
-        <%= render :partial => 'wishlist_sections/add_button', :locals => { :section_id => section.id } %>
+  <% if options[:show_wishlist_button] %>
+    <td class="button">
+      <% if wishlist_section_ids.include? section.id %>
+        Wishlisted&nbsp;&nbsp;
+      <% else %>
+        <% form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
+          <%= render :partial => 'wishlist_sections/add_button', :locals => { :section_id => section.id } %>
+        <% end %>
       <% end %>
-    <% end %>
-  </td>
+    </td>
   <% end %>
-  <% if options["show_schedule_button"] %>
+  <% if options[:show_schedule_button] %>
   <td class="button">
     <% if registered_section_ids.include? section.id %>
       Added
@@ -34,22 +33,6 @@
         <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
       <% end %>
     <% end %>
-  </td>
-  <% end %>
-  <% if options["show_remove_button"] %>
-  <td class="button">
-    <% form_for WishlistSection.new, :html => { :method => :delete } do |f| %>
-      <%= f.hidden_field :section_id, :value => section.id %>
-      <%= f.submit 'Remove from Wishlist' %>
-    <% end %>
-  </td>
-  <% end %>
-  <% if options["show_drop_button"] %>
-  <td class="button">
-    <input  type="button" 
-            onclick="$.ajax({ type: 'delete',
-                              url:  '<%= url_for(:controller => 'registered_sections', :action => 'destroy', :id => section.id) %>'})"
-            value="Remove from schedule">
   </td>
   <% end %>
 </tr>

@@ -9,8 +9,8 @@
 <% else %>
   Searching for: <%= (params[:search].empty? ? 'All courses' : h(params[:search]) ) %><p/>
 
-  <% options = {"show_wishlist_button" => true,
-                "show_schedule_button" => true} %>
+  <% options = {:show_wishlist_button => true,
+                :show_schedule_button => true} %>
   
   <table class="courseList">
     <%= render :partial => "courses/course", :collection => @courses,

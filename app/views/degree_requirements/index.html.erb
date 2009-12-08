@@ -5,8 +5,8 @@
     <% classname = req.required.class.name.underscore %>
     <% # classname will be either group or section %>
     
-    <% options = {"show_wishlist_button" => true,
-                  "show_schedule_button" => true} %>
+    <% options = {:show_wishlist_button => true,
+                  :show_schedule_button => true} %>
                   
     <%= render  :partial => "#{classname.pluralize}/#{classname}", 
                 :object => req.required,

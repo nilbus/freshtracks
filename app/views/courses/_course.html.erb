@@ -29,10 +29,18 @@ registered_section_ids = [] unless defined?(registered_section_ids)
       <%= sections.first.begin_time.strftime(time_format) %>-<%= sections.first.end_time.strftime(time_format) %>
       </nobr>
       </td>
-      <td style="width:1%" class="button">
-        <% form_for options[:added_object], :html => { :method => :delete } do |f| %>
-          <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
-        <% end %>
+      <% if options[:show_drop_button] %>
+        <td class="button">
+          <% form_for options[:added_object], :html => { :method => :delete } do |f| %>
+            <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
+          <% end %>
+      <% end %>
+      <% if options[:show_remove_button] %>
+        <td class="button">
+          <% form_for options[:added_object], :html => { :method => :delete } do |f| %>
+            <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
+          <% end %>
+      <% end %>
     <%- else -%>
       <%= pluralize(course.credits, "Credit hour") %>
     <%- end -%>
@@ -43,19 +51,21 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 </tr>
 <tr id="<%=unique_id%>extra" class="extra">
   <td colspan="100">
-  <div class="slider">
-    <% unless false && options[:added] # I'm undecided whether or not this should be included in wishlist and registered course lists. %>
-      <div class="description">
-        <%=course.description%>
-      </div>
-    <% end %>
-    <table class="sectionList">
-      <%= render  :partial => "sections/section",
-                  :collection => sections,
-                  :locals => { :options => options,
-                               :wishlist_section_ids => wishlist_section_ids,
-                               :registered_section_ids => registered_section_ids } %>
-    </table>
-  </div>
+    <div class="slider">
+      <% # I'm undecided whether or not this should be included in wishlist and registered course lists. 
+      %>
+      <% unless false && options[:added] %>
+        <div class="description">
+          <%=course.description%>
+        </div>
+      <% end %>
+      <table class="sectionList">
+        <%= render  :partial => "sections/section",
+                    :collection => sections,
+                    :locals => { :options => options,
+                                 :wishlist_section_ids => wishlist_section_ids,
+                                 :registered_section_ids => registered_section_ids } %>
+      </table>
+    </div>
   </td>
 </tr>
