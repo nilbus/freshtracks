@@ -3,25 +3,19 @@ body {
   font-size: 10pt;
 }
 
-ul.tabList {
-	list-style: none;
-	display: inline;
+.courseList,
+.sectionList {
+  border-spacing: 0px;
+  border-spacing-bottom: 0px;
+  border: 2px solid black;
+  margin-left: 1em;
+  margin-bottom: .2em;
+  width: 95%;
 }
 
-ul.tabList > li {
-	display: inline;
-	padding: .1em;
-	border: 1px #69F solid;
-	margin-left: .3em;
-	background: #CDF;
-}
-
-ul.tabList > li#selectedTab {
-	border: 2px #36F solid;
-}
-
-ul.tabList > li:hover {
-	background: #EEF;
+.description {
+  margin-left: 1em;
+  margin-bottom: .2em;
 }
 
 .extra > td > div {
@@ -49,21 +43,6 @@ ul.tabList > li:hover {
   width: 20%;
 }
 
-.courseList,
-.sectionList {
-  border-spacing: 0px;
-  border-spacing-bottom: 0px;
-  border: 2px solid black;
-  margin-left: 1em;
-  margin-bottom: .2em;
-  width: 95%;
-}
-
-.description {
-  margin-left: 1em;
-  margin-bottom: .2em;
-}
-
 .inline {
   display: inline;
 }
@@ -75,6 +54,15 @@ ul.tabList > li:hover {
 .rightAlign {
   float: right;
   margin-right: 1em;
+}
+
+.sectionlist {
+  background-color: #fff;
+}
+
+.sectionlist td {
+  background-color: #ddf;
+  border-bottom: 2px white solid;
 }
 
 td.button {
@@ -103,11 +91,24 @@ tr.extra {
   background-color: #fff;
 }
 
-.sectionlist {
-  background-color: #fff;
+ul.tabList {
+	list-style: none;
+	display: inline;
 }
 
-.sectionlist td {
-  background-color: #ddf;
-  border-bottom: 2px white solid;
+ul.tabList > li {
+	display: inline;
+	padding: .1em;
+	border: 1px #69F solid;
+	margin-left: .3em;
+	background: #CDF;
 }
+
+ul.tabList > li#selectedTab {
+	border: 2px #36F solid;
+}
+
+ul.tabList > li:hover {
+	background: #EEF;
+}
+
