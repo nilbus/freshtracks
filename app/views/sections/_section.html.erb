@@ -27,7 +27,7 @@
   <% if options[:show_schedule_button] %>
   <td class="button">
     <% if registered_section_ids.include? section.id %>
-      Added
+      &nbsp;Enrolled
     <% else %>
       <% form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
         <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
