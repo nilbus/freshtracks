@@ -7,9 +7,8 @@ class RegisteredSection < ActiveRecord::Base
   validate :not_already_registered_for_course
   validate :not_a_schedule_conflict
   
+protected
   def not_already_registered_for_course
-    #debugger
-    
     new_course_key = Section.find(section_id).course.searchkey
     
     RegisteredSection.all.each do |registered_section|
@@ -17,7 +16,6 @@ class RegisteredSection < ActiveRecord::Base
 	errors.add_to_base("Unable to register for section: you are already registered for another section of this course.")
       end
     end
-    #Section.find(params[:registered_section][:section_id])
   end
   
   def not_a_schedule_conflict
@@ -47,9 +45,9 @@ class RegisteredSection < ActiveRecord::Base
     
     #If the start or end time of the second section is during the first section, error!
     if(    ((begin_time1 < begin_time2) and (begin_time2 < end_time1)) \
-        or ((begin_time1 < end_time2) 	and (end_time2 < end_time1)) 
-	or ((begin_time2 < begin_time1) and (begin_time1 < end_time2))
-	or ((begin_time2 < end_time1) 	and (end_time1 < end_time2)) )
+        or ((begin_time1 < end_time2) 	and (end_time2 < end_time1))   \
+	or ((begin_time2 < begin_time1) and (begin_time1 < end_time2)) \
+	or ((begin_time2 < end_time1) 	and (end_time1 < end_time2)) ) 
       return true
     end
     return false

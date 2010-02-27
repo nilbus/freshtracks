@@ -13,6 +13,25 @@ class WishlistSectionsController < ApplicationController
       format.js { render :partial => 'created', :object => @wishlist_section }
     end
   end
+  
+  # register for all of the classes
+  def register_all
+    WishlistSection.all.each do |wishlist_section|
+      new_section = RegisteredSection.create({"section_id" => wishlist_section.section_id})
+      debugger
+      if(new_section.errors == nil)
+	wishlist_section.delete
+      else
+	if(flash[:notice] == nil)
+	  flash[:notice] = ""
+	end
+	flash[:notice] += new_section.errors.on_base
+	#flash[:wishlist_section][wishlist_section.id] = new_section.errors.on_base
+      end
+    end
+    
+    redirect_to wishlist_sections_path
+  end
 
   # change attributes of wishlisted class, like credit/audit
   def update

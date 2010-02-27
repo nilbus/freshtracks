@@ -1,6 +1,8 @@
-<h1>Prepare to Register &ndash; Your Wishlist</h1>
+<h1>Your Wishlist</h1>
 
 <%=flash[:notice]%>
+
+<%= link_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post  %>
 
 <% if @wishlist_sections.length == 0 %>
   <h3>You don't currently have any classes on your wishlist.</h3>
