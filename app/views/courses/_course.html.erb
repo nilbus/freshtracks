@@ -5,19 +5,21 @@ options = {} unless defined?(options)
 # When passed a course, it will include all sections for that course.
 # When passed a section, it will display the course the section belongs to and the details for that section.
 
-unless (course.is_a?(Section))
-  sections = course.sections.find_all_by_semester_id(session[:semester])
-  options[:show_section_count] = true
-else
+if (course.is_a?(Section))
   sections = [course]
   course = sections[0].course
-  options[:show_section_count] = false
+  options[:show_section_count] = false  
+else
+  sections = course.sections.find_all_by_semester_id(session[:semester])
+  options[:show_section_count] = true  
 end
 
 wishlist_section_ids = [] unless defined?(wishlist_section_ids)
 registered_section_ids = [] unless defined?(registered_section_ids)
 %>
+
 <%- unique_id = generate_unique_id course.id -%>
+
 <tr id="<%=unique_id%>main" class="main">
   <td class="expander"><%= expand_button %></td>
   <td><%= course.subject%><%=course.number%></td>
@@ -52,7 +54,7 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 <tr id="<%=unique_id%>extra" class="extra">
   <td colspan="100">
     <div class="slider">
-      <% # I'm undecided whether or not this should be included in wishlist and registered course lists. 
+      <% # I'm undecided whether or not this should be included in wishlist and registered course lists. -EHA
       %>
       <% unless false && options[:added] %>
         <div class="description">

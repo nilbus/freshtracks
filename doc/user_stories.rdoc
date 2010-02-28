@@ -36,6 +36,7 @@
 - <tt>1!</tt> As a student, I have dummy degree requirements, so I can quickly see how usable the interface is.
 - <tt>2!</tt> As a student, I can expand requirement groups to see which courses I can add that match the requirement, so the information is immediately available.
 - <tt>3</tt> As a student, I see my degree plan in an organized manner, so I can understand what order I have might want to take classes.
+- <tt>4</tt> As a student, I can see courses I've already completed, including semester and grade of completion, so I can keep track of what I've done.
 - <tt>5</tt> As a student, I can see actual NCSU degree requirements and groups, so this system is more realistic.
 
 ===  As a student, I can take action on a class in my degree plan or search, such as adding it, so the degree plan and search is integrated with course registration.
