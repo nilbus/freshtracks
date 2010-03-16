@@ -1,7 +1,7 @@
 <%- if created.new_record? -%>
   <%= render :partial => 'add_button', :locals => { :section_id => created.section_id } %>
   <% javascript_tag do %>
-    alert('<%= (created.errors.any? ? created.errors.map{|e|"That " + e.last}.join(' ') : "That didn't work." ) %>');
+    alert('<%= (created.errors.any? ? created.errors.map{|e| e[1]}.join(' ') : "That didn't work." ) %>');
   <% end %>
 <%- else -%>
   <span class="loaded">Added</span>

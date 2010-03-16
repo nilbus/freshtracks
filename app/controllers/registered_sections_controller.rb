@@ -6,7 +6,7 @@ class RegisteredSectionsController < ApplicationController
   end
 
   # register for a class
-  def create
+  def create    
     @registered_section = RegisteredSection.create(params[:registered_section])
     respond_to do |format|
       format.html { redirect_to registered_sections_path }
