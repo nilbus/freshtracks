@@ -1,0 +1,25 @@
+= FreshTracks
+
+A limited functionality, single-user prototype that demonstrates usability improvements for the NCSU course registration system.
+
+Live demo available at http://freshtracks.nilbus.com
+
+== Problems We Solve
+
+- Too many clicks/pageloads to accomplish anything - adding each class requires navigating through 6 pages
+- Separate Wishlist and Shopping Cart is unnecessary and confusing
+- Degree requirements, which determine what classes you want to register for, are not accessible through the course registration system
+
+== Design Philosophy
+
+- Build around the most common use cases; use a goal-centric design rather than designing around data structures
+- Make information quickly accessible through expanding lists that don't require additional network access
+- Details that are less important should be hidden yet easily accessible
+- Actions should provide visual cues to give the user an understanding of what they are doing
+
+== Authors
+
+- Edward Anderson 
+- Ben Berry
+- Joel Joslin
+- Jonathan Mason
