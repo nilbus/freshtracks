@@ -27,6 +27,12 @@ body {
   display: none;
 }
 
+tr.error td {
+	padding-left: 2em;
+	color: #d00;
+	font-weight: bold;
+}
+
 .expander {
   text-align: center; 
   width: 1%;

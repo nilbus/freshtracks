@@ -29,7 +29,7 @@
   	course = section.course %>
   	
   	<%- unique_id = generate_unique_id course.id -%>
-		<tr id="<%=unique_id%>main" class="main">
+		<tr id="<%=unique_id%>main" class="main" uid="<%=unique_id%>">
 		<td class="expander"><%= expand_button %></td>
 		<td class="course_code"><%= course.subject%><%=course.number%></td>
 		<td class="course_title"><nobr><%= course.name%></nobr></td>
@@ -61,7 +61,12 @@
     </td>
     
  	</tr>
-	<tr id="<%=unique_id%>extra" class="extra">
+ 	
+ 	<% if reg_section.errors.on_base != nil %>
+ 		<tr id="<%=unique_id%>error" class="error" uid="<%=unique_id%>"><td colspan=6 ><%=reg_section.errors.on_base%></td></tr>
+ 	<% end %>
+ 		 	
+	<tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">
 		<td colspan="100">
 		  <div class="slider">
 		    
