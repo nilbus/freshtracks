@@ -1,19 +1,83 @@
-<div class="spacer"></div>
-<h1 class="inline">Your Current Schedule</h1>
-<div class="rightAlign scheduleLink"><%= link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' unless @registered_sections.empty? %></div>
+<% 
+	options = (options or {})
+	if(options[:wishlist])
+		section_list = @wishlist_sections
+		title = "Wishlist"
+		extra_link = link_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post
+	else
+		section_list = @registered_sections
+		title = "Current Schedule"
+		extra_link = link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' 
+	end	
+%>
 
-<%- if @registered_sections.empty? -%>
-<h4>You haven't registered for any classes this semester.</h4>
+<div class="spacer"></div>
+<h1 class="inline"><%=title%></h1>
+<div class="rightAlign scheduleLink"><%=extra_link unless section_list.empty?%></div>
+
+<%- if section_list.empty? -%>
+<h4>Your <%=title.downcase%> is currently empty.</h4>
 <%- else -%>
 
 
+
 <table class="courseList">
-  <% for reg_section in @registered_sections %>
-  <%= render  :partial => 'courses/course', 
-              :object => reg_section.section,
-              :locals => { :options => { :show_drop_button => true,
-                                         :added => true,
-                                         :added_object => reg_section } } %>
+  <% for reg_section in section_list %>
+    
+    <% section = reg_section.section
+    
+  	course = section.course %>
+  	
+  	<%- unique_id = generate_unique_id course.id -%>
+		<tr id="<%=unique_id%>main" class="main">
+		<td class="expander"><%= expand_button %></td>
+		<td class="course_code"><%= course.subject%><%=course.number%></td>
+		<td class="course_title"><nobr><%= course.name%></nobr></td>
+		<td class="course_time">
+      <nobr>
+      <%= section.days %> 
+      <%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
+      </nobr>
+    </td>
+    <td><%= pluralize(course.credits, "Credit hour") %></td>
+    <td class="button"><nobr>
+    <% if options[:schedule] %>
+        <% form_for reg_section, :html => { :method => :delete } do |f| %>
+          <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
+        <% end %>
+    <% end %>
+    <% if options[:wishlist] %>
+        <% form_for reg_section, :html => { :method => :delete } do |f| %>
+          <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
+        <% end %>
+       
+        
+			<% form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+				<%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
+			<% end %>
+    <% end %>
+    
+    </nobr>
+    </td>
+    
+ 	</tr>
+	<tr id="<%=unique_id%>extra" class="extra">
+		<td colspan="100">
+		  <div class="slider">
+		    
+	      <div class="description">
+	        <p><%=course.description%></p>
+	        <table width="100%"><tr>
+			      <td width="33%">Professor: <%=section.professor%> </td>
+			      <td width="33%">Room: <%=section.room%></td>
+			      <td width="33%">Section #<%=section.number%></td>
+			    </tr></table>
+	      </div>
+		    
+
+		  </div>
+		</td>
+	</tr>
   <% end %>
 </table>
 

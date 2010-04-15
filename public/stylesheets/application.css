@@ -48,6 +48,24 @@ body {
   width: 20%;
 }
 
+.courseList td
+	width: auto;
+	padding-right: 1em;
+}
+
+.courseList td.course_title{
+
+}
+
+.courseList td.course_time{
+
+}
+
+.courseList td.button{
+	padding-right: none;
+	text-align: right;
+}
+
 h1 {
   color: #900;
 }

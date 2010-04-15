@@ -1,13 +1,9 @@
-<h1>Your Wishlist</h1>
-
 <%=flash[:notice]%>
 
-<%= link_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post  %>
-
-<% if @wishlist_sections.length == 0 %>
-  <h3>You don't currently have any classes on your wishlist.</h3>
-<% else %>
-  <table class="courseList">
+  	<%= render :partial => 'registered_sections/schedule', 
+					 :locals => { :options => { :wishlist => true} }%>
+  <!--
+	  <table class="courseList">
     <% for wsection in @wishlist_sections %>
       <%= render :partial => "courses/course",
                  :object => wsection.section,
@@ -15,6 +11,7 @@
                                             :added_object => wsection,
                                             :show_remove_button => true } } %>
     <% end %> 
-  </table>
-<% end %>
-<%= render :partial => 'registered_sections/schedule' %>
+    </table>
+    -->
+<%= render :partial => 'registered_sections/schedule', 
+					 :locals => { :options => { :schedule => true} }%>
