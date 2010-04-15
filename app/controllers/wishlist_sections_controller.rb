@@ -25,7 +25,7 @@ class WishlistSectionsController < ApplicationController
 	if(flash[:notice] == nil)
 	  flash[:notice] = ""
 	end
-	flash[:notice] += new_section.errors.on_base
+	flash[:notice] += (new_section.errors.on_base || "")
 	#flash[:wishlist_section][wishlist_section.id] = new_section.errors.on_base
       end
     end
