@@ -54,7 +54,6 @@ jQuery.fn.makeRowExpander = function() {
 
     var displayStatus = slider.css("display");
     slider.slideToggle();
-    extra.slideToggle();
     if (displayStatus == "none") {
       // expand
       button.html(collapseButton());

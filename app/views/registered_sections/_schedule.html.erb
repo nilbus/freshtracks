@@ -40,7 +40,7 @@
       </nobr>
     </td>
     <td><%= pluralize(course.credits, "Credit hour") %></td>
-    <td class="button"><nobr>
+    <td class="button">
     <% if options[:schedule] %>
         <% form_for reg_section, :html => { :method => :delete } do |f| %>
           <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
@@ -57,13 +57,16 @@
 			<% end %>
     <% end %>
     
-    </nobr>
     </td>
     
  	</tr>
  	
- 	<% if reg_section.errors.on_base != nil %>
- 		<tr id="<%=unique_id%>error" class="error" uid="<%=unique_id%>"><td colspan=6 ><%=reg_section.errors.on_base%></td></tr>
+ 	<% if not reg_section.errors.empty? %>
+ 		<tr id="<%=unique_id%>error" class="error" uid="<%=unique_id%>"><td colspan=6 >
+ 			<% reg_section.errors.each_full do |error| %>
+ 				<%=error%> <br/>
+ 			<% end %>
+ 		</td></tr>
  	<% end %>
  		 	
 	<tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">

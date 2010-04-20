@@ -69,8 +69,9 @@ tr.error td {
 
 .courseList td.button{
 	padding-right: none;
-	text-align: right;
+	text-align: center;
 }
+
 
 h1 {
   color: #900;
