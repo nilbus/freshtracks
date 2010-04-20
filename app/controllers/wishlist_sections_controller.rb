@@ -18,6 +18,8 @@ class WishlistSectionsController < ApplicationController
   def register_all
     @wishlist_sections = WishlistSection.all(:joins => :section,
                                              :conditions => { 'sections.semester_id' => session[:semester] })
+                                             
+    flash[:wishlist_section] = {}
     @wishlist_sections.each do |wishlist_section|
       new_section = RegisteredSection.create({"section_id" => wishlist_section.section_id})
 
@@ -25,12 +27,12 @@ class WishlistSectionsController < ApplicationController
 				wishlist_section.delete
       else
 				if (new_section.errors.on_base != nil)
-					wishlist_section.errors.add_to_base(new_section.errors.on_base)
+					flash[:wishlist_section][wishlist_section.id] = new_section.errors.on_base
 				end
       end
     end
     
-    render :action => :index
+    redirect_to :action => :index
   end
 
   # change attributes of wishlisted class, like credit/audit

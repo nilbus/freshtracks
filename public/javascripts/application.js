@@ -37,8 +37,8 @@ jQuery.fn.submitWithAjax = function() {
 
 jQuery.fn.makeRowRemover = function() {
   this.click(function() {
-    $(this).parent('form').parent('td').parent('tr').next('tr.extra').hide();
-    $(this).parent('form').parent('td').parent('tr').hide();
+  	row = $(this).closest("tr");
+  	$("[uid=" + $(row).attr("uid") + "]").fadeOut();
   })
   return this;
 };
@@ -48,7 +48,7 @@ jQuery.fn.makeRowRemover = function() {
 jQuery.fn.makeRowExpander = function() {
   this.click(function() {
     var row = $(this);
-    var slider = row.next().children().children(".slider");
+    var slider = $("#" + $(this).attr("uid") + "extra .slider");
     var button = row.children(".expander");
     var id = row.attr("id");
 

@@ -3,11 +3,13 @@
 	if(options[:wishlist])
 		section_list = @wishlist_sections
 		title = "Wishlist"
-		extra_link = link_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post
+		extra_link = link_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post		
+		errors = (flash[:wishlist_section] || {})	
 	else
 		section_list = @registered_sections
 		title = "Current Schedule"
 		extra_link = link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' 
+		errors = (flash[:registered_section] || {})	
 	end	
 %>
 
@@ -61,18 +63,15 @@
     
  	</tr>
  	
- 	<% if not reg_section.errors.empty? %>
+ 	<% if (errors[reg_section.id] != nil) %>
  		<tr id="<%=unique_id%>error" class="error" uid="<%=unique_id%>"><td colspan=6 >
- 			<% reg_section.errors.each_full do |error| %>
- 				<%=error%> <br/>
- 			<% end %>
+ 			<%=errors[reg_section.id]%>
  		</td></tr>
  	<% end %>
- 		 	
+ 	 		 	
 	<tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">
 		<td colspan="100">
 		  <div class="slider">
-		    
 	      <div class="description">
 	        <p><%=course.description%></p>
 	        <table width="100%"><tr>
