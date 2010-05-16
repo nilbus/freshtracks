@@ -24,7 +24,7 @@ class WishlistSectionsController < ApplicationController
       new_section = RegisteredSection.create({"section_id" => wishlist_section.section_id})
 
       if(new_section.errors == nil)
-				wishlist_section.delete
+				wishlist_section.destroy()
       else
 				if (new_section.errors.on_base != nil)
 					flash[:wishlist_section][wishlist_section.id] = new_section.errors.on_base

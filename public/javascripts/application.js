@@ -37,8 +37,17 @@ jQuery.fn.submitWithAjax = function() {
 
 jQuery.fn.makeRowRemover = function() {
   this.click(function() {
-  	row = $(this).closest("tr");
-  	$("[uid=" + $(row).attr("uid") + "]").fadeOut();
+  row = $(this).closest("tr");
+    $("[uid=" + $(row).attr("uid") + "]").fadeOut( function(){
+      var containingTable = $(this).closest("table");
+      if( containingTable.find("tr:visible").length == 0)
+      {
+        containingTable.hide();
+        $("[type=" + containingTable.attr("type") + "].empty").show();
+      }
+      
+    });
+    
   })
   return this;
 };
@@ -48,8 +57,13 @@ jQuery.fn.makeRowRemover = function() {
 jQuery.fn.makeRowExpander = function() {
   this.click(function() {
     var row = $(this);
-    var slider = $("#" + $(this).attr("uid") + "extra .slider");
+    
+    //The row to be slid
+    var slider = $("[uid=" + $(this).attr("uid") + "] .slider").eq(0);
+    
+    //The button on this row, to be changed
     var button = row.children(".expander");
+    
     var id = row.attr("id");
 
     var displayStatus = slider.css("display");
@@ -67,7 +81,7 @@ jQuery.fn.makeRowExpander = function() {
       $("#" + id + " + .extra td > div").slideUp();
     }
   })
-  this.children('.button').children("input").click(function() { return false; });
+  this.find("input:visible").click(function(event) { event.stopPropagation(); });
   
   return this;
 };

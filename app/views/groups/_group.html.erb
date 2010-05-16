@@ -1,5 +1,5 @@
-<%- unique_id = generate_unique_id "group#{group.id}" -%>
-<tr id="group<%= unique_id %>main" class="main">
+<%- unique_id = generate_unique_id group.id -%>
+<tr id="<%= unique_id %>main" uid="<%=unique_id%>" class="main">
   <td class="expander"><%= expand_button %></td>
   <td>GRP <%=group.number%></td>
   <td><%= group.name%></td>
@@ -7,7 +7,7 @@
   <td>&nbsp;</td>
 </tr>
 
-<tr id="group<%= unique_id %>extra" class="extra">
+<tr id="<%= unique_id %>extra" uid="<%=unique_id%>" class="extra">
   <td colspan="5">
     <div class="slider">
       <% if not defined? options
