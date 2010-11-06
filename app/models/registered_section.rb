@@ -6,8 +6,17 @@ class RegisteredSection < ActiveRecord::Base
   #These two custom validations are not very DRY. Optimize?
   validate :not_already_registered_for_course
   validate :not_a_schedule_conflict
+
+  validate :check_and_remove_from_wishlist
   
 protected
+  def check_and_remove_from_wishlist
+    wishlist_section = WishlistSection.find_by_section_id(section_id)
+    if(wishlist_section != nil)
+      wishlist_section.delete()
+    end
+  end
+
   def not_already_registered_for_course
     new_course_key = Section.find(section_id).course.searchkey
     
