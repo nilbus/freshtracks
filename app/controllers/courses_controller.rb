@@ -11,7 +11,8 @@ class CoursesController < ApplicationController
                                             '%' + params[:search] + '%'],
                             :joins => :sections,
                             :include => :sections,
-                            :group => 'courses.id',
+                            # Postgres requires you to explicitly list all fields to group. Whyyy? This is fixed by Rails 3 with :unique => true
+                            :group => Course.new.attributes.keys.map{|field| "courses.#{field}"}.join(", ") + ', courses.id',
                             :order => "courses.subject || courses.number")
 
       # Load schedule so we don't display buttons for things already added
