@@ -1,7 +1,6 @@
-config/database.yml
-tmp
-log
 *.swp
 *~
-*.sqlite3
-*.orig
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
