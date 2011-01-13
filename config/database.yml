@@ -6,6 +6,16 @@ development:
   pool: 5
   timeout: 5000
 
+#Development with postgres
+pgdev:
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password: Rome1231
+  database: freshtracks
+  pool: 5
+  timeout: 5000
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
