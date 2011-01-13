@@ -38,5 +38,7 @@ module Freshtracks
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    Rails.env = "development" #options include "pgdev", "test", "production" 
   end
 end
