@@ -35,7 +35,7 @@ module ApplicationHelper
 
   # These are also defined in javascripts/application.js
   def expand_button
-    '<img border="0" src="/images/add_greyscale.png">'
+    '<img border="0" src="/images/add_greyscale.png">'.html_safe()
   end
 
   def collapse_button
