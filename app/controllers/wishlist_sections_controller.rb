@@ -5,6 +5,9 @@ class WishlistSectionsController < ApplicationController
                                              :conditions => { 'sections.semester_id' => session[:semester] })
   end
 
+  #We can probably refactor this respond_to format
+  # http://ryandaigle.com/articles/2009/8/6/what-s-new-in-edge-rails-cleaner-restful-controllers-w-respond_with
+
   # add a class to wishlist
   def create
     @wishlist_section = WishlistSection.create(params[:wishlist_section])
