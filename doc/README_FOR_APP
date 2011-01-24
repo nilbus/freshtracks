@@ -1,1 +1,6 @@
-System library dependencies: libpq-dev for pg gem
+System library dependencies:
+libsqlite0-dev for sqlite3-ruby
+libpq-dev for pg
+libxslt-dev for nokigiri for capybara
+
+Summary: sudo apt-get install libsqlite0-dev libpq-dev libxslt-dev
