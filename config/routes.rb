@@ -13,9 +13,6 @@ Freshtracks::Application.routes.draw do
     end
   end
 
-  match "sign_in", :to => "clearance#index"
-  match "clearance/index"
-
   resources :registered_sections
   resources :sections
   match '/' => 'courses#index'
