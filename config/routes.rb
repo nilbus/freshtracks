@@ -16,4 +16,11 @@ Freshtracks::Application.routes.draw do
   resources :registered_sections
   resources :sections
   match '/' => 'courses#index'
+
+  # Override for Clearance SessionsController
+  resource  :session,
+    :controller => 'sessions',
+    :only       => [:new, :create, :destroy]
+  match 'sign_in'  => 'sessions#new', :as => 'sign_in'
+  match 'sign_out' => 'sessions#destroy', :via => :delete, :as => 'sign_out'
 end
