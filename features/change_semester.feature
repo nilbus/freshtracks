@@ -16,13 +16,13 @@ Feature: Change semester
 
   Scenario: Select semester after login
     Given I have logged in as a "student"
-    When I select the "current" semester
     And my schedule for the "current" semester has this class scheduled:
       | CSC326 | Software Engineering                    | Harper Lee | MWF 01:45PM-02:35PM |
     And my schedule for the "next" semester has this class scheduled:
       | CSC316 | Data Structures for Computer Scientists | Sauron     | TH 11:45AM-01:00PM  |
-    Then the layout should include that I am working with the "current" semester
-    And I should see the following class in my schedule:
+    When I select the "current" semester
+    Then the layout should indicate that I am working with the "current" semester
+    And my schedule should have this class:
       | CSC326 | Software Engineering                    | Harper Lee | MWF 01:45PM-02:35PM |
 
   Scenario: Change semester after the initial selection
@@ -30,4 +30,4 @@ Feature: Change semester
     And I am working with the "current" semester
     When I click on "Change semester"
     And I select the "next" semester
-    Then the layout should include that I am working with the "next" semester
+    Then the layout should indicate that I am working with the "next" semester
