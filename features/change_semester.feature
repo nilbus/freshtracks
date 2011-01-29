@@ -18,12 +18,12 @@ Feature: Change semester
     Given I have logged in as a "student"
     When I select the "current" semester
     And my schedule for the "current" semester has this class scheduled:
-      | CSC 326 | Software Engineering                    | MWF 01:45PM-02:35PM | Section 001 |
+      | CSC326 | Software Engineering                    | Harper Lee | MWF 01:45PM-02:35PM |
     And my schedule for the "next" semester has this class scheduled:
-      | CSC 316 | Data Structures for Computer Scientists | TH 11:45AM-01:00PM  | Section 002 |
+      | CSC316 | Data Structures for Computer Scientists | Sauron     | TH 11:45AM-01:00PM  |
     Then the layout should include that I am working with the "current" semester
     And I should see the following class in my schedule:
-      | CSC 326 | Software Engineering                    | MWF 01:45PM-02:35PM | Section 001 |
+      | CSC326 | Software Engineering                    | Harper Lee | MWF 01:45PM-02:35PM |
 
   Scenario: Change semester after the initial selection
     Given I have logged in as a "student"
