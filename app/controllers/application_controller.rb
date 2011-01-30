@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def choosing_semester?
-    /semester/.match(request.request_uri)
+    /semester/.match(request.fullpath)
   end
 
   def load_schedule
