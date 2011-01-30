@@ -22,4 +22,5 @@ group :development, :test do
   gem 'capybara'
   gem 'culerity'
   gem 'celerity', :require => nil # JRuby only. Make it available but don't require it in any environment.
+  gem 'launchy'
 end

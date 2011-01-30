@@ -17,7 +17,7 @@ Current semester: <%= Semester.find(session[:semester]).name %><br>
 <%= link_to "Change semester", semesters_path%>
 </div>
 
-<ul class="tabList">
+<ul class="tab-list">
   <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selectedtab"' : '' %>>
   <%= link_to "Search", courses_path %>
   </li>

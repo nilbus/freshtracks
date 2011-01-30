@@ -136,20 +136,20 @@ tr.extra {
   background-color: #fff;
 }
 
-ul.tabList {
+ul.tab-list {
 	display: inline;
 	list-style: none;
   margin-left: -2em;
 }
 
-ul.tabList a {
+ul.tab-list a {
   color: #000;
   font-size: 1.1em;
   /*font-weight: bold;*/
 	text-decoration: none;
 }
 
-ul.tabList > li {
+ul.tab-list > li {
 	background: #f7f3d9;
 	border: 1px #000 solid;
 	display: inline;
@@ -157,8 +157,8 @@ ul.tabList > li {
 	padding: .2em .6em .2em .6em;
 }
 
-ul.tabList > li:hover,
-ul.tabList > li#selectedTab {
+ul.tab-list > li:hover,
+ul.tab-list > li#selectedTab {
 	border: 2px #900 solid;
   margin: 1px;
 }

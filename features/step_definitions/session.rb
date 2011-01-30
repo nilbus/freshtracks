@@ -1,12 +1,12 @@
-Given /^I have logged in as a "([^"]*)"$/ do |user_type|
-  pending # express the regexp above with the code you wish you had
+Given /^I have logged in as an? "([^"]*)"$/ do |user_type|
+  pending unless user_type == 'student'
 end
 
 Given /^I have not logged in$/ do
-  pending # express the regexp above with the code you wish you had
+  # no action necessary
 end
 
-When /^I log in as a "([^"]*)"$/ do |user_type|
-  pending # express the regexp above with the code you wish you had
+When /^I log in as an? "([^"]*)"$/ do |user_type|
+  pending unless user_type == 'student'
 end
 
