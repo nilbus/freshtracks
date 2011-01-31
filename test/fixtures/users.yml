@@ -1,0 +1,7 @@
+student:
+  email: student@ncsu.edu
+  #the password is password
+  encrypted_password: 0eb20c5045c571967db20bb0d501ab68302d6d30
+  salt: 03bab5d0e0c7420e1b9ae5b0b1e8746ecd1858a2
+  remember_token: 70b066b67baa96f6adf4aa9babdca7a67f3018ab
+
