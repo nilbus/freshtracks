@@ -11,8 +11,11 @@ class ApplicationController < ActionController::Base
   before_filter :load_schedule
 
   def choose_semester
-  	if session[:semester].nil? && !choosing_semester? && !request.xhr? # don't redirect on AJAX req's
-  		redirect_to :controller => :semesters, :action => :index
+    if signed_in? && 
+       session[:semester].nil? && 
+       !choosing_semester? && 
+       !request.xhr? # don't redirect on AJAX req's
+  	     redirect_to :controller => :semesters, :action => :index
   	end
   end
 
