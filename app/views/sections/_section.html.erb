@@ -22,7 +22,7 @@
       <% if wishlist_section_ids.include? section.id %>
         Wishlisted&nbsp;&nbsp;
       <% else %>
-        <% form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
+        <%= form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
           <%= render :partial => 'wishlist_sections/add_button', :locals => { :section_id => section.id } %>
         <% end %>
       <% end %>
@@ -34,7 +34,7 @@
       <% if registered_section_ids.include? section.id %>
 	&nbsp;Enrolled
       <% else %>
-	<% form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+	<%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
 	  <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
 	<% end %>
       <% end %>
