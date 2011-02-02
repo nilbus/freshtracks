@@ -3,7 +3,7 @@
 	if(options[:wishlist])
 		section_list = @wishlist_sections
 		title = "Wishlist"
-		extra_link = link_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post		
+		extra_link = button_to "Add all classes to schedule", register_all_wishlist_sections_path, :method => :post		
 		errors = (flash[:wishlist_section] || {})	
 	else
 		section_list = @registered_sections
