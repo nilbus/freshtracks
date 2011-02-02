@@ -2,7 +2,7 @@ class WishlistSectionsController < ApplicationController
   # show wishlist
   def index
     @wishlist_sections = WishlistSection.all(:joins => :section,
-                                             :conditions => { 'sections.semester_id' => session[:semester] })
+                                             :conditions => { 'sections.semester_id' => session[:semester], 'user_id' => current_user.id })
   end
 
   #We can probably refactor this respond_to format
@@ -10,7 +10,7 @@ class WishlistSectionsController < ApplicationController
 
   # add a class to wishlist
   def create
-    @wishlist_section = WishlistSection.create(params[:wishlist_section])
+    @wishlist_section = WishlistSection.create(params[:wishlist_section].merge(:user => current_user))
     respond_to do |format|
       format.html { redirect_to wishlist_sections_path }
       format.js { render :partial => 'created', :object => @wishlist_section }
@@ -20,11 +20,11 @@ class WishlistSectionsController < ApplicationController
   # register for all of the classes
   def register_all
     @wishlist_sections = WishlistSection.all(:joins => :section,
-                                             :conditions => { 'sections.semester_id' => session[:semester] })
+                                             :conditions => { 'sections.semester_id' => session[:semester], 'user_id' => current_user.id })
                                              
     flash[:wishlist_section] = {}
     @wishlist_sections.each do |wishlist_section|
-      new_section = RegisteredSection.create({"section_id" => wishlist_section.section_id})
+      new_section = RegisteredSection.create({"section_id" => wishlist_section.section_id, 'user_id' => current_user.id})
 
       if(new_section.errors == nil)
 				wishlist_section.destroy()
