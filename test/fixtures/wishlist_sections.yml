@@ -1,5 +1,12 @@
 wish_csc216_003:      #timing conflict with eng 101
   section: sp10csc216_003
+  user: student
+
 
 wish_csc440_001:
   section: sp10csc440_001
+  user: student 
+
+wish_csc116_001:
+  section: fa09csc116_001
+  user: shadow

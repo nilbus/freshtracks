@@ -5,3 +5,8 @@ student:
   salt: 03bab5d0e0c7420e1b9ae5b0b1e8746ecd1858a2
   remember_token: 70b066b67baa96f6adf4aa9babdca7a67f3018ab
 
+shadow:
+  email: shadow@ncsu.edu
+  encrypted_password: 13
+  salt: 43
+  remember_token: 04392
