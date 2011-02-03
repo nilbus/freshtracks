@@ -2,7 +2,7 @@
 
 A limited functionality, single-user prototype that demonstrates usability improvements for the NCSU course registration system.
 
-Live demo available at http://freshtracks.nilbus.com
+Live demo available at http://freshtracks.heroku.com . Try logging in with username "student@ncsu.edu" and a password of "password".  
 
 == Problems We Solve
 
