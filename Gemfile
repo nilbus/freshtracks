@@ -18,9 +18,12 @@ group :development, :test do
 
   # Functional testing
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', '~> 0.4.0.beta.1'
   gem 'capybara'
   gem 'culerity'
   gem 'celerity', :require => nil # JRuby only. Make it available but don't require it in any environment.
   gem 'launchy'
+
+  # Debug
+  gem 'ruby-debug19'
 end
