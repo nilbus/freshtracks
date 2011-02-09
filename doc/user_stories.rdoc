@@ -14,8 +14,8 @@
 
 ===  As a planner, I can prepare a wishlist for the upcoming semester before registration opens, so I can register instantly when my date comes.
 - <tt>1!</tt> As a planner, I can add sections of classes without restriction to a wishlist, so I can flexibly view and weigh my scheduling options.
-- <tt>2</tt> As a planner, I can attempt to add an individual class in my wishlist, so I don't have to add every class in my wishlist.
-- <tt>2</tt> As a planner, I can attempt to add my entire wishlist, so I can register quickly when my date comes.
+- <tt>2!</tt> As a planner, I can attempt to add an individual class in my wishlist, so I don't have to add every class in my wishlist.
+- <tt>2!</tt> As a planner, I can attempt to add my entire wishlist, so I can register quickly when my date comes.
 - <tt>3!</tt> As a planner, I can remove classes from my wishlist, so my wishlist can match what I actually want to register for.
 - <tt>4</tt> As a planner, conflicts in adding my schedule are highlighted or noted, so I know to resolve them before registration time
 - <tt>5</tt> As a planner, I am notified when I add a class to my wishlist that I am not eligible to take, so I am not surprised when I can't add it.
@@ -29,7 +29,8 @@
 - <tt>4</tt> As a student, I can see preview search results immediately using a Google style auto-complete input box, so the search terms are easily discoverable.
 - <tt>4</tt> As a student, I can filter the list to display any combination of open, waitlisted, and full classes, so I can be aware of classes that may open in the future.
 - <tt>5</tt> As a student, I can sign up for actual NCSU course offerings, so this system is more realistic.
-- <tt>5</tt> As a student, I can log in with my unity ID, so my classes are separated from others'.
+- <tt>5</tt> As a student, I can log in to my account, so my classes are separated from others'.
+- <tt>5</tt> As a student, I can use my Unity ID to log in, so my password is shared with other Unity applications.
 
 ===  As a student, I can use my degree plan to register for classes, so I don't have to use a separate website to determine which classes I need to take.
 - <tt>1!</tt> As a student, I can see my current degree plan, so I know which classes I ought to register for.
@@ -53,7 +54,8 @@
 ===  As a student, I can modify my schedule, so I can optimize my schedule.
 - <tt>1!</tt> As a dropper, I can drop a class from my schedule, so I have control of the classes I take.
 - <tt>2</tt> As a dropper, I can't drop a class from my schedule without confirming, so I remove classes only when I want to.
+- <tt>3</tt> As an adder, I can't add a section before or after my enrollment period, so I can't register when I'm not allowed.
+- <tt>3</tt> As a dropper, I can't drop a class after the drop date, so I can't drop classes when I'm not allowed.
 - <tt>3</tt> As an adder, I can change options for a class after adding it, so I can take classes credit-only, audit, etc.
-- <tt>3</tt> As a dropper, I am prompted to drop co-requisites or associated labs when removing a class, so I am aware of a potential problem and can fix it without dropping the other.
-- <tt>4</tt> As a student, I can attempt to switch a co-requisite or lab for another one, so that if the switch is not successful, I will not lose my original class registration.
-
+- <tt>4</tt> As a dropper, I am prompted to drop co-requisites or associated labs when removing a class, so I am aware of a potential problem and can fix it without dropping the other.
+- <tt>5</tt> As a student, I can attempt to switch a co-requisite or lab for another one, so that if the switch is not successful, I will not lose my original class registration.

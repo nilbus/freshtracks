@@ -1,11 +1,19 @@
 wish_csc216_001:      #timing conflict with csc 226-001
   section: sp10csc216_001
+  user: student
 
 wish_csc216_004:
   section: sp10csc216_004
+  user: student
 
 wish_csc226_001:      #timing conflict with csc 216-001
   section: sp10csc226_001
+  user: student
 
 wish_eng101_001:
   section: sp10eng101_001
+  user: student
+
+wish_csc116_001:
+  section: fa09csc116_001
+  user: shadow

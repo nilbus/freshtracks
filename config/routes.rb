@@ -16,4 +16,5 @@ Freshtracks::Application.routes.draw do
   resources :registered_sections
   resources :sections
   match '/' => 'courses#index'
+
 end

@@ -1,5 +1,6 @@
 class RegisteredSection < ActiveRecord::Base
   belongs_to :section
+  belongs_to :user
 
   validates_uniqueness_of :section_id, :message => 'That is already on your schedule.'
   

@@ -1,5 +1,7 @@
 reg_eng101_001:
   section: fa09eng101_001
+  user: student
 
 reg_csc216_001:
   section: sp10csc216_001
+  user: student

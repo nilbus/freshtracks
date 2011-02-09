@@ -1,0 +1,3 @@
+- registered_sections, wishlist_sections, passed_courses each belong_to a user
+- registered_sections has_many users
+- user 
