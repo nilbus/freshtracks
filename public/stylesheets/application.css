@@ -163,3 +163,7 @@ ul.tab-list > li#selectedTab {
   margin: 1px;
 }
 
+ul.tab-list > li#selectedTab {
+	border-bottom: none;
+}
+

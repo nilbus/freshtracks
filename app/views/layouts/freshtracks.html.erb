@@ -1,0 +1,47 @@
+<%= render :partial => 'layouts/header' %>
+
+</head>
+<body style="margin: auto; width: 90%; padding-top: 2em;" >
+<div style="border: 2px #CC0000 solid; width: 15em; padding: 1em; margin-bottom: 2ex;">
+<span style="font-size: x-large; color: #C00; font-weight: bold; font-family: ubuntu, helvetica, sans-serif">FreshTracks</span>
+</div>
+
+
+<%
+if(params[:action] == "index")
+  case params[:controller]
+    when "courses"
+      @selected_tab = 'tab1'
+    when "degree_requirements"
+      @selected_tab = 'tab2'
+    when "wishlist_sections"
+      @selected_tab = 'tab3'
+  end
+end
+%>
+
+<% if session[:semester] %>
+<div class="rightAlign">
+Current semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", 'sessions#destroy', :method => :delete %> 
+</div>
+
+<ul class="tab-list">
+  <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id=selectedTab' : '' %>>
+  <%= link_to "Search", courses_path %>
+  </li>
+  <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id=selectedTab' : '' %>>
+  <%= link_to degree_requirements_path do  %>
+    <nobr>Degree Requirements</nobr>
+  <% end %>
+  </li>
+  <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id=selectedTab' : '' %>>
+  <%= link_to "Wishlist", wishlist_sections_path %>
+  </li>
+</ul>
+
+<% end %>
+<div style="border: 2px #C00 solid; padding: 1ex;">
+<%= yield %>
+</div>
+</body>
+</html>
