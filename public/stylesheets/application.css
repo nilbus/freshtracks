@@ -54,7 +54,7 @@ tr.error td {
   width: 20%;
 }
 
-.courseList td
+.courseList td {
 	width: auto;
 	padding-right: 1em;
 }
