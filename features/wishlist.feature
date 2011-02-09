@@ -8,43 +8,44 @@ Feature: Switch semester context
     And I am working with the "next" semester
     When I search for "csc2"
     And I wishlist these classes:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 216    | Programming Concepts - Java                    | Jayne Cobb      | TH 09:00AM-10:30AM  |
-      | CSC     | 226    | Discrete Mathematics for Computer Scientists   | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 | Times           |
+      | CSC     | 216    | Jamison                    | MWF 09:10-10:00 |
+      | CSC     | 226    | Malcolm Reynolds           | MW  09:00-10:15 |
     Then my wishlist should have these classes:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 216    | Programming Concepts - Java                    | Jayne Cobb      | TH 09:00AM-10:30AM  |
-      | CSC     | 226    | Discrete Mathematics for Computer Scientists   | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 | Times           |
+      | CSC     | 216    | Jamison                    | MWF 09:10-10:00 |
+      | CSC     | 226    | Malcolm Reynolds           | MW  09:00-10:15 |
 
-  Scenario: Conflicts are noted
+  Scenario: Scheduling conflicts are noted
     Given I have logged in as a "student"
     And I am working with the "current" semester
     And my wishlist has these classes:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 216    | Programming Concepts - Java                    | Jayne Cobb      | TH 09:00AM-10:30AM  |
-      | CSC     | 226    | Discrete Mathematics for Computer Scientists   | Malcom Reynolds | TH 08:00AM-09:15AM  |
-    Then show me the page
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Jamison                    |
+      | CSC     | 226    | Malcolm Reynolds           |
     When I navigate to the "Wishlist" page
     Then there should be a highlight on these classes:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 216    | Programming Concepts - Java                    | Jayne Cobb      | TH 09:00AM-10:30AM  |
-      | CSC     | 226    | Discrete Mathematics for Computer Scientists   | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Jamison                    |
+      | CSC     | 226    | Malcolm Reynolds           |
     And I should see a caption that contains "conflict"
 
   Scenario: Not eligible to take a class
     Given I have logged in as a "student"
     And I am working with the "current" semester
+    And "CSC 911" has a prerequisite of "CSC 901"
+    And I have not taken "CSC 911"
     And my wishlist has this class:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 911    | Elite Topics in Computer Science               | Morpheus        | MWF 01:00AM-05:00AM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 911    | Morpheus                   |
     When I navigate to the "Wishlist" page
     Then there should be a highlight on this class:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 911    | Elite Topics in Computer Science               | Morpheus        | MWF 01:00AM-05:00AM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 911    | Morpheus                   |
     And I should see a caption that contains "not"
     And this class should not have an "Add to wishlist" button:
-      | Subject | Number | Name                                           | Instructor      | Times               |
-      | CSC     | 911    | Elite Topics in Computer Science               | Morpheus        | MWF 01:00AM-05:00AM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 911    | Morpheus                   |
 
   Scenario: Past add date
     Given I have logged in as a "student"
@@ -54,56 +55,56 @@ Feature: Switch semester context
     And I expand the course "CSC326"
     Then the course "CSC326" should not have an "Add to wishlist" button
 
-  Scenario: Add a single class from the wishlist
+  Scenario: Add a single class from the wishlist to my schedule
     Given I have logged in as a "student"
     And I am working with the "current" semester
     And my wishlist has these classes:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
-      | ENG     | 101    | Academic Writing and Research | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
+      | ENG     | 101    | Bob Woodward               |
     When I navigate to the "Wishlist" page
     And I click on "Add to Schedule" for this class:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
     Then my wishlist should not have this class:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
+      | Subject | Number | Instructor                 |
+      | ENG     | 101    | Bob Woodward               |
     And my schedule should have this class:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
 
   Scenario: Add all classes on the wishlist
     Given I have logged in as a "student"
     And I am working with the "current" semester
     And my wishlist has these classes:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
-      | ENG     | 101    | Academic Writing and Research | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
+      | ENG     | 101    | Bob Woodward               |
     When I navigate to the "Wishlist" page
     And I click on the link "Add all classes to schedule"
-    Then my wishlist should have these classes:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
-      | ENG     | 101    | Academic Writing and Research | Malcom Reynolds | TH 08:00AM-09:15AM  |
+    Then my wishlist should not have these classes:
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
+      | ENG     | 101    | Bob Woodward               |
     And my schedule should have these classes:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
-      | ENG     | 101    | Academic Writing and Research | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
+      | ENG     | 101    | Bob Woodward               |
 
   Scenario: Remove classes from wishlist
     Given I have logged in as a "student"
     And I am working with the "current" semester
     And my wishlist has these classes:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
-      | ENG     | 101    | Academic Writing and Research | Malcom Reynolds | TH 08:00AM-09:15AM  |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
+      | ENG     | 101    | Bob Woodward               |
     When I navigate to the "Wishlist" page
     And I click on "Remove from Wishlist" for this class:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
     Then my wishlist should not have this class:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |
     And my schedule should not have this class:
-      | Subject | Number | Name                          | Instructor      | Times               |
-      | CSC     | 326    | Software Engineering          | Harper Lee      | MWF 01:45PM-02:35PM |
+      | Subject | Number | Instructor                 |
+      | CSC     | 216    | Bob Dylan                  |

@@ -1,5 +1,6 @@
-def semester_selector(semester)
-  "img[@alt='#{semester}_semester']"
+def semester_selector_link_id(semester)
+  semester = semester.downcase.gsub 'current', 'this'
+  "#{semester}_semester"
 end
 
 Given /^I am working with the "([^"]*)" semester$/ do |semester|
@@ -15,14 +16,13 @@ When /^I select the "([^"]*)" semester$/ do |semester|
 end
 
 Then /^I should have to select which semester I want to work with$/ do
-  page.should have_css(semester_selector('This'))
-  page.should have_css(semester_selector('Next'))
+  page.should have_css("##{semester_selector_link_id('This')}")
+  page.should have_css("##{semester_selector_link_id('Next')}")
 end
 
+# semester is usually 'current' or 'next'
 def select_semester(semester)
   visit '/semesters'
-  semester = semester.camelcase
-  semester.gsub! 'Current', 'This'
-  find(semester_selector(semester)).click
+  click_link semester_selector_link_id(semester)
 end
 

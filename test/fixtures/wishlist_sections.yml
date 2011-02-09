@@ -1,5 +1,11 @@
-wish_csc216_003:      #timing conflict with eng 101
-  section: sp10csc216_003
+wish_csc216_001:      #timing conflict with csc 226-001
+  section: sp10csc216_001
 
-wish_csc440_001:
-  section: sp10csc440_001
+wish_csc216_004:
+  section: sp10csc216_004
+
+wish_csc226_001:      #timing conflict with csc 216-001
+  section: sp10csc226_001
+
+wish_eng101_001:
+  section: sp10eng101_001
