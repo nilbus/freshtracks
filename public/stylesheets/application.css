@@ -114,6 +114,12 @@ td.button {
   width: 1em;
 }
 
+td.button form{
+	display: inline;
+}
+
+
+
 tr.main {
   cursor: pointer;
 }
