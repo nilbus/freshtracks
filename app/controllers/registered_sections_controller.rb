@@ -7,7 +7,7 @@ class RegisteredSectionsController < ApplicationController
 
   # register for a class
   def create    
-    @registered_section = RegisteredSection.create(params[:registered_section])
+    @registered_section = RegisteredSection.create(params[:registered_section].merge(:user => current_user))
     respond_to do |format|
       format.html { redirect_to registered_sections_path }
       format.js { render :partial => 'created', :object => @registered_section }
