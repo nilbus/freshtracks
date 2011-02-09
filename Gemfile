@@ -6,6 +6,9 @@ gem 'rails', '3.0.3'
 #Authentication
 gem "clearance"
 
+#Scripting
+gem 'jquery-rails', '>= 0.2.6'
+
 group :development, :test do
   # Server
   gem 'mongrel', '~> 1.2.0.pre2'
