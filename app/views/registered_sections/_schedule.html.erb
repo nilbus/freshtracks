@@ -43,17 +43,17 @@
     <td><%= pluralize(course.credits, "Credit hour") %></td>
     <td class="button">
     <% if options[:schedule] %>
-        <% form_for reg_section, :html => { :method => :delete } do |f| %>
+        <%= form_for reg_section, :html => { :method => :delete } do |f| %>
           <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
         <% end %>
     <% end %>
     <% if options[:wishlist] %>
-        <% form_for reg_section, :html => { :method => :delete } do |f| %>
+        <%= form_for reg_section, :html => { :method => :delete } do |f| %>
           <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
         <% end %>
        
         
-			<% form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+			<%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
 				<%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
 			<% end %>
     <% end %>
