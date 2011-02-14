@@ -21,7 +21,7 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 <%- unique_id = generate_unique_id course.id -%>
 
 <tr id="<%=unique_id%>main" class="main" uid="<%=unique_id%>">
-  <td class="expander"><%= expand_button %></td>
+  <td class="expander <%= "#{course.subject}#{course.number}" %>"><%= expand_button %></td>
   <td><%= course.subject%><%=course.number%></td>
   <td<%= ' colspan="2"' unless options[:show_section_count] || options[:added] %>><%= course.name%></td>
   <td>

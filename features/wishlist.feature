@@ -43,7 +43,7 @@ Feature: Switch semester context
       | Subject | Number | Instructor                 |
       | CSC     | 911    | Morpheus                   |
     And I should see a caption that contains "not"
-    And this class should not have an "Add to wishlist" button:
+    And this class should not have an "Add to Schedule" button:
       | Subject | Number | Instructor                 |
       | CSC     | 911    | Morpheus                   |
 
@@ -81,7 +81,7 @@ Feature: Switch semester context
       | CSC     | 216    | Bob Dylan                  |
       | ENG     | 101    | Bob Woodward               |
     When I navigate to the "Wishlist" page
-    And I click on the link "Add all classes to schedule"
+    And I click on the (pending) link "Add all classes to schedule"
     Then my wishlist should not have these classes:
       | Subject | Number | Instructor                 |
       | CSC     | 216    | Bob Dylan                  |

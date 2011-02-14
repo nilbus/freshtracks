@@ -1,6 +1,6 @@
 <%- unique_id = generate_unique_id group.id -%>
 <tr id="<%= unique_id %>main" uid="<%=unique_id%>" class="main">
-  <td class="expander"><%= expand_button %></td>
+  <td class="expander <%= "#{group.subject}#{group.number}" %>"><%= expand_button %></td>
   <td>GRP <%=group.number%></td>
   <td><%= group.name%></td>
   <td>&nbsp;</td>

@@ -1,9 +1,10 @@
 When /^I search for "([^"]*)"$/ do |query|
-  pending # express the regexp above with the code you wish you had
+  fill_in('search', :with => 'query')
+  click_button('Search')
 end
 
 When /^I expand the course "([^"]*)"$/ do |course|
-  pending # express the regexp above with the code you wish you had
+  locate(:css, '.expander.CSC326 img').click
 end
 
 Then /^the course "([^"]*)" should not have an? "([^"]*)" (button|link)$/ do |course, clickable|
