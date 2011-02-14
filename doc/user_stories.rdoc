@@ -18,7 +18,7 @@
 - <tt>2!</tt> As a planner, I can attempt to add my entire wishlist, so I can register quickly when my date comes.
 - <tt>3!</tt> As a planner, I can remove classes from my wishlist, so my wishlist can match what I actually want to register for.
 - <tt>4</tt> As a planner, conflicts in adding my schedule are highlighted or noted, so I know to resolve them before registration time
-- <tt>5</tt> As a planner, I am notified when I add a class to my wishlist that I am not eligible to take, so I am not surprised when I can't add it.
+- <tt>5</tt> As a planner, I am notified when I add a class to my wishlist that I have unmet prerequisites for, so I am not surprised when I can't add it to my schedule.
 
 ===  As a student, I can search through available classes by major and class number or title, so I can plan or add classes to my schedule.
 - <tt>1!</tt> As a student, I can type part of a course code or title and see the matching classes, so I can find classes that I want.
@@ -42,7 +42,7 @@
 
 ===  As a student, I can take action on a class in my degree plan or search, such as adding it, so the degree plan and search is integrated with course registration.
 - <tt>1!</tt> As an adder, I can attempt to add a class that I find to my schedule, so I can take a class.
-- <tt>2</tt> As an adder, I see clear explanations of why I can't add a class, so I understand and resolve the problem.
+- <tt>2</tt> As an adder, I see clear explanations of why I can't add a class, such as an unmet prerequisite, so I understand and resolve the problem.
 - <tt>3</tt> As an adder, I can waitlist a section of a class that is full, so I get in if enough others drop the class.
 
 ===  As a student, I can see my schedule with classes I have added, so I know what my schedule is.
