@@ -24,14 +24,14 @@
 
 <table class="courseList" type="<%=title%>">
   <% for reg_section in section_list %>
-    
     <% section = reg_section.section
     
   	course = section.course %>
   	
   	<%- unique_id = generate_unique_id course.id -%>
+		<tbody class="<%= "#{course.code} #{section.code}" %>">
 		<tr id="<%=unique_id%>main" class="main" uid="<%=unique_id%>">
-		<td class="expander <%= "#{course.subject}#{course.number}" %>"><%= expand_button %></td>
+		<td class="expander"><%= expand_button %></td>
 		<td class="course_code"><%= course.subject%><%=course.number%></td>
 		<td class="course_title"><nobr><%= course.name%></nobr></td>
 		<td class="course_time">
@@ -84,6 +84,7 @@
 		  </div>
 		</td>
 	</tr>
+  </tbody>
   <% end %>
 </table>
 

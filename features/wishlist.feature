@@ -57,7 +57,7 @@ Feature: Switch semester context
 
   Scenario: Add a single class from the wishlist to my schedule
     Given I have logged in as a "student"
-    And I am working with the "current" semester
+    And I am working with the "next" semester
     And my wishlist has these classes:
       | Subject | Number | Instructor                 |
       | CSC     | 216    | Bob Dylan                  |
@@ -75,7 +75,7 @@ Feature: Switch semester context
 
   Scenario: Add all classes on the wishlist
     Given I have logged in as a "student"
-    And I am working with the "current" semester
+    And I am working with the "next" semester
     And my wishlist has these classes:
       | Subject | Number | Instructor                 |
       | CSC     | 216    | Bob Dylan                  |
@@ -93,7 +93,7 @@ Feature: Switch semester context
 
   Scenario: Remove classes from wishlist
     Given I have logged in as a "student"
-    And I am working with the "current" semester
+    And I am working with the "next" semester
     And my wishlist has these classes:
       | Subject | Number | Instructor                 |
       | CSC     | 216    | Bob Dylan                  |

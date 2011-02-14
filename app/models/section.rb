@@ -8,4 +8,8 @@ class Section < ActiveRecord::Base
     time_format = '%I:%M%p'
     begin_time.strftime(time_format) + "-" + end_time.strftime(time_format)
   end
+
+  def code
+    "#{number} #{professor.gsub(' ','').underscore}"
+  end
 end

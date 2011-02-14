@@ -4,7 +4,8 @@ When /^I search for "([^"]*)"$/ do |query|
 end
 
 When /^I expand the course "([^"]*)"$/ do |course|
-  locate(:css, '.expander.CSC326 img').click
+  course = course.upcase.gsub ' ', ''
+  locate("tbody.#{course} .expander img").click
 end
 
 Then /^the course "([^"]*)" should not have an? "([^"]*)" (button|link)$/ do |course, clickable|
