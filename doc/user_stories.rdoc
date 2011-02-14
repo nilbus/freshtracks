@@ -29,7 +29,7 @@
 - <tt>4</tt> As a student, I can see preview search results immediately using a Google style auto-complete input box, so the search terms are easily discoverable.
 - <tt>4</tt> As a student, I can filter the list to display any combination of open, waitlisted, and full classes, so I can be aware of classes that may open in the future.
 - <tt>5</tt> As a student, I can sign up for actual NCSU course offerings, so this system is more realistic.
-- <tt>5</tt> As a student, I can log in to my account, so my classes are separated from others'.
+- <tt>5!</tt> As a student, I can log in to my account, so my classes are separated from others'.
 - <tt>5</tt> As a student, I can use my Unity ID to log in, so my password is shared with other Unity applications.
 
 ===  As a student, I can use my degree plan to register for classes, so I don't have to use a separate website to determine which classes I need to take.
@@ -49,6 +49,7 @@
 - <tt>1!</tt> As a student, I can click "view schedule" at any time to open my schedule in a new window.
 - <tt>2!</tt> As a student, my schedule is visible on all pages where reasonable, so I can see where classes will fit in my schedule while I am browsing.
 - <tt>2!</tt> As a student, I can see a dummy graphical representation of a schedule in the View Schedule window, so I can see where it would be if implemented.
+- <tt>3!</tt> As a student, the schedule at the bottom of the page should be updated as I make changes to it and not just update when a page is loaded, so I can rely on what it is telling me.
 - <tt>4</tt> As a student, I can view a graphical representation of my schedule on a calendar.
 
 ===  As a student, I can modify my schedule, so I can optimize my schedule.
