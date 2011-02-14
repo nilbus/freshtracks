@@ -15,15 +15,21 @@
 
   <% options = {:show_wishlist_button => true,
                 :show_schedule_button => true} %>
-  
+
+<% if not @courses.empty? %>
   <table class="courseList">
     <%= render :partial => "courses/course", :collection => @courses,
                :locals => { :options => options,
                             :wishlist_section_ids => @wishlist_section_ids,
                             :registered_section_ids => @registered_section_ids } %>
   </table>
+
+<% else %>
+<h3>We didn't find any classes that matched your search.</h3>
+<% end %>
   <br/>
 
 <% end %>
 
-<%= render :partial => 'registered_sections/schedule' %>
+<% options = {:schedule => true} %>
+<%= render :partial => 'registered_sections/schedule', :locals => { :options => options }%>

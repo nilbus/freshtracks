@@ -16,4 +16,5 @@
   <% end %>
 </table>
 
-<%= render :partial => 'registered_sections/schedule' %>
+<% options = {:schedule => true} %>
+<%= render :partial => 'registered_sections/schedule', :locals => { :options => options }%>
