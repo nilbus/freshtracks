@@ -62,13 +62,29 @@ registered_section_ids = [] unless defined?(registered_section_ids)
             <%=course.description%>
           </div>
         <% end %>
-        <table class="sectionList">
-          <%= render  :partial => "sections/section",
-                      :collection => sections,
-                      :locals => { :options => options,
-                                   :wishlist_section_ids => wishlist_section_ids,
-                                   :registered_section_ids => registered_section_ids } %>
-        </table>
+        
+        <% 
+        if(sections.length != 0) 
+        #If we have sections, display a section/section partial for each
+        %>
+        
+          <table class="sectionList">
+            <%= render  :partial => "sections/section",
+                        :collection => sections,
+                        :locals => { :options => options,
+                                     :wishlist_section_ids => wishlist_section_ids,
+                                     :registered_section_ids => registered_section_ids } %>
+
+          </table>
+        
+        <% 
+        else 
+        #Otherwise, if we have no sections to display (none for this semester), say so
+        %>
+
+          <span style="padding: 0; padding-left: 2em; font-weight: bold;">This course isn't being offered this semester.</h4>
+        
+        <% end %>
       </div>
     </td>
   </tr>
