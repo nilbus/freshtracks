@@ -23,7 +23,7 @@ protected
     
     RegisteredSection.all.each do |registered_section|
       if (registered_section.section.course.searchkey == new_course_key)
-	errors.add_to_base("Unable to register for section: you are already registered for another section of this course.")
+	errors.add(:base, "Unable to register for section: you are already registered for another section of this course.")
       end
     end
   end
@@ -33,7 +33,7 @@ protected
     
     RegisteredSection.all.each do |registered_section|
       if(time_conflict?(new_section, registered_section.section))
-	errors.add_to_base("Unable to schedule class: you are already scheduled for another class at that time.")
+	errors.add(:base, "Unable to schedule class: you are already scheduled for another class at that time.")
       end
     end
   end
