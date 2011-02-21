@@ -25,6 +25,6 @@ end
 Then /^the layout should indicate that I am working with the "([^"]*)" semester$/ do |semester|
   pending
   semester_name = "Spring 2010 (fixme)"
-  page.should have_content("Current semester: ", semester_name)
+  page.should have_content("Semester: ", semester_name)
 end
 

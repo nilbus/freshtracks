@@ -22,7 +22,7 @@ end
 
 <% if session[:semester] %>
 <div class="rightAlign">
-Current semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
+Semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
 </div>
 
 <ul class="tab-list">
