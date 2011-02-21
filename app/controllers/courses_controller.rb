@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   def index
     begin
                                            # sqlite query
-      @courses = Course.all(:conditions => ['semester_id = ? AND (courses.subject || courses.number || \' - \' || courses.name) LIKE ?',
+      @courses = Course.all(:conditions => ['semester_id = ? AND (courses.subject || courses.number || \' - \' || courses.name) ILIKE ?',
                                             session[:semester],
                                             '%' + params[:search] + '%'],
                             :joins => :sections,
