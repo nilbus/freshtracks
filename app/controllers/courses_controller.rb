@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   # search courses; returns matching
   # Currently only uses one search term
   def index
-    search_terms = params[:search].split ' '
+    search_terms = params[:search].split(' ') rescue []
 
     # Build the query
     c = Course
