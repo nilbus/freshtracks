@@ -23,6 +23,9 @@ end
 # semester is usually 'current' or 'next'
 def select_semester(semester)
   visit '/semesters'
-  click_link semester_selector_link_id(semester)
+  semester_selector_id = semester_selector_link_id(semester)
+  semester_id = page.first("##{semester_selector_id}")['href'].split('/').last rescue "Couldn't find semester to select. #{$!}"
+  @current_semester = Semester.find(semester_id)
+  click_link semester_selector_id
 end
 

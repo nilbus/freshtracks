@@ -17,14 +17,28 @@ Given /^my wishlist has th[ie]se? class[es]{0,2}:$/ do |class_table|
   end
 end
 
+Given /^my wishlist is empty$/ do
+  WishlistSection.where(:user_id => @current_user.id).each &:destroy
+end
+
 When /^I wishlist th[ie]se? class[es]{0,2}:$/ do |class_table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
-  
+  return pending
+  classes = class_table.hashes
+  classes.each do |c|
+    subject = c['Subject']
+    number = c['Number']
+    instructor = c['Instructor'].gsub(' ', '').underscore
+
+    #save_and_open_page
+    expand_course "#{subject}#{number}"
+    within ".#{subject}#{number} .#{instructor}" do
+      click_link_or_button 'Add to Wishlist'
+    end
+  end
 end
 
 Then /^my wishlist should( not)? have th[ie]se? class[es]{0,2}:$/ do |negative, class_table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  classes = class_table.hashes
+  wishlisted = WishlistSection.where(:user_id => @current_user.id, :semester_id => @current_semester.id)
 end
 

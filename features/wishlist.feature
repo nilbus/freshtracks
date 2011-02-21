@@ -6,13 +6,14 @@ Feature: Switch semester context
   Scenario: Wishlist classes with overlapping times
     Given I have logged in as a "student"
     And I am working with the "next" semester
+    And my wishlist is empty
     When I search for "csc2"
     And I wishlist these classes:
-      | Subject | Number | Instructor                 | Times           |
+      | Subject | Number | Instructor                 | Times (ignored) |
       | CSC     | 216    | Jamison                    | MWF 09:10-10:00 |
       | CSC     | 226    | Malcolm Reynolds           | MW  09:00-10:15 |
     Then my wishlist should have these classes:
-      | Subject | Number | Instructor                 | Times           |
+      | Subject | Number | Instructor                 | Times (ignored) |
       | CSC     | 216    | Jamison                    | MWF 09:10-10:00 |
       | CSC     | 226    | Malcolm Reynolds           | MW  09:00-10:15 |
 
