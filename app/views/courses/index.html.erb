@@ -11,12 +11,12 @@
        Example: <tt>computer</tt> - Find courses with Computer in the title.</p>
   </div>
 <% else %>
-  Searching for: <%= (params[:search].empty? ? 'All courses' : h(params[:search]) ) %><p/>
+  Searching for: <%= (params[:search].blank? ? 'All courses' : h(params[:search]) ) %><p/>
 
   <% options = {:show_wishlist_button => true,
                 :show_schedule_button => true} %>
 
-<% if not @courses.empty? %>
+<% if @courses.any? %>
   <table class="courseList">
     <%= render :partial => "courses/course", :collection => @courses,
                :locals => { :options => options,
