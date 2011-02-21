@@ -1,4 +1,4 @@
-class PassedCourse < ActiveRecord::Base
+class CompletedCourse < ActiveRecord::Base
   belongs_to :course
   belongs_to :user
 end
