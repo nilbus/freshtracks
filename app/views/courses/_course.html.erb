@@ -68,7 +68,7 @@ registered_section_ids = [] unless defined?(registered_section_ids)
         #If we have sections, display a section/section partial for each
         %>
         
-          <table class="sectionList">
+          <table class="section-list">
             <%= render  :partial => "sections/section",
                         :collection => sections,
                         :locals => { :options => options,

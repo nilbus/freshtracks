@@ -15,14 +15,14 @@
 
 <div class="spacer"></div>
 <h1 class="inline"><%=title%></h1>
-<div class="rightAlign scheduleLink"><%=extra_link unless section_list.empty?%></div>
+<div class="right-align schedule-link"><%=extra_link unless section_list.empty?%></div>
 
 <%- if section_list.empty? -%>
 <h4 type="<%=title%>" class="empty">Your <%=title.downcase%> is currently empty.</h4>
 <%- else -%>
 <h4 type="<%=title%>" class="empty" style="display:none">Your <%=title.downcase%> is currently empty.</h4>
 
-<table class="courseList" type="<%=title%>">
+<table class="course-list" type="<%=title%>">
   <% for reg_section in section_list %>
     <% section = reg_section.section
     

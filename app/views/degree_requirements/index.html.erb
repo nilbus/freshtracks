@@ -1,6 +1,6 @@
 <h1>Register for a Required Course</h1>
 
-<table class="courseList">
+<table class="course-list">
   <% for req in @degree_requirements %>
     <% classname = req.required.class.name.underscore %>
     <% # classname will be either group or section %>

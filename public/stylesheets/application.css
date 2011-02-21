@@ -8,8 +8,8 @@ body {
   font-size: 10pt;
 }
 
-.courseList,
-.sectionList {
+.course-list,
+.section-list {
   border-spacing: 0px;
   border-spacing-bottom: 0px;
   border: 2px solid black;
@@ -54,20 +54,20 @@ tr.error td {
   width: 20%;
 }
 
-.courseList td {
+.course-list td {
 	width: auto;
 	padding-right: 1em;
 }
 
-.courseList td.course_title{
+.course-list td.course_title{
 
 }
 
-.courseList td.course_time{
+.course-list td.course_time{
 
 }
 
-.courseList td.button{
+.course-list td.button{
 	padding-right: none;
 	text-align: center;
 }
@@ -85,13 +85,13 @@ h1 {
   color: #070;
 }
 
-.rightAlign {
+.right-align {
   float: right;
   margin-right: 1em;
   text-align: right;
 }
 
-.scheduleLink {
+.schedule-link {
   margin: 2em 2em 0 0;
 }
 
@@ -125,7 +125,7 @@ tr.main {
 }
 
 tr.main > td,
-.sectionList td {
+.section-list td {
   padding: .1em;
 }
 
@@ -164,12 +164,12 @@ ul.tab-list > li {
 }
 
 ul.tab-list > li:hover,
-ul.tab-list > li#selectedTab {
+ul.tab-list > li#selected-tab {
 	border: 2px #900 solid;
   margin: 1px;
 }
 
-ul.tab-list > li#selectedTab {
+ul.tab-list > li#selected-tab {
 	border-bottom: none;
 }
 

@@ -3,7 +3,7 @@
   	<%= render :partial => 'registered_sections/schedule', 
 					 :locals => { :options => { :wishlist => true} }%>
   <!--
-	  <table class="courseList">
+	  <table class="course-list">
     <% for wsection in @wishlist_sections %>
       <%= render :partial => "courses/course",
                  :object => wsection.section,

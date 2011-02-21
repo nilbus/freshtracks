@@ -12,7 +12,7 @@ end
 %>
 
 <% if session[:semester] %>
-<div class="rightAlign">
+<div class="right-align">
 Semester: <%= Semester.find(session[:semester]).name %><br>
 <%= link_to "Change semester", semesters_path%>
 </div>

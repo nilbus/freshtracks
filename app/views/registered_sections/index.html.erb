@@ -4,7 +4,7 @@
 <img src="/images/schedule.png">
 </p>
 
-<table class="courseList">
+<table class="course-list">
   <% for reg_section in @registered_sections %>
   <%= render  :partial => 'courses/course', 
               :object => reg_section.section,
