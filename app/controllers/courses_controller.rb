@@ -4,12 +4,17 @@ class CoursesController < ApplicationController
   # search courses; returns matching
   # Currently only uses one search term
   def index
-    @courses = Course.where('semester_id = ? AND (courses.subject || courses.number || \' - \' || courses.name) ILIKE ?',
-                            session[:semester],
-                            '%' + params[:search] + '%')
-    @courses = @courses.joins(:sections).includes(:sections).order("courses.subject || courses.number")
-    @courses = @courses.group(Course.new.attributes.keys.map{|field| "courses.#{field}"}.join(", ") + ', courses.id')
-    @courses = @courses.all
+    search_terms = params[:search].split ' '
+
+    # Build the query
+    c = Course
+    c = c.joins(:sections).includes(:sections).order("courses.subject || courses.number")
+    c = c.where(:sections => {:semester_id => session[:semester]})
+    c = c.group(Course.new.attributes.keys.map{|field| "courses.#{field}"}.join(", ") + ', courses.id')
+    search_terms.each do |term|
+      c = c.where('(courses.subject || courses.number || \' - \' || courses.name) ILIKE ?', '%' + term + '%')
+    end
+    @courses = c.all
 
     # Load schedule so we don't display buttons for things already added
     @registered_section_ids = RegisteredSection.all.map &:section_id
