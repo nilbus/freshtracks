@@ -11,3 +11,9 @@ Feature: Search
       | Subject | Number |
       | CSC     | 316    |
 
+  Scenario: Expand all search results
+    Given I have logged in as a "student"
+    And I am working with the "next" semester
+    When I search for "csc"
+    And I double-click on an expander
+    Then all the results in the group should be expanded
