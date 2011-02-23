@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Framework
-gem 'rails', '3.0.3'
+gem 'rails', '~> 3.0.4'
 
 #Authentication
 gem "clearance"
