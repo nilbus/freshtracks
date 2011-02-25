@@ -166,7 +166,7 @@ DEPENDENCIES
   launchy
   mongrel (~> 1.2.0.pre2)
   pg
-  rails (~> 3.0.3)
+  rails (~> 3.0.4)
   rspec
   rspec-rails
   ruby-debug19
