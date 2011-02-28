@@ -97,8 +97,8 @@ jQuery.fn.makeRowExpander = function() {
   this.find("input:visible").click(function(event) { event.stopPropagation(); });
   this.dblclick(function() {
     var courseList = $(this).closest('.course-list');
-    var hasCollapsedRows = courseList.find('.expander>img').hasClass('collapsed');
-    courseList.find('.main').each(function(index, element) {
+    var hasCollapsedRows = courseList.children().children('.main').children('.expander').children('img').hasClass('collapsed');
+    courseList.children().children('.main').each(function(index, element) {
       expandRow(element, hasCollapsedRows);
     });
   });
