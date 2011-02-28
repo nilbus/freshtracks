@@ -18,6 +18,12 @@ body {
   width: 95%;
 }
 
+.course-list-header {
+  color: #966;
+  font-size: 13px;
+  margin-left: 20px;
+}
+
 .description {
   margin-left: 1em;
   margin-bottom: .2em;

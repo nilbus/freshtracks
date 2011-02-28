@@ -13,6 +13,7 @@ $(document).ready(function() {
   $(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section, .edit_registered_section").submitWithAjax();
   $(".rowRemover").makeRowRemover();
   $(".main").makeRowExpander();
+  $(".course-list").not(".course-list .course-list").before('<div class="course-list-header">Double-click a row to expand all rows</div>');
 })
 
 jQuery.fn.makeIntoSpiner = function() {
@@ -98,7 +99,6 @@ jQuery.fn.makeRowExpander = function() {
     var courseList = $(this).closest('.course-list');
     var hasCollapsedRows = courseList.find('.expander>img').hasClass('collapsed');
     courseList.find('.main').each(function(index, element) {
-      console.log(hasCollapsedRows);
       expandRow(element, hasCollapsedRows);
     });
   });
