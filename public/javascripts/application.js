@@ -55,42 +55,62 @@ jQuery.fn.makeRowRemover = function() {
 // Row Expander
 
 jQuery.fn.makeRowExpander = function() {
-  this.click(function() {
-    var row = $(this);
+  // expand can be undefined(toggle), true(expand), false(collapse)
+  var expandRow = function(row, expand) {
+    row = $(row);
     
     //The row to be slid
-    var slider = $("[uid=" + $(this).attr("uid") + "] .slider").eq(0);
+    var slider = $("[uid=" + row.attr("uid") + "] .slider").eq(0);
     
     //The button on this row, to be changed
     var button = row.children(".expander");
     
     var id = row.attr("id");
 
-    var displayStatus = slider.css("display");
-    slider.slideToggle();
-    if (displayStatus == "none") {
-      // expand
+    var previouslyExpanded = button.children().hasClass('expanded');
+    var nowExpanded;
+    slider.stop(true, true);
+    if (expand) {
+      slider.slideDown();
+      nowExpanded = true;
+    } else if (expand == false) {
+      slider.slideUp();
+      nowExpanded = false;
+    } else {
+      slider.slideToggle();
+      nowExpanded = !previouslyExpanded;
+    }
+    if (nowExpanded) {
+      // update button
       button.html(collapseButton());
     } else {
-      // shrink
+      // update button
+      button.html(expandButton());
+
       // also shrink descendents
-      setTimeout(function() {
-        $("#" + id + " + .extra .expander").html(expandButton());
-        button.html(expandButton());
-      }, 400);
       $("#" + id + " + .extra td > div").slideUp();
     }
-  })
+  };
+
+  this.click(function() { expandRow(this); });
   this.find("input:visible").click(function(event) { event.stopPropagation(); });
+  this.dblclick(function() {
+    var courseList = $(this).closest('.course-list');
+    var hasCollapsedRows = courseList.find('.expander>img').hasClass('collapsed');
+    courseList.find('.main').each(function(index, element) {
+      console.log(hasCollapsedRows);
+      expandRow(element, hasCollapsedRows);
+    });
+  });
   
   return this;
 };
 
 // These are also defined in helpers/application.rb
 function expandButton() {
-  return '<img border="0" src="/images/add_greyscale.png">';
+  return '<img border="0" src="/images/add_greyscale.png" class="collapsed">';
 }
 
 function collapseButton() {
-  return '<img border="0" src="/images/delete_greyscale.png">';
+  return '<img border="0" src="/images/delete_greyscale.png" class="expanded">';
 }
