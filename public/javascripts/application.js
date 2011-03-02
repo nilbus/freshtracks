@@ -14,7 +14,15 @@ $(document).ready(function() {
   $(".rowRemover").makeRowRemover();
   $(".main").makeRowExpander();
   $(".course-list").not(".course-list .course-list").before('<div class="course-list-header">Double-click a row to expand all rows</div>');
+  $("input:submit").button();
+  $("input:text").textbox();
 })
+
+jQuery.fn.textbox = function() {
+  this.addClass('ui-widget ui-state-default');
+  this.focus(function(e){$(this).addClass('ui-state-active')});
+  this.blur(function(e){$(this).removeClass('ui-state-active')});
+};
 
 jQuery.fn.makeIntoSpiner = function() {
   this.html('<img src="/images/ajax-loader.gif" title="loading">');
