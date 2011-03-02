@@ -1,16 +1,12 @@
 Freshtracks::Application.routes.draw do
   resources :semesters
   resources :courses do
-    collection do
-     :auto_complete_for_searchkey
-    end
+    get :autocomplete_course_searchkey, :on => :collection
   end
 
   resources :degree_requirements
   resources :wishlist_sections do
-    collection do
-      post :register_all
-    end
+    post :register_all, :on => :collection
   end
 
   resources :registered_sections

@@ -8,6 +8,7 @@ gem "clearance"
 
 #Scripting
 gem 'jquery-rails', '>= 0.2.6'
+gem 'rails3-jquery-autocomplete'
 
 group :development, :test do
   # Server
@@ -24,7 +25,7 @@ group :development, :test do
 
   # Functional testing
   gem 'cucumber'
-  gem 'cucumber-rails', '~> 0.4.0.beta.1'
+  gem 'cucumber-rails', '>= 0.4.0.beta.1'
   gem 'capybara'
   gem 'culerity'
   gem 'celerity', :require => nil # JRuby only. Make it available but don't require it in any environment.

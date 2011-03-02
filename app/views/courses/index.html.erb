@@ -1,7 +1,7 @@
 <h1>Register for a Course</h1>
 
 <%= form_tag '/courses', :method => :get do -%>
-    <%= text_field_tag 'search', h(params[:search]) %> <%= submit_tag 'Search', :name => nil %>
+  <%= autocomplete_field_tag 'search', h(params[:search]), autocomplete_course_searchkey_courses_path, :class => 'search' %> <%= submit_tag 'Search', :name => nil %>
 <% end -%>
 
 <% if @courses.nil? %>

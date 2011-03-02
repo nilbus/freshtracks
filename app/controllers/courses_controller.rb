@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  #autocomplete_for :searchkey
+  autocomplete :course, :searchkey, :full => true
 
   # search courses; returns matching
   # Currently only uses one search term

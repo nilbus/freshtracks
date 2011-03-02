@@ -8,6 +8,10 @@ body {
   font-size: 10pt;
 }
 
+input.search {
+  width: 450px;
+}
+
 .course-list,
 .section-list {
   border-spacing: 0px;
