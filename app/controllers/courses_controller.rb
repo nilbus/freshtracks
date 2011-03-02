@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
     c = c.where(:sections => {:semester_id => session[:semester]})
     c = c.group(Course.new.attributes.keys.map{|field| "courses.#{field}"}.join(", ") + ', courses.id')
     search_terms.each do |term|
-      c = c.where('(courses.subject || courses.number || \' - \' || courses.name) ILIKE ?', '%' + term + '%')
+      c = c.where('courses.searchkey ILIKE ?', "%#{term}%")
     end
     @courses = c.all
 
