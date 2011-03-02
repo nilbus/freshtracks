@@ -3,4 +3,11 @@ passed_csc116:
   degree_requirement: java1
   course: csc116
   semester: fall2009
-  grade: 'Bplus'
+  grade: 'B+'
+
+passed_history:
+  user: student
+  degree_requirement: history1 
+  course: hi208
+  semester: spring2010
+  grade: 'C-'

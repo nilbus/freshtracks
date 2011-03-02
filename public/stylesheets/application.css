@@ -41,7 +41,7 @@ tr.error td {
 
 .expander {
   text-align: center; 
-  width: 1%;
+  width: 1% !important;
 }
 
 .expander + td {

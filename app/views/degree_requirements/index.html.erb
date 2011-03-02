@@ -1,7 +1,8 @@
 <h1>Register for a Required Course</h1>
 
+<h3>Unmet Degree Requirements:</h3>
 <table class="course-list">
-  <% for req in @degree_requirements %>
+  <% for req in @incomplete_requirements %>
     <% classname = req.required.class.name.underscore %>
     <% # classname will be either group or course %>
     
@@ -15,6 +16,19 @@
                              :registered_section_ids => @registered_section_ids } %>
   <% end %>
 </table>
+
+<h3>Completed Degree Requirements</h3>
+
+<table class="course-list" id="completed-reqs">
+  <% for req in @complete_requirements %>
+
+    <%= render :partial => "degree_requirements/completed_req",
+              :object => req %>
+
+  <% end %>
+
+</table>
+
 
 <% options = {:schedule => true} %>
 <%= render :partial => 'registered_sections/schedule', :locals => { :options => options }%>

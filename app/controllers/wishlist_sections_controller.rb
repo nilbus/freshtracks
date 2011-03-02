@@ -1,8 +1,12 @@
 class WishlistSectionsController < ApplicationController
   # show wishlist
   def index
-    @wishlist_sections = WishlistSection.all(:joins => :section,
-                                             :conditions => { 'sections.semester_id' => session[:semester], 'user_id' => current_user.id })
+    w = WishlistSection
+    w = w.joins(:section)
+    w = w.where(:sections => {:semester_id => session[:semester]},
+                :user_id => current_user.id)
+    @wishlist_sections = w.all
+
   end
 
   #We can probably refactor this respond_to format

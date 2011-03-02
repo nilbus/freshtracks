@@ -21,50 +21,58 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 <%- unique_id = generate_unique_id course.id -%>
 
 <tbody class="<%= course.code %>">
+
   <tr id="<%=unique_id%>main" class="main" uid="<%=unique_id%>">
     <td class="expander"><%= expand_button %></td>
     <td><%= course.subject%><%=course.number%></td>
     <td<%= ' colspan="2"' unless options[:show_section_count] || options[:added] %>><%= course.name%></td>
     <td>
       <%- if options[:added] -%>
+        
         <nobr>
         <%= sections.first.days %> 
         <%= sections.first.begin_time.strftime(time_format) %>-<%= sections.first.end_time.strftime(time_format) %>
         </nobr>
         </td>
+        
         <% if options[:show_drop_button] %>
           <td class="button">
             <%= form_for options[:added_object], :html => { :method => :delete } do |f| %>
               <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
             <% end %>
         <% end %>
+
         <% if options[:show_remove_button] %>
           <td class="button">
             <%= form_for options[:added_object], :html => { :method => :delete } do |f| %>
               <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
             <% end %>
         <% end %>
+      
       <%- else -%>
         <%= pluralize(course.credits, "Credit hour") %>
       <%- end -%>
     </td>
+    
     <%- if options[:show_section_count] -%>
     <td colspan="100"><%= pluralize(sections.length, "section") %>
     <%- end -%>
+  
   </tr>
+
   <tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">
     <td colspan="100">
       <div class="slider">
         <% # I'm undecided whether or not this should be included in wishlist and registered course lists. -EHA
         %>
-        <% unless false && options[:added] %>
+        
+        <% if options[:added].nil? or options[:added] %>
           <div class="description">
             <%=course.description%>
           </div>
         <% end %>
         
-        <% 
-        if(sections.length != 0) 
+        <% if(sections.length != 0) 
         #If we have sections, display a section/section partial for each
         %>
         
@@ -77,8 +85,7 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 
           </table>
         
-        <% 
-        else 
+        <% else 
         #Otherwise, if we have no sections to display (none for this semester), say so
         %>
 

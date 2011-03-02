@@ -1,0 +1,20 @@
+<%- unique_id = generate_unique_id completed_req.id -%>
+<tbody class="<%= completed_req.id %>">
+  <tr id="<%= unique_id %>main" uid="<%=unique_id%>" class="main">
+    <td class="expander"><%= expand_button %></td>
+
+    <td><%=completed_req.course.name%></td> 
+    <td>Grade: <%=completed_req.grade%></td>
+
+
+  </tr>
+
+  <tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">
+    <td colspan="3">
+      <div class="slider" style="width: 80%; margin-left: 1em ;">
+        <div style="width: 50%; float: left">Fulfills: <%= completed_req.degree_requirement.required.name %> </div>
+        <div style="width: 50%; float: left"><%=completed_req.semester.name%></div>
+      </div>
+    </td>
+  </tr>
+</tbody>
