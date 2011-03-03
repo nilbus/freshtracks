@@ -26,8 +26,9 @@
 - <tt>2!</tt> As a student, each word in my search terms can independently match anywhere in the course code and title.
 - <tt>2!</tt> As a student, courses that I search for appear in list form where each item can be expanded in-page to show details, so I can get information without leaving the page.
 - <tt>3!</tt> As a student, I can expand all search results in one click, so I can quickly compare the details of all results.
-- <tt>4</tt> As a student, I can see preview search results immediately using a Google style auto-complete input box, so the search terms are easily discoverable.
+- <tt>4!</tt> As a student, I can see preview search results immediately using an auto-complete input box, so the search terms are easily discoverable.
 - <tt>4</tt> As a student, I can filter the list to display any combination of open, waitlisted, and full classes, so I can be aware of classes that may open in the future.
+- <tt>5</tt> As a student, when I search with multiple terms (separated by space), the autocomplete recognizes this, so the visual feedback matches the actual capabilities of the search.
 - <tt>5</tt> As a student, I can sign up for actual NCSU course offerings, so this system is more realistic.
 - <tt>5!</tt> As a student, I can log in to my account, so my classes are separated from others'.
 - <tt>5</tt> As a student, I can use my Unity ID to log in, so my password is shared with other Unity applications.
