@@ -16,6 +16,7 @@ $(document).ready(function() {
   $(".course-list").not(".course-list .course-list").before('<div class="course-list-header">Double-click a row to expand all rows</div>');
   $("input:submit").button();
   $("input:text").textbox();
+  $("input:password").textbox();
 })
 
 jQuery.fn.textbox = function() {
