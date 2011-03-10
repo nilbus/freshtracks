@@ -18,7 +18,7 @@
 </table>
 
 <h3>Completed Degree Requirements</h3>
-
+<% if @complete_requirements.size > 0 %>
 <table class="course-list" id="completed-reqs">
   <% for req in @complete_requirements %>
 
@@ -28,6 +28,9 @@
   <% end %>
 
 </table>
+<% else %>
+<h4>You haven't completed any courses yet. You must be new around here!</h4>
+<% end %>
 
 
 <% options = {:schedule => true} %>
