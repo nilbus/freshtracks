@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   include Clearance::Authentication
   protect_from_forgery
-  #layout proc { |controller| controller.request.xhr? ? nil : 'mypackportal' }
-  layout proc { |controller| controller.request.xhr? ? nil : 'freshtracks' }
+  layout proc { |controller| controller.request.xhr? ? nil : 'application' }
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
