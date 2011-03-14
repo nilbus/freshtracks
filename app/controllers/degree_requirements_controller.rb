@@ -4,8 +4,8 @@ class DegreeRequirementsController < ApplicationController
     @degree_requirements = DegreeRequirement.all(:include => :required)
 
     # Load schedule so we don't display buttons for things already added
-    @registered_section_ids = RegisteredSection.all.map &:section_id
-    @wishlist_section_ids = WishlistSection.all.map &:section_id
+    @registered_section_ids = RegisteredSection.where(:user_id => current_user).map &:section_id
+    @wishlist_section_ids = WishlistSection.where(:user_id => current_user).map &:section_id
    
     #Get all the degree requirements and completed courses (for the current user)
     reqs = DegreeRequirement.all
