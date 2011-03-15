@@ -1,3 +1,11 @@
+<p style="width:40em">
+Go ahead and sign up for a throwaway account. Why "throwaway"? Because we redeploy and wipe the database all the time. 
+</p>
+
+<p style="width:40em">
+Since this is a throwaway account, you <b>don't have to use an actual email address</b>, it just has to pass our simple validations that it <i>looks</i> like an email address. Also, you don't have to use a strong password, and <b>shouldn't re-use one of your favorite passwords</b>. They're stored as a hash on our server, meaning we can't look at them easily, but that's no reason to use a potentially valuable password.
+</p>
+
 <%= form.error_messages.gsub("prohibited this user from being saved", "stopped us from creating your account") %>
 <div class="text_field">
   <%= form.label :email %>
