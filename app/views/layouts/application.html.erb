@@ -4,22 +4,22 @@
   <meta charset="utf-8"/>
   <%= csrf_meta_tag %>
 
+  <title>FreshTracks</title>
+
   <!-- The 1140px Grid -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="stylesheets/1140.css" type="text/css" media="screen" />
   <!--[if lte IE 9]>
-  <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen" />
   <![endif]-->
   <!-- Type and image presets -->
-  <link rel="stylesheet" href="css/typeimg.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="stylesheets/typeimg.css" type="text/css" media="screen" />
   <!-- Make minor type adjustments for 1024 monitors -->
-  <link rel="stylesheet" href="css/smallerscreen.css" media="only screen and (max-width: 1023px)" />
+  <link rel="stylesheet" href="stylesheets/smallerscreen.css" media="only screen and (max-width: 1023px)" />
   <!-- Resets grid for mobile -->
-  <link rel="stylesheet" href="css/mobile.css" media="handheld, only screen and (max-width: 767px)" />
-  <!-- Put your layout here -->
-  <%'(unused)<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />'%>
+  <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-width: 767px)" />
 
-  <%= stylesheet_link_tag 'application', 'jquery-ui-1.8.10.custom' %>
+  <%= stylesheet_link_tag 'application', 'jquery-ui-1.8.10.custom', 'layout' %>
   <% # helper methods below are defined in app/helpers/application_helper.rb %>
   <% include_filename = current_action_include_filename(controller) %>
   <%= stylesheet_link_tag include_filename if css_exists?(include_filename) %>
@@ -29,10 +29,9 @@
 
 </head>
 <body>
-<div style="border: 2px #CC0000 solid; width: 15em; padding: 1em; margin-bottom: 2ex;">
-<span style="font-size: x-large; color: #C00; font-weight: bold; font-family: ubuntu, helvetica, sans-serif">FreshTracks</span>
-</div>
-
+<header>
+  <span style="font-size: 60px; color: #C00; font-weight: bold; font-family: ubuntu, helvetica, sans-serif"><br>FreshTracks</span>
+</header>
 
 <%
 if(params[:action] == "index")
@@ -48,27 +47,29 @@ end
 %>
 
 <% if session[:semester] %>
-<div class="right-align">
-Semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
-</div>
-
-<ul class="tab-list">
-  <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"' : '' %>>
-  <%= link_to "Search", courses_path %>
-  </li>
-  <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"' : '' %>>
-  <%= link_to degree_requirements_path do  %>
-    <nobr>Degree Requirements</nobr>
-  <% end %>
-  </li>
-  <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"' : '' %>>
-  <%= link_to "Wishlist", wishlist_sections_path %>
-  </li>
-</ul>
-
+  <div class="right-align">
+  Semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
+  </div>
 <% end %>
-<div style="border: 2px #C00 solid; padding: 1ex;">
+
+<nav>
+  <ul>
+    <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"' : '' %>>
+    <%= link_to "Search", courses_path %>
+    </li>
+    <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"' : '' %>>
+    <%= link_to degree_requirements_path do  %>
+      <nobr>Degree Requirements</nobr>
+    <% end %>
+    </li>
+    <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"' : '' %>>
+    <%= link_to "Wishlist", wishlist_sections_path %>
+    </li>
+  </ul>
+</nav>
+
+<section class="container">
 <%= yield %>
-</div>
+</section><!--container-->
 </body>
 </html>

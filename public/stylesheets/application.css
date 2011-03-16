@@ -1,80 +1,15 @@
-input.search {
-  width: 450px;
+a {
+  color: #900;
 }
 
-.course-list,
-.section-list {
-  border-spacing: 0px;
-  border-spacing-bottom: 0px;
-  border: 2px solid black;
-  margin-left: 1em;
-  margin-bottom: .2em;
-  width: 95%;
-}
-
-.course-list-header {
-  color: #966;
-  font-size: 13px;
-  margin-left: 20px;
-}
-
-.description {
-  margin-left: 1em;
-  margin-bottom: .2em;
-}
-
-.extra > td > div {
+.extra.slider {
   display: none;
 }
 
-tr.error td {
+.error div {
 	padding-left: 2em;
 	color: #d00;
 	font-weight: bold;
-}
-
-.expander {
-  text-align: center; 
-  width: 1% !important;
-}
-
-.expander + td {
-  width: 10%;
-}
-
-.expander + td + td {
-  width: 50%;
-}
-
-.expander + td + td + td {
-  width: 20%;
-}
-
-.expander + td + td + td + td {
-  width: 20%;
-}
-
-.course-list td {
-	width: auto;
-	padding-right: 1em;
-}
-
-.course-list td.course_title{
-
-}
-
-.course-list td.course_time{
-
-}
-
-.course-list td.button{
-	padding-right: none;
-	text-align: center;
-}
-
-
-h1 {
-  color: #900;
 }
 
 .inline {
@@ -95,81 +30,16 @@ h1 {
   margin: 2em 2em 0 0;
 }
 
-.sectionlist {
-  background-color: #fff;
-}
-
-.sectionlist td {
-  background-color: #f7f3d9;
-  border-bottom: 2px white solid;
-}
-
 .spacer {
   display: block;
   height: 2em;
-  width: 100%;
 }
 
-td.button {
-  width: 1em;
-}
-
-td.button form{
+.button form{
 	display: inline;
 }
 
-
-
-tr.main {
+.main {
   cursor: pointer;
-}
-
-tr.main > td,
-.section-list td {
-  padding: .1em;
-}
-
-tr.main,
-tr.extra {
-  border: 2px solid black;
-}
-
-tr.main {
-  background-color: #f7f3d9;
-}
-
-tr.extra {
-  background-color: #fff;
-}
-
-ul.tab-list {
-	display: inline;
-	list-style: none;
-  margin-left: -2em;
-}
-
-ul.tab-list a {
-  color: #000;
-  font-size: 1.1em;
-  /*font-weight: bold;*/
-	text-decoration: none;
-}
-
-ul.tab-list > li {
-	background: #f7f3d9;
-	border: 1px #000 solid;
-	display: inline;
-	margin: 2px;
-	padding: .2em .6em .2em .6em;
-}
-
-ul.tab-list > li:hover,
-ul.tab-list > li#selected-tab {
-	border: 2px #900 solid;
-  margin: 1px;
-}
-
-ul.tab-list > li#selected-tab {
-	border-bottom: none;
 }
 

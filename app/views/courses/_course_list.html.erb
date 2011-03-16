@@ -1,6 +1,7 @@
-  <table class="course-list">
+<% options ||= {} %>
+  <div class="course-list">
     <%= render :partial => "courses/course", :collection => course_list,
-               :locals => { :options => defined?(options) ? options : {},
+               :locals => { :options => options,
                             :wishlist_section_ids => wishlist_section_ids,
                             :registered_section_ids => registered_section_ids } %>
-  </table>
+  </div><!--course-list-->

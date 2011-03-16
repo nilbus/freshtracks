@@ -13,7 +13,7 @@ $(document).ready(function() {
   $(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section, .edit_registered_section").submitWithAjax();
   $(".rowRemover").makeRowRemover();
   $(".main").makeRowExpander();
-  $(".course-list").not(".course-list .course-list").before('<div class="course-list-header">Double-click a row to expand all rows</div>');
+  $(".course-list").not(".course-list .course-list").before('<div class="row course-list-header">Double-click a row to expand all rows</div>');
   $("input:submit").button();
   $("input:text").textbox();
   $("input:password").textbox();
@@ -70,7 +70,7 @@ jQuery.fn.makeRowExpander = function() {
     row = $(row);
     
     //The row to be slid
-    var slider = $("[uid=" + row.attr("uid") + "] .slider").eq(0);
+    var slider = $("[uid=" + row.attr("uid") + "].slider").eq(0);
     
     //The button on this row, to be changed
     var button = row.children(".expander");

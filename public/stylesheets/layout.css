@@ -1,9 +1,125 @@
 /* Layout for desktop version */
 
 body {
-
+  background: #f4f4f4 url('images/gray_texture_1.jpg');
 }
 
+body>header { 
+  background: #33363a url('images/header_texture_1.png');
+  height: 80px;
+  width: 100%;
+}
+
+nav ul {
+  display: inline;
+  list-style: none;
+}
+
+nav ul a {
+  font-size: 16px;
+}
+
+nav ul > li {
+	background: #f7f3d9;
+	border: 1px #000 solid;
+	display: inline;
+}
+
+nav ul > li:hover,
+nav ul > li#selected-tab {
+	border: 2px #900 solid;
+  margin: 1px;
+}
+
+nav ul.tab-list > li#selected-tab {
+	border-bottom: none;
+}
+
+section header h1 {
+  margin-top: 40px;
+}
+
+section header {
+  border-bottom: 2px solid #2d3335;
+  box-shadow: 0 1px 0 0 white;
+  -moz-box-shadow: 0 1px 0 0 white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+}
+
+section header h1 {
+  border-bottom: 5px solid #2d3335;
+  box-shadow: 0 1px 0 0 white;
+  -moz-box-shadow: 0 1px 0 0 white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+  color: #2d3335;
+  display: inline-block;
+  margin-bottom: -3px;
+  overflow: visible;
+  padding-bottom: 22px;
+  position: relative;
+  text-shadow: 0 1px white;
+}
+
+.row.main {
+  border-bottom: #d0d0d0;
+  box-shadow: 0 1px 0 0 #d0d0d0, 0 2px 0 0 #f7f7f7;
+  -moz-box-shadow: 0 1px 0 0 #d0d0d0, 0 2px 0 0 #f7f7f7;
+  -webkit-box-shadow: 0 1px 0 0 #d0d0d0, 0 2px 0 0 #f7f7f7;
+  height: 47px;
+}
+
+.course-list {
+  background-color: #eaeaea;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+}
+
+.course-list p {
+  margin-top: 12px;
+}
+
+.course-list .first p {
+  margin-left: 30px;
+}
+
+.course-code {
+  color: #656565;
+  font-family: Verdana;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 1px white;
+}
+
+.course-name {
+  color: #656565;
+  font-family: Calluna sans;
+  font-size: 22px;
+  text-shadow: 0 1px white;
+}
+
+.course-time {
+  color: #656565;
+  font-size: 18px;
+  text-shadow: 0 1px white;
+}
+
+.course-buttons {
+  color: #656565;
+  font-family: Verdana;
+  font-size: 18px;
+  text-shadow: 0 1px white;
+}
+
+.course-count {
+  color: #8e8e8e;
+  font-family: Verdana;
+  font-size: 18px;
+  text-shadow: 0 1px white;
+}
+
+.section-list {
+  background-color: #d4d4d4;
+}
 
 /* Layout for mobile version */
 

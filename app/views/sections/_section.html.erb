@@ -1,45 +1,40 @@
 <%
-  wishlist_section_ids = [] unless defined?(wishlist_section_ids)
-  registered_section_ids = [] unless defined?(registered_section_ids)
+  wishlist_section_ids ||= []
+  registered_section_ids ||= []
 %>
 
+<div class="row <%= section.code %>">
+  <div class="threecol"><%=section.professor%></div>    
+  <div class="threecol"><%=section.room%></div>
 
-<tbody class="<%= section.code %>">
-  <tr>
-    <td><%=section.professor%></td>    
-    <td><%=section.room%></td>
+  <div class="threecol">
+    <%- if options[:added] -%>
+Section <%= section.number %>
+    <%- else -%>
+<%= section.days %> 
+<%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
+    <%- end -%>
+  </div>
 
-    <td>
-      <%- if options[:added] -%>
-	Section <%= section.number %>
-      <%- else -%>
-	<%= section.days %> 
-	<%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
-      <%- end -%>
-    </td>
-
+  <div class="threecol last" class="button">
     <% if options[:show_wishlist_button] %>
-      <td class="button">
-	<% if wishlist_section_ids.include? section.id %>
-	  Wishlisted&nbsp;&nbsp;
-	<% else %>
-	  <%= form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
-	    <%= render :partial => 'wishlist_sections/add_button', :locals => { :section_id => section.id } %>
-	  <% end %>
-	<% end %>
-      </td>
+      <% if wishlist_section_ids.include? section.id %>
+        Wishlisted&nbsp;&nbsp;
+      <% else %>
+        <%= form_for WishlistSection.new, :html => { :id => nil, :class => 'newWishlistSection' } do |f| %>
+          <%= render :partial => 'wishlist_sections/add_button', :locals => { :section_id => section.id } %>
+        <% end %>
+      <% end %>
     <% end %>
-
     <% if options[:show_schedule_button] %>
-      <td class="button">
-	<% if registered_section_ids.include? section.id %>
-	  &nbsp;Enrolled
-	<% else %>
-	  <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
-	    <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
-	  <% end %>
-	<% end %>
-      </td>
+      <% if registered_section_ids.include? section.id %>
+        &nbsp;Enrolled
+      <% else %>
+        <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+          <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
+        <% end %>
+      <% end %>
     <% end %>
-  </tr>
-</tbody>
+  </div>
+
+</div><!--row code-->

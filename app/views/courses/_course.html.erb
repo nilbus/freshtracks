@@ -1,5 +1,5 @@
 <%
-options = {} unless defined?(options)
+options ||= {}
 
 # This partial can be passed a course or a section.
 # When passed a course, it will include all sections for that course.
@@ -20,79 +20,84 @@ registered_section_ids = [] unless defined?(registered_section_ids)
 
 <%- unique_id = generate_unique_id course.id -%>
 
-<tbody class="<%= course.code %>">
+<%
+purpose = :search_result unless options[:added]
+purpose = :search_result # default
+purpose = :wishlist if options[:show_remove_button]
+%>
 
-  <tr id="<%=unique_id%>main" class="main" uid="<%=unique_id%>">
-    <td class="expander"><%= expand_button %></td>
-    <td><%= course.subject%><%=course.number%></td>
-    <td<%= ' colspan="2"' unless options[:show_section_count] || options[:added] %>><%= course.name%></td>
-    <td>
-      <%- if options[:added] -%>
-        
+<div class="<%= course.code %>">
+
+  <div class="row main" id="<%=unique_id%>main" uid="<%=unique_id%>">
+    <div class="twocol first course-code"><p><%= course.code %></p></div>
+    <div class="<%= options[:added] ? 'fivecol' : 'eightcol' %> course-name"><p><%= course.name%></p></div>
+    <%- if options[:added] -%>
+      <div class="threecol course-time">
         <nobr>
         <%= sections.first.days %> 
         <%= sections.first.begin_time.strftime(time_format) %>-<%= sections.first.end_time.strftime(time_format) %>
         </nobr>
-        </td>
+      </div>
         
+      <div class="twocol last course-buttons">
         <% if options[:show_drop_button] %>
-          <td class="button">
+          <div class="button">
             <%= form_for options[:added_object], :html => { :method => :delete } do |f| %>
               <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
             <% end %>
+          </div>
         <% end %>
 
         <% if options[:show_remove_button] %>
-          <td class="button">
+          <div class="button">
             <%= form_for options[:added_object], :html => { :method => :delete } do |f| %>
               <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
             <% end %>
-        <% end %>
-      
-      <%- else -%>
-        <%= pluralize(course.credits, "Credit hour") %>
-      <%- end -%>
-    </td>
-    
-    <%- if options[:show_section_count] -%>
-    <td colspan="100"><%= pluralize(sections.length, "section") %>
-    <%- end -%>
-  
-  </tr>
-
-  <tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">
-    <td colspan="100">
-      <div class="slider">
-        <% # I'm undecided whether or not this should be included in wishlist and registered course lists. -EHA
-        %>
-        
-        <% if options[:added].nil? or options[:added] %>
-          <div class="description">
-            <%=course.description%>
           </div>
         <% end %>
-        
-        <% if(sections.length != 0) 
-        #If we have sections, display a section/section partial for each
-        %>
-        
-          <table class="section-list">
-            <%= render  :partial => "sections/section",
-                        :collection => sections,
-                        :locals => { :options => options,
-                                     :wishlist_section_ids => wishlist_section_ids,
-                                     :registered_section_ids => registered_section_ids } %>
+      </div>
+    
+    <%- else -%>
+      <div class="twocol last course-count">
+        <p>
+          <% if options[:show_section_count] %>
+            <%= pluralize(sections.length, "section") %>
+          <% elsif options[:show_credit_count] %>
+            <%= pluralize(course.credits, "Credit hour") %>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div>
 
-          </table>
-        
-        <% else 
-        #Otherwise, if we have no sections to display (none for this semester), say so
-        %>
+  <div class="extra slider" id="<%=unique_id%>extra" uid="<%=unique_id%>">
+    <% if options[:added].nil? or options[:added] %>
+      <div class="row">
+        <div class="twelvecol description">
+          <%=course.description%>
+        </div>
+      </div>
+    <% end %>
+    
+    <% if(sections.length != 0) 
+    #If we have sections, display a section/section partial for each
+    %>
+    
+      <div class="section-list">
+        <%= render  :partial => "sections/section",
+                    :collection => sections,
+                    :locals => { :options => options,
+                                 :wishlist_section_ids => wishlist_section_ids,
+                                 :registered_section_ids => registered_section_ids } %>
+
+      </div>
+    
+    <% else 
+    #Otherwise, if we have no sections to display (none for this semester), say so
+    %>
 
           <span style="padding: 0; padding-left: 2em; font-weight: bold;">This course isn't being offered this semester.</h4>
         
-        <% end %>
-      </div>
-    </td>
-  </tr>
-</tbody>
+    <% end %>
+  </div>
+</div><!--course code-->
