@@ -61,11 +61,10 @@ section header h1 {
 }
 
 .row.main {
-  border-bottom: #d0d0d0;
-  box-shadow: 0 1px 0 0 #d0d0d0, 0 2px 0 0 #f7f7f7;
-  -moz-box-shadow: 0 1px 0 0 #d0d0d0, 0 2px 0 0 #f7f7f7;
-  -webkit-box-shadow: 0 1px 0 0 #d0d0d0, 0 2px 0 0 #f7f7f7;
-  height: 47px;
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0 1px 0 0 #f7f7f7;
+  -moz-box-shadow: 0 1px 0 0 #f7f7f7;
+  -webkit-box-shadow: 0 1px 0 0 #f7f7f7;
 }
 
 .course-list {
@@ -75,11 +74,31 @@ section header h1 {
 }
 
 .course-list p {
-  margin-top: 12px;
+  margin: 12px 0;
+}
+
+.course-list .button p,form {
+  display: inline-block;
 }
 
 .course-list .first p {
   margin-left: 30px;
+}
+
+.course-list .extra {
+  background-color: #d4d4d4;
+  background: url(images/expander_top_gradient.png) top left repeat-x, url(images/expander_bottom_gradient.png) bottom left repeat-x, #d4d4d4;
+  color: #333334;
+  font-family: FreeSans;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.course-list .description p {
+  font-family: Calluna;
+  font-size: 18px;
+  margin: 20px 30px;
+  text-shadow: 0 1px #f6f6f6;
 }
 
 .course-code {
@@ -119,6 +138,13 @@ section header h1 {
 
 .section-list {
   background-color: #d4d4d4;
+}
+
+.section-list .row {
+  border-top: 1px solid #e9e9e9;
+  box-shadow: 0 -1px 0 0 #a3a3a3;
+  -moz-box-shadow: 0 -1px 0 0 #a3a3a3;
+  -webkit-box-shadow: 0 -1px 0 0 #a3a3a3;
 }
 
 /* Layout for mobile version */

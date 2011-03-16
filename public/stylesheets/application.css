@@ -35,10 +35,6 @@ a {
   height: 2em;
 }
 
-.button form{
-	display: inline;
-}
-
 .main {
   cursor: pointer;
 }
