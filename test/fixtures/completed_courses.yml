@@ -2,12 +2,12 @@ passed_csc116:
   user: student
   degree_requirement: java1
   course: csc116
-  semester: fall2009
+  semester: spring2009
   grade: 'B+'
 
 passed_history:
   user: student
   degree_requirement: history1 
   course: hi208
-  semester: spring2010
+  semester: spring2009
   grade: 'C-'

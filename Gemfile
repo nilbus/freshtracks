@@ -5,6 +5,7 @@ gem 'rails', '~> 3.0.4'
 
 #Authentication
 gem "clearance"
+gem 'dynamic_form' #req'd by Clearance
 
 #Scripting
 gem 'jquery-rails', '>= 0.2.6'

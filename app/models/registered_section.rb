@@ -12,17 +12,17 @@ class RegisteredSection < ActiveRecord::Base
   
 protected
   def check_and_remove_from_wishlist
-    wishlist_section = WishlistSection.find_by_section_id(section_id)
+    wishlist_section = WishlistSection.where(:user_id => user_id).find_by_section_id(section_id)
     if(wishlist_section != nil)
       wishlist_section.delete()
     end
   end
 
   def not_already_registered_for_course
-    new_course_key = Section.find(section_id).course.searchkey
+    new_course_code = Section.find(section_id).course.code
     
-    RegisteredSection.all.each do |registered_section|
-      if (registered_section.section.course.searchkey == new_course_key)
+    RegisteredSection.where(:user_id => user_id).each do |registered_section|
+      if (registered_section.section.course.code == new_course_code)
 	errors.add(:base, "Unable to register for section: you are already registered for another section of this course.")
       end
     end
@@ -31,7 +31,7 @@ protected
   def not_a_schedule_conflict
     new_section = Section.find(section_id)
     
-    RegisteredSection.all.each do |registered_section|
+    RegisteredSection.where(:user_id => user_id).each do |registered_section|
       if(time_conflict?(new_section, registered_section.section))
 	errors.add(:base, "Unable to schedule class: you are already scheduled for another class at that time.")
       end
