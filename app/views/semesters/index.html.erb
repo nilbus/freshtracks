@@ -1,9 +1,12 @@
 <div style="width:25em;">
 <center>
 <h1>Choose a semester</h1>
-<%= link_to image_tag("next_semester.png", :border => 0), @semesters[1], :id => 'next_semester' %><br/>
-(Spring 2010)<br/><br/>
-<%= link_to image_tag("this_semester.png", :border => 0), @semesters[0], :id => 'this_semester' %><br/>
-(Fall 2009)<br/>
+<% next_semester = @semesters.select{|s| s.name == "Fall 2009"}.first
+  current_semester = @semesters.select{|s| s.name == "Spring 2010" }.first
+  %>
+<%= link_to image_tag("next_semester.png", :border => 0), next_semester, :id => 'next_semester' %><br/>
+(<%= next_semester.name %>)<br/><br/>
+<%= link_to image_tag("this_semester.png", :border => 0), current_semester, :id => 'this_semester' %><br/>
+(<%= current_semester.name %>)<br/>
 </center>
 </div>

@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
     # returns [] when session[:semester].nil?
     @registered_sections ||= RegisteredSection.all(:joins => :section,
-                                                   :conditions => { 'sections.semester_id' => session[:semester], 'user_id' => current_user.id })
+                                                   :conditions => { 'sections.semester_id' => session[:semester], :user_id => current_user.id })
   end
 
 end

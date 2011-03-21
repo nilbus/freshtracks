@@ -7,7 +7,12 @@ class RegisteredSectionsController < ApplicationController
 
   # register for a class
   def create    
+    #Add the new section to the schedule in the database
     @registered_section = RegisteredSection.create(params[:registered_section].merge(:user => current_user))
+   
+    #Add the new section to the schedule in memory
+    @registered_sections.push(@registered_section)        
+
     respond_to do |format|
       format.html { redirect_to registered_sections_path }
       format.js { render :partial => 'created', :object => @registered_section }

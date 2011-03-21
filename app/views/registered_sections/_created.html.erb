@@ -5,4 +5,13 @@
   <% end %>
 <%- else -%>
   <span class="loaded">Added</span>
+  <%- scheduleID = SecureRandom.hex(10) %>
+  <div style="display:none" id="<%=scheduleID%>">
+    <%= render :partial => 'registered_sections/schedule',
+               :locals => { :options => { :schedule => true} } %>
+  </div>
+  <%= javascript_tag do %>
+    $("div.schedule:visible").replaceWith($("div#<%=scheduleID%>").get(0).innerHTML);
+    $("div").remove("#<%=scheduleID%>")
+  <% end %>
 <%- end -%>

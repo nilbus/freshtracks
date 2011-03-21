@@ -36,7 +36,7 @@ function showLoadedStatus(element, data) {
 jQuery.fn.submitWithAjax = function() {
   this.submit(function() {
     var form = this;
-    $.post(this.action, $(this).serialize(), function(data) {showLoadedStatus(form, data);});
+    $.post(this.action, $(this).serialize(), function(data) {showLoadedStatus(form, data);}, "html");
     $(this).makeIntoSpiner();
     return false;
   })
