@@ -12,8 +12,7 @@
       <%- if options[:added] -%>
         Section <%= section.number %>
       <%- else -%>
-        <%= section.days %>
-        <%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
+        <%= section.meeting_times %>
       <%- end -%>
     </p>
   </div>

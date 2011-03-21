@@ -32,13 +32,7 @@ purpose = :wishlist if options[:show_remove_button]
     <div class="twocol first course-code"><p><%= course.code %></p></div>
     <div class="<%= options[:added] ? 'fivecol' : 'eightcol' %> course-name"><p><%= course.name%></p></div>
     <%- if options[:added] -%>
-      <div class="threecol course-time">
-        <nobr>
-        <%= sections.first.days %> 
-        <%= sections.first.begin_time.strftime(time_format) %>-<%= sections.first.end_time.strftime(time_format) %>
-        </nobr>
-      </div>
-        
+      <div class="threecol course-time"><p><%= section.meeting_times %></p></div>
       <div class="twocol last course-buttons">
         <% if options[:show_drop_button] %>
           <div class="button">
