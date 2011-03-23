@@ -1,26 +1,16 @@
 <%- unique_id = generate_unique_id group.id -%>
-<tbody class="<%= group.code %>">
-  <tr id="<%= unique_id %>main" uid="<%=unique_id%>" class="main">
-    <td class="expander"><%= expand_button %></td>
-    <td><%= group.code%></td>
-    <td><%= group.name%></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+<div class="<%= group.code %>">
+  <div class="row main" id="<%= unique_id %>main" uid="<%=unique_id%>">
+    <div class="twocol first group-code"><p><%= group.code %></p></div>
+    <div class="tencol last group-name"><p><%= group.name %></p></div>
+  </div>
 
-  <tr id="<%= unique_id %>extra" uid="<%=unique_id%>" class="extra">
-    <td colspan="5">
-      <div class="slider">
-	<% if not defined? options
-	      options = {}
-	  end
-	%>
-	<%= render  :partial => 'courses/course_list', 
-		    :object => group.group_members.map(&:course),
-		    :locals => { :options => defined?(options) ? options : {},
-				:wishlist_section_ids => wishlist_section_ids,
-				:registered_section_ids => registered_section_ids } %>
-      </div>
-    </td>
-  </tr>
-</tbody>
+  <div class="extra slider" id="<%= unique_id %>extra" uid="<%=unique_id%>">
+    <% options ||= {} %>
+    <%= render :partial => 'courses/course_list', 
+          :object => group.group_members.map(&:course),
+          :locals => { :options => options,
+            :wishlist_section_ids => wishlist_section_ids,
+            :registered_section_ids => registered_section_ids } %>
+  </div>
+</div>

@@ -14,78 +14,80 @@
 %>
 
 <div class="spacer"></div>
-<h1 class="inline"><%=title%></h1>
+<header class="row">
+  <h1 class="twelvecol">
+    <%=title%>
+  </h1>
+</header>
+
 <div class="right-align schedule-link"><%=extra_link unless section_list.empty?%></div>
 
-<%- if section_list.empty? -%>
-<h4 type="<%=title%>" class="empty">Your <%=title.downcase%> is currently empty.</h4>
-<%- else -%>
-<h4 type="<%=title%>" class="empty" style="display:none">Your <%=title.downcase%> is currently empty.</h4>
+<div class="row"<%= ' style="display:none"'.html_safe if section_list.any? %>>
+  <div class="twelvecol">
+    <h2 type="<%=title%>" class="empty">
+      Your <%= title.downcase %> is currently empty.
+    </h2>
+  </div>
+</div>
 
-<table class="course-list" type="<%=title%>">
-  <% for reg_section in section_list %>
-    <% section = reg_section.section
-    
-  	course = section.course %>
-  	
-  	<%- unique_id = generate_unique_id course.id -%>
-		<tbody class="<%= "#{course.code} #{section.code}" %>">
-		<tr id="<%=unique_id%>main" class="main" uid="<%=unique_id%>">
-		<td class="expander"><%= expand_button %></td>
-		<td class="course_code"><%= course.subject%><%=course.number%></td>
-		<td class="course_title"><nobr><%= course.name%></nobr></td>
-		<td class="course_time">
-      <nobr>
-      <%= section.days %> 
-      <%= section.begin_time.strftime(time_format) %>-<%= section.end_time.strftime(time_format) %>
-      </nobr>
-    </td>
-    <td><%= pluralize(course.credits, "Credit hour") %></td>
-    <td class="button">
-    <% if options[:schedule] %>
-        <%= form_for reg_section, :html => { :method => :delete } do |f| %>
-          <%= f.submit 'Remove from Schedule', :class => 'rowRemover', :id => nil %>
-        <% end %>
-    <% end %>
-    <% if options[:wishlist] %>
-      <%= form_for reg_section, :html => { :method => :delete } do |f| %>
-        <%= f.submit 'Remove from Wishlist', :class => 'rowRemover', :id => nil %>
-    <% end %>
-       
+<% if section_list.any? %>
+  <div class="row course-list" type="<%= title %>">
+    <% for reg_section in section_list %>
+      <%
+        section = reg_section.section
+        course = section.course
+        unique_id = generate_unique_id course.id
+      %>
+      <div class="<%= "#{course.code} #{section.code}" %>">
+        <div class="row main" id="<%= unique_id %>main" uid="<%= unique_id %>">
+          <div class="twocol first course-code"><p><%= course.code %></p></div>
+          <div class="fivecol course-name"><p><%= course.name %></p></div>
+          <div class="threecol course-time"><p><%= section.meeting_times %></p></div>
+          <div class="twocol last course-buttons">
+            <p class="button">
+              <% if options[:schedule] %>
+                <%= form_for reg_section, :html => { :method => :delete } do |f| %>
+                  <%= f.submit 'Remove', :class => 'rowRemover', :id => nil %>
+                <% end %>
+              <% end %>
+              <% if options[:wishlist] %>
+                <%= form_for reg_section, :html => { :method => :delete } do |f| %>
+                  <%= f.submit 'Remove', :class => 'rowRemover', :id => nil %>
+                <% end %>
+                 
+                  
+                <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+                  <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
+                <% end %>
+              <% end %>
+              
+            </p>
+          </div>
         
-      <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
-        <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
-      <% end %>
+        </div><!--main-->
+        
+        <% if (errors[reg_section.id] != nil) %>
+          <div class="row">
+            <div class="twelvecol error" id="<%=unique_id%>error" uid="<%=unique_id%>">
+              <%=errors[reg_section.id]%>
+            </div>
+          </div>
+        <% end %>
+              
+        <div class="extra slider" id="<%=unique_id%>extra" uid="<%=unique_id%>">
+          <div class="row">
+            <div class="twelvecol description">
+              <p><%=course.description%></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="threecol first"><p>Professor: <%=section.professor%></p></div>
+            <div class="threecol"><p>Room: <%=section.room%></p></div>
+            <div class="threecol"><p><%= pluralize(course.credits, "Credit hour") %></p></div>
+            <div class="threecol last"><p>Section #<%=section.number%></p></div>
+          </div>
+        </div><!--extra-->
+      </div><!--course-code section-code-->
     <% end %>
-    
-    </td>
-    
- 	</tr>
- 	
- 	<% if (errors[reg_section.id] != nil) %>
- 		<tr id="<%=unique_id%>error" class="error" uid="<%=unique_id%>"><td colspan=6 >
- 			<%=errors[reg_section.id]%>
- 		</td></tr>
- 	<% end %>
- 	 		 	
-	<tr id="<%=unique_id%>extra" class="extra" uid="<%=unique_id%>">
-		<td colspan="100">
-		  <div class="slider">
-	      <div class="description">
-	        <p><%=course.description%></p>
-	        <table width="100%"><tr>
-			      <td width="33%">Professor: <%=section.professor%> </td>
-			      <td width="33%">Room: <%=section.room%></td>
-			      <td width="33%">Section #<%=section.number%></td>
-			    </tr></table>
-	      </div>
-		    
-
-		  </div>
-		</td>
-	</tr>
-  </tbody>
-  <% end %>
-</table>
-
+  </div><!--course-list-->
 <%- end -%>

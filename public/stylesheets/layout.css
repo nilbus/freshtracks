@@ -1,0 +1,180 @@
+/* Layout for desktop version */
+
+body {
+  background: #f4f4f4 url('images/gray_texture_1.jpg');
+}
+
+body>header { 
+  background: #33363a url('images/header_texture_1.png');
+  height: 80px;
+  width: 100%;
+}
+
+nav ul {
+  display: inline;
+  list-style: none;
+}
+
+nav ul a {
+  font-size: 16px;
+}
+
+nav ul > li {
+	background: #f7f3d9;
+	border: 1px #000 solid;
+	display: inline;
+}
+
+nav ul > li:hover,
+nav ul > li#selected-tab {
+	border: 2px #900 solid;
+  margin: 1px;
+}
+
+nav ul.tab-list > li#selected-tab {
+	border-bottom: none;
+}
+
+/*
+section header {
+  border-bottom: 2px solid #2d3335;
+  box-shadow: 0 1px 0 0 white;
+  -moz-box-shadow: 0 1px 0 0 white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+}
+*/
+
+section header h1 {
+  border-bottom: 5px solid #2d3335;
+  box-shadow: 0 1px 0 0 white;
+  -moz-box-shadow: 0 1px 0 0 white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+  color: #2d3335;
+  display: inline-block;
+  margin: 40px 0 -3px 0;
+  overflow: visible;
+  padding-bottom: 22px;
+  position: relative;
+  text-shadow: 0 1px white;
+}
+
+.row h2 {
+  color: #2d3335;
+  font-family: Georgia;
+  font-size: 25px;
+  margin: 20px 0;
+  text-shadow: 0 1px white;
+}
+
+.row.main {
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0 1px 0 0 #f7f7f7;
+  -moz-box-shadow: 0 1px 0 0 #f7f7f7;
+  -webkit-box-shadow: 0 1px 0 0 #f7f7f7;
+}
+
+.course-list {
+  background-color: #eaeaea;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+}
+
+.course-list p {
+  margin: 12px 0;
+}
+
+.course-list .button p,form {
+  display: inline-block;
+}
+
+.course-list .first p {
+  margin-left: 30px;
+}
+
+.course-list .extra {
+  background-color: #d4d4d4;
+  background: url(images/expander_top_gradient.png) top left repeat-x, url(images/expander_bottom_gradient.png) bottom left repeat-x, #d4d4d4;
+  color: #333334;
+  font-family: FreeSans;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.course-list .description p {
+  font-family: Calluna;
+  font-size: 18px;
+  margin: 20px 30px;
+  text-shadow: 0 1px #eeeeee;
+}
+
+.course-code, .group-code {
+  color: #656565;
+  font-family: Verdana;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 1px white;
+}
+
+.course-name, .group-name {
+  color: #656565;
+  font-family: Calluna sans;
+  font-size: 22px;
+  text-shadow: 0 1px white;
+}
+
+.course-time {
+  color: #656565;
+  font-size: 18px;
+  text-shadow: 0 1px white;
+}
+
+.course-buttons {
+  color: #656565;
+  font-family: Verdana;
+  font-size: 18px;
+  text-shadow: 0 1px white;
+}
+
+.course-count, .course-grade {
+  color: #8e8e8e;
+  font-family: Verdana;
+  font-size: 18px;
+  text-shadow: 0 1px white;
+}
+
+.section-list {
+  background-color: #d4d4d4;
+}
+
+.section-list .row {
+  border-top: 1px solid #e9e9e9;
+  box-shadow: 0 -1px 0 0 #a3a3a3;
+  -moz-box-shadow: 0 -1px 0 0 #a3a3a3;
+  -webkit-box-shadow: 0 -1px 0 0 #a3a3a3;
+}
+
+/* Layout for mobile version */
+
+@media handheld, only screen and (max-width: 767px) {
+
+.examplecontainer {
+
+body {
+
+}
+
+}
+
+
+/* Provide higher res assets for iPhone 4 */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/* An example of how to override an image with one twice the size for iPhone 4. Specify the original pixel size with background-size.
+.download {
+background: url(../img/downarrow@2x.png) no-repeat;
+background-size: 27px 28px;
+}
+*/
+
+}
