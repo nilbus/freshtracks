@@ -6,7 +6,7 @@
 
 <header class="row">
   <h2 class="twelvecol">
-    Unmet Degree Requirements:
+    Unmet Degree Requirements
   </h2>
 </header>
 
@@ -33,7 +33,7 @@
 </header>
 
 <% if @complete_requirements.size > 0 %>
-  <div class="course-list" id="completed-reqs">
+  <div class="row course-list" id="completed-reqs">
     <% for req in @complete_requirements %>
       <%= render :partial => "degree_requirements/completed_req", :object => req %>
     <% end %>

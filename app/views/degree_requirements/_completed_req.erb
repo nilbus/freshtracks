@@ -1,16 +1,19 @@
 <%- unique_id = generate_unique_id completed_req.id -%>
 <div class="<%= completed_req.id %>">
   <div class="row main" id="<%= unique_id %>main" uid="<%=unique_id%>">
-    <td><%= completed_req.course.name %></td> 
-    <td>Grade: <%= completed_req.grade %></td>
+    <div class="twocol first course-code"><p><%= completed_req.course.code %></p></div> 
+    <div class="eightcol course-name"><p><%= completed_req.course.name %></p></div> 
+    <div class="twocol last course-grade"><p><%= completed_req.grade %></p></div>
   </div>
 
-  <div class="row extra" id="<%=unique_id%>extra" uid="<%=unique_id%>">
-    <td colspan="3">
-      <div class="slider" style="width: 80%; margin-left: 1em ;">
-        <div style="width: 50%; float: left">Fulfills: <%= completed_req.degree_requirement.required.name %> </div>
-        <div style="width: 50%; float: left"><%=completed_req.semester.name%></div>
-      </div>
-    </td>
+  <div class="extra slider" id="<%=unique_id%>extra" uid="<%=unique_id%>">
+    <div class="row">
+      <div class="twelvecol first description"><p>Fulfilled requirement:</p></div>
+    </div>
+    <div class="row">
+      <div class="twocol first"><p><%= completed_req.degree_requirement.required.code %></p></div>
+      <div class="eightcol"><p><%= completed_req.degree_requirement.required.name %></p></div>
+      <div class="twocol last"><p><%=completed_req.semester.name%></p></div>
+    </div>
   </div>
 </div><!-- # -->
