@@ -24,7 +24,7 @@
   <% include_filename = current_action_include_filename(controller) %>
   <%= stylesheet_link_tag include_filename if css_exists?(include_filename) %>
 
-  <%= javascript_include_tag 'jquery-1.5.1.min', 'jquery-ui-1.8.10.custom.min.js', 'rails', 'autocomplete-rails', 'application' %>
+  <%= javascript_include_tag 'ie-html5', 'jquery-1.5.1.min', 'jquery-ui-1.8.10.custom.min.js', 'rails', 'autocomplete-rails', 'application' %>
   <%= javascript_include_tag include_filename if js_exists?(include_filename) %>
 
 </head>
