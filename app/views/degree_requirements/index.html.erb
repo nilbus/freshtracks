@@ -1,7 +1,16 @@
-<h1>Register for a Required Course</h1>
+<header class="row">
+  <h1 class="twelvecol">
+    Register for a Required Course
+  </h1>
+</header>
 
-<h3>Unmet Degree Requirements:</h3>
-<table class="course-list">
+<header class="row">
+  <h2 class="twelvecol">
+    Unmet Degree Requirements:
+  </h2>
+</header>
+
+<div class="row course-list">
   <% for req in @incomplete_requirements %>
     <% classname = req.required.class.name.underscore %>
     <% # classname will be either group or course %>
@@ -15,21 +24,22 @@
                              :wishlist_section_ids => @wishlist_section_ids,
                              :registered_section_ids => @registered_section_ids } %>
   <% end %>
-</table>
+</div><!--course-list-->
 
-<h3>Completed Degree Requirements</h3>
+<header class="row">
+  <h2 class="twelvecol">
+    Completed Degree Requirements
+  </h2>
+</header>
+
 <% if @complete_requirements.size > 0 %>
-<table class="course-list" id="completed-reqs">
-  <% for req in @complete_requirements %>
-
-    <%= render :partial => "degree_requirements/completed_req",
-              :object => req %>
-
-  <% end %>
-
-</table>
+  <div class="course-list" id="completed-reqs">
+    <% for req in @complete_requirements %>
+      <%= render :partial => "degree_requirements/completed_req", :object => req %>
+    <% end %>
+  </div><!--course-list-->
 <% else %>
-<h4>You haven't completed any courses yet. You must be new around here!</h4>
+  <h4>You haven't completed any courses yet. You must be new around here!</h4>
 <% end %>
 
 

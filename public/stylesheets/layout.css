@@ -101,7 +101,7 @@ section header h1 {
   text-shadow: 0 1px #f6f6f6;
 }
 
-.course-code {
+.course-code, .group-code {
   color: #656565;
   font-family: Verdana;
   font-size: 18px;
@@ -109,7 +109,7 @@ section header h1 {
   text-shadow: 0 1px white;
 }
 
-.course-name {
+.course-name, .group-name {
   color: #656565;
   font-family: Calluna sans;
   font-size: 22px;
