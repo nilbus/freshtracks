@@ -6,6 +6,7 @@ options ||= {}
 # When passed a section, it will display the course the section belongs to and the details for that section.
 
 if (course.is_a?(Section))
+  section = course
   sections = [course]
   course = sections[0].course
   options[:show_section_count] = false  

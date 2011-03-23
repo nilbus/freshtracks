@@ -1,17 +1,9 @@
-<%=flash[:notice]%>
+<%= flash[:notice] %>
 
-  	<%= render :partial => 'registered_sections/schedule', 
-					 :locals => { :options => { :wishlist => true} }%>
-  <!--
-	  <table class="course-list">
-    <% for wsection in @wishlist_sections %>
-      <%= render :partial => "courses/course",
-                 :object => wsection.section,
-                 :locals => { :options => { :added => true,
-                                            :added_object => wsection,
-                                            :show_remove_button => true } } %>
-    <% end %> 
-    </table>
-    -->
+<!-- Wishlist -->
 <%= render :partial => 'registered_sections/schedule', 
-					 :locals => { :options => { :schedule => true} }%>
+           :locals => { :options => { :wishlist => true} }%>
+
+<!-- Current Schedule -->
+<%= render :partial => 'registered_sections/schedule', 
+           :locals => { :options => { :wishlist => false} }%>
