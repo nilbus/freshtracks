@@ -157,11 +157,9 @@ section header h1 {
 
 @media handheld, only screen and (max-width: 767px) {
 
-.examplecontainer {
-
-body {
-
-}
+  .course-list .first p {
+    margin-left: 0;
+  }
 
 }
 
