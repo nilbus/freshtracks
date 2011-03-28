@@ -123,3 +123,35 @@ function expandButton() {
 function collapseButton() {
   return '<img border="0" src="/images/delete_greyscale.png" class="expanded">';
 }
+
+function disableButton(button, newText) {
+  button = $(button)
+  button.attr("old-value", button.attr("value"));
+  button.attr("value", newText);
+  button.attr("disabled", "disabled");
+}
+
+function enableButton(button) {
+  button = $(button);
+  var oldVal = button.attr("value");
+  button.attr("value", button.attr("old-value"));
+  button.removeAttr("disabled");
+  button.removeAttr("old-value");
+  return oldVal;
+}
+
+function disableScheduleButton(sectionID){
+  disableButton( $(":input[type=submit].add-to-schedule[section=" + sectionID + "]"), "Currently Enrolled");
+}
+
+function enableScheduleButton(sectionID){
+  enableButton( $(":input[type=submit].add-to-schedule[section=" + sectionID + "]"));
+}
+
+function disableWishlistButton(sectionID){
+  disableButton( $(":input[type=submit].add-to-wishlist[section=" + sectionID + "]"), "On your wishlist");
+}
+
+function enableWishlistButton(sectionID){
+  enableButton( $(":input[type=submit].add-to-wishlist[section=" + sectionID + "]"));
+}
