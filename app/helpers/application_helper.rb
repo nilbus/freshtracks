@@ -33,15 +33,6 @@ module ApplicationHelper
     "#{base}#{(rand*1000000).to_i}"
   end
 
-  # These are also defined in javascripts/application.js
-  def expand_button
-    '<img border="0" src="/images/add_greyscale.png" class="collapsed">'.html_safe
-  end
-
-  def collapse_button
-    '<img border="0" src="/images/delete_greyscale.png" class="expanded">'.html_safe
-  end
-
   private
     def resource_exists?(base_name, subdir, extention)
       FileTest.exists?("public/#{subdir}/#{base_name}.#{extention}")

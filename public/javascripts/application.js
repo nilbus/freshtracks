@@ -71,14 +71,10 @@ jQuery.fn.makeRowExpander = function() {
     
     //The row to be slid
     var slider = $("[uid=" + row.attr("uid") + "].slider").eq(0);
-    
-    //The button on this row, to be changed
-    var button = row.children(".expander");
-    
     var id = row.attr("id");
-
-    var previouslyExpanded = button.children().hasClass('expanded');
+    var previouslyExpanded = row.attr('state') == 'expanded'; // assumption: default state (unset) is collapsed
     var nowExpanded;
+
     slider.stop(true, true);
     if (expand) {
       slider.slideDown();
@@ -86,19 +82,19 @@ jQuery.fn.makeRowExpander = function() {
     } else if (expand == false) {
       slider.slideUp();
       nowExpanded = false;
-    } else {
+    } else { // undefined
       slider.slideToggle();
       nowExpanded = !previouslyExpanded;
     }
-    if (nowExpanded) {
-      // update button
-      button.html(collapseButton());
-    } else {
-      // update button
-      button.html(expandButton());
 
-      // also shrink descendents
-      $("#" + id + " + .extra td > div").slideUp();
+    if (nowExpanded) {
+      row.attr('state', 'expanded');
+
+    } else {
+      row.attr('state', 'collapsed');
+
+      // shrink descendents
+      $("#" + id + " + .extra .slider").slideUp();
     }
   };
 
@@ -106,20 +102,15 @@ jQuery.fn.makeRowExpander = function() {
   this.find("input:visible").click(function(event) { event.stopPropagation(); });
   this.dblclick(function() {
     var courseList = $(this).closest('.course-list');
-    var hasCollapsedRows = courseList.children().children('.main').children('.expander').children('img').hasClass('collapsed');
-    courseList.children().children('.main').each(function(index, element) {
+    var childRows = courseList.children().children('.main');
+    var hasCollapsedRows = childRows.map(function(i,el){return $(el).attr('state')}).filter(function(i,state){return state != 'expanded'}).length > 0
+
+    // Expand the rows
+    childRows.each(function(i, element) {
       expandRow(element, hasCollapsedRows);
     });
+
   });
   
   return this;
 };
-
-// These are also defined in helpers/application.rb
-function expandButton() {
-  return '<img border="0" src="/images/add_greyscale.png" class="collapsed">';
-}
-
-function collapseButton() {
-  return '<img border="0" src="/images/delete_greyscale.png" class="expanded">';
-}
