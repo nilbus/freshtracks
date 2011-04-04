@@ -83,7 +83,7 @@ section header h1 {
   margin: 12px 0;
 }
 
-.course-list .button p,form {
+.course-list .button p,.course-list .button form {
   display: inline-block;
 }
 

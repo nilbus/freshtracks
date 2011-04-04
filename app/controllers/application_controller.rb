@@ -24,9 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_schedule
-    if !signed_in?
-      return
-    end
+    return unless signed_in?
 
     # returns [] when session[:semester].nil?
     @registered_sections ||= RegisteredSection.all(:joins => :section,
