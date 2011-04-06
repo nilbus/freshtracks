@@ -1,6 +1,10 @@
 class RegisteredSection < ActiveRecord::Base
   belongs_to :section
   belongs_to :user
+  
+  def self.set_active_semester_id(semester)
+    @@semester_id = semester
+  end
 
   validates_uniqueness_of :section_id, :message => 'That is already on your schedule.'
   
@@ -30,8 +34,10 @@ protected
   
   def not_a_schedule_conflict
     new_section = Section.find(section_id)
-    
-    RegisteredSection.where(:user_id => user_id).each do |registered_section|
+   
+    r = RegisteredSection
+    r = r.joins(:section).where(:sections => {'semester_id' => @@semester_id})
+    r.where(:user_id => user_id).each do |registered_section|
       if(time_conflict?(new_section, registered_section.section))
 	errors.add(:base, "Unable to schedule class: you are already scheduled for another class at that time.")
       end
