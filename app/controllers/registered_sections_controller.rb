@@ -29,13 +29,14 @@ class RegisteredSectionsController < ApplicationController
 
   # unregister
   def destroy
-    RegisteredSection.find(params[:id]).destroy
+    @registered_section = RegisteredSection.find(params[:id])
+    @registered_section.destroy
     respond_to do |format|
-      format.html {
+      format.html do
         flash[:notice] = "Class successfully removed from your schedule."
         redirect_to wishlist_sections_path
-      }
-      format.js { render :text => ''}
+      end
+      format.js #registered_sections/destroy.js.erb 
     end
   end
 

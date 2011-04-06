@@ -10,13 +10,10 @@ jQuery.ajaxSetup({
 $(document).ready(function() {
   var preloaded_spinner = new Image();
   preloaded_spinner.src = '/images/ajax-loader.gif';
-  $(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section, .edit_registered_section").submitWithAjax();
-  $(".rowRemover").makeRowRemover();
-  $(".main").makeRowExpander();
+  submitWithAjax(".newWishlistSection, .newRegisteredSection, .edit_wishlist_section, .edit_registered_section");
+  makeRowRemover(".rowRemover");
+  makeRowExpander(".main");
   $(".course-list").not(".course-list .course-list").before('<div class="row course-list-header">Double-click a row to expand all rows</div>');
-  $("input:submit").button();
-  $("input:text").textbox();
-  $("input:password").textbox();
 })
 
 jQuery.fn.textbox = function() {
@@ -29,38 +26,35 @@ function appendReturnValue(element, data) {
   $(element).append(data);
 }
 
-jQuery.fn.submitWithAjax = function() {
-  this.submit(function() {
+function submitWithAjax(selector) {
+  $(selector).live('submit', function() {
     var form = $(this);
     disableButton(form.children("[type=submit]"), "Loading...");
     $.post(this.action, form.serialize(), function(data) {appendReturnValue(form, data);}, "html");
     return false;
-  })
-  return this;
+  });
 };
 
 // Row Remover
-
-jQuery.fn.makeRowRemover = function() {
-  this.click(function() {
-  row = $(this).closest("tr");
+function makeRowRemover(selector) {
+  $(selector).live('click', function() {
+    row = $(this).closest(".main");
     $("[uid=" + $(row).attr("uid") + "]").fadeOut( function(){
-      var containingTable = $(this).closest("table");
-      if( containingTable.find("tr:visible").length == 0)
-      {
-        containingTable.hide();
-        $("[type=" + containingTable.attr("type") + "].empty").show();
+      // Hide the course list if it's empty
+      /* This isn't necessary in the new layout, but we could later replace its contents with something like "Empty Schedule"
+      var container = $(this).closest(".course-list");
+      if( container.find(".main:visible").length == 0) {
+        container.hide();
+        $("[type=" + container.attr("type") + "].empty").show();
       }
-      
+      */
     });
-    
-  })
-  return this;
+  });
 };
 
 // Row Expander
 
-jQuery.fn.makeRowExpander = function() {
+function makeRowExpander(selector) {
   // expand can be undefined(toggle), true(expand), false(collapse)
   var expandRow = function(row, expand) {
     row = $(row);
@@ -94,9 +88,10 @@ jQuery.fn.makeRowExpander = function() {
     }
   };
 
-  this.click(function() { expandRow(this); });
-  this.find("input:visible").click(function(event) { event.stopPropagation(); });
-  this.dblclick(function() {
+  rows = $(selector);
+  rows.live('click', function() { expandRow(this); });
+  rows.find("input:visible").live('click', function(event) { event.stopPropagation(); }); // Keep button/input clicks from counting as a click to expand/contract
+  rows.live('dblclick', function() {
     var courseList = $(this).closest('.course-list');
     var childRows = courseList.children().children('.main');
     var hasCollapsedRows = childRows.map(function(i,el){return $(el).attr('state')}).filter(function(i,state){return state != 'expanded'}).length > 0
@@ -107,8 +102,6 @@ jQuery.fn.makeRowExpander = function() {
     });
 
   });
-  
-  return this;
 };
 
 // These are also defined in helpers/application.rb
