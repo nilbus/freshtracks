@@ -16,9 +16,11 @@ class CoursesController < ApplicationController
     end
     @courses = c.all
 
-    # Load schedule so we don't display buttons for things already added
-    @registered_section_ids = RegisteredSection.all.map &:section_id
-    @wishlist_section_ids = WishlistSection.all.map &:section_id
+    # Get a list of all the classes the current user has wishlisted & scheduled 
+    @registered_section_ids = 
+      RegisteredSection.where(:user_id => current_user.id).map &:section_id
+    @wishlist_section_ids = 
+      WishlistSection.where(:user_id => current_user.id).map &:section_id
 
   rescue TypeError # when params[:search].nil?
     # Don't search for courses if they haven't searched for them
