@@ -1,10 +1,10 @@
-<%-  if created.new_record?; -%>
-  <%= render :partial => 'add_button', :locals => { :section_id => created.section_id } %>
+<%-  if created.new_record? #if the record wasn't saved (validation problem) -%>
   <%= javascript_tag do %>
+    enableScheduleButton(<%=@registered_section.section_id%>);
     alert('<%= (created.errors.any? ? created.errors.values.join(' ') : "That didn't work." )%>');
   <% end %>
 <%- else -%>
-  <span class="loaded">Added</span>
+  
   <%- scheduleID = SecureRandom.hex(10) %>
   <div style="display:none" id="<%=scheduleID%>">
     <%= render :partial => 'registered_sections/schedule',
@@ -13,5 +13,6 @@
   <%= javascript_tag do %>
     $("div.schedule:visible").replaceWith($("div#<%=scheduleID%>").get(0).innerHTML);
     $("div").remove("#<%=scheduleID%>")
+    disableScheduleButton(<%=created.section_id%>);
   <% end %>
 <%- end -%>

@@ -25,19 +25,15 @@ jQuery.fn.textbox = function() {
   this.blur(function(e){$(this).removeClass('ui-state-active')});
 };
 
-jQuery.fn.makeIntoSpiner = function() {
-  this.html('<img src="/images/ajax-loader.gif" title="loading">');
-};
-
-function showLoadedStatus(element, data) {
-  $(element).html('<span class="loaded">' + data + '</span>');
-};
+function appendReturnValue(element, data) {
+  $(element).append(data);
+}
 
 jQuery.fn.submitWithAjax = function() {
   this.submit(function() {
-    var form = this;
-    $.post(this.action, $(this).serialize(), function(data) {showLoadedStatus(form, data);}, "html");
-    $(this).makeIntoSpiner();
+    var form = $(this);
+    disableButton(form.children("[type=submit]"), "Loading...");
+    $.post(this.action, form.serialize(), function(data) {appendReturnValue(form, data);}, "html");
     return false;
   })
   return this;
@@ -126,7 +122,9 @@ function collapseButton() {
 
 function disableButton(button, newText) {
   button = $(button)
-  button.attr("old-value", button.attr("value"));
+  if(( button.attr("old-value") == undefined ) || (button.attr("old-value") == "")){
+    button.attr("old-value", button.attr("value"));
+  }
   button.attr("value", newText);
   button.attr("disabled", "disabled");
 }

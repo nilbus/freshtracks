@@ -8,6 +8,8 @@ class RegisteredSectionsController < ApplicationController
   # register for a class
   def create    
     #Add the new section to the schedule in the database
+
+    RegisteredSection.set_active_semester_id(session[:semester])
     @registered_section = RegisteredSection.create(params[:registered_section].merge(:user => current_user))
    
     #Add the new section to the schedule in memory

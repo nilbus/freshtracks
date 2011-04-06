@@ -32,11 +32,12 @@
         <% end %>
       </span>
       <% if options[:show_schedule_button] %>
-        <% if registered_section_ids.include? section.id %>
-          &nbsp;Enrolled
-        <% else %>
-          <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
-            <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
+        <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
+          <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
+          <% if registered_section_ids.include? section.id %>
+            <%= javascript_tag do %>
+              disableScheduleButton(<%=section.id%>);
+            <% end -%>
           <% end %>
         <% end %>
       <% end %>
