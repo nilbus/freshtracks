@@ -1,0 +1,6 @@
+FreshTracks is a fresh approach to college course registration. Add, drop, wishlist, and search for classes with a single click. 
+
+We believe:
+* most colleges make registration too hard by developing their own or buying a registration system that is easier to make than it is to use. We put the students and professors first, and make registering with FreshTracks as easy as possible.
+* you shouldn't have to re-learn how to register for classes every semester. Using FreshTracks, it's quick and easy to find what you need to do and get it done; no arcane rituals required.
+* in simplicity. FreshTracks won't handle financial aid or tuition, housing, or updating personal information. We make registration quick, and that's it.
