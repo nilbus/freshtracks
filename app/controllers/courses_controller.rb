@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   # search courses; returns matching
   # Currently only uses one search term
   def index
-    search_terms = params[:search].split(' ') rescue []
+    search_terms = params[:search].split(' ')
 
     # Build the query
     c = Course
@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
     @wishlist_section_ids = 
       WishlistSection.where(:user_id => current_user.id).map &:section_id
 
-  rescue TypeError # when params[:search].nil?
+  rescue NoMethodError # when params[:search].nil?
     # Don't search for courses if they haven't searched for them
     # The view should display instructions if @courses.nil?
     # and show that there were no results  if @courses.empty?
