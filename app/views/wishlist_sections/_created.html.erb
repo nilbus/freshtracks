@@ -1,15 +1,7 @@
-<%- if created.new_record? -%>
-  <%= render :partial => 'add_button', :locals => { :section_id => created.section_id } %>
-  <% javascript_tag do %>
-    <% if(created.errors.any?) %>
-      <% errs = created.errors.map{ |column, error| "This section " + error } %>
-      alert("<%=errs.join(' ')%>");
-    <% else %>
-      alert("That didn't work.");
-    <% end %>
-  <% end %>
-<%- else -%>
-  <%= javascript_tag do %>
-    disableWishlistButton(<%=created.section_id%>);
-  <% end -%>
-<%- end -%>
+<%= javascript_tag do %>
+  <%- if created.new_record? -%>
+    var error_message = 'This section <%= (created.errors.any? ? created.errors.values.join(' ') : "couldn't be added." )%>';
+    appendError("#section-<%= @wishlist_section.section.id %> .button", error_message);
+  <%- end -%>
+  disableWishlistButton(<%=created.section_id%>);
+<% end -%>

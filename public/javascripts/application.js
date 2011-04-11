@@ -146,3 +146,9 @@ function disableWishlistButton(sectionID){
 function enableWishlistButton(sectionID){
   enableButton( $(":input[type=submit].add-to-wishlist[section=" + sectionID + "]"));
 }
+
+function appendError(container, error_message) {
+  $('#error').attr('id', 'old-error').slideUp('fast', function(){$(this).remove()});
+  $(container).append($("<div id='error'>" + error_message + "</div>").hide());
+  $('#error').slideDown('fast');
+}

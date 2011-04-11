@@ -153,6 +153,10 @@ section header h1 {
   -webkit-box-shadow: 0 -1px 0 0 #a3a3a3;
 }
 
+#error, #old-error {
+  color: #B00;
+}
+
 /* Layout for mobile version */
 
 @media handheld, only screen and (max-width: 767px) {

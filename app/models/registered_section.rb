@@ -27,19 +27,21 @@ protected
     
     RegisteredSection.where(:user_id => user_id).each do |registered_section|
       if (registered_section.section.course.code == new_course_code)
-	errors.add(:base, "Unable to register for section: you are already registered for another section of this course.")
+        errors.add(:base, "#{registered_section.section.course.code} is already on your schedule.")
       end
     end
   end
   
   def not_a_schedule_conflict
+    return if errors.any? # Don't show this error if there are already errors
+
     new_section = Section.find(section_id)
    
     r = RegisteredSection
     r = r.joins(:section).where(:sections => {'semester_id' => @@semester_id})
     r.where(:user_id => user_id).each do |registered_section|
       if(time_conflict?(new_section, registered_section.section))
-	errors.add(:base, "Unable to schedule class: you are already scheduled for another class at that time.")
+        errors.add(:base, "Time conflict with #{registered_section.section.course.code}.")
       end
     end
   end
@@ -61,9 +63,9 @@ protected
     
     #If the start or end time of the second section is during the first section, error!
     if(    ((begin_time1 < begin_time2) and (begin_time2 < end_time1)) \
-        or ((begin_time1 < end_time2) 	and (end_time2 < end_time1))   \
-	or ((begin_time2 < begin_time1) and (begin_time1 < end_time2)) \
-	or ((begin_time2 < end_time1) 	and (end_time1 < end_time2)) ) 
+        or ((begin_time1 < end_time2)   and (end_time2 < end_time1))   \
+        or ((begin_time2 < begin_time1) and (begin_time1 < end_time2)) \
+        or ((begin_time2 < end_time1)   and (end_time1 < end_time2)) ) 
       return true
     end
     return false
