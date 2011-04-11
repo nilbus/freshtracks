@@ -1,7 +1,8 @@
 <%-  if created.new_record? #if the record wasn't saved (validation problem) -%>
   <%= javascript_tag do %>
     enableScheduleButton(<%=@registered_section.section_id%>);
-    alert('<%= (created.errors.any? ? created.errors.values.join(' ') : "That didn't work." )%>');
+    var error_message = '<%= (created.errors.any? ? created.errors.values.join(' ') : "That didn't work." )%>';
+    appendError("#section-<%= @registered_section.section.id %> .button", error_message);
   <% end %>
 <%- else -%>
   

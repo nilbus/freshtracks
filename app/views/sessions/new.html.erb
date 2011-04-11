@@ -1,20 +1,65 @@
-<h2>Sign in</h2>
+<div class="row">
+  <div class="twelvecol">
+  </div>
+</div>
 
-<%= form_for :session, :url => session_path do |form| %>
-  <div class="text_field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  <div class="text_field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div class="submit_field">
-    <%= form.submit "Sign in" %>
-  </div>
-<% end %>
+<div class="row">
+  <div class="fourcol">
+    <h1>
+      Try our live demo
+    </h1>
+    <p>
+      <!-- As a student in our demo system,  -->
+    </p>
 
-<div style="float:left; margin: 0 1em">
-<%= link_to "Sign up", sign_up_path %>
-    </div><div><%= link_to "Forgot password?", new_password_path %>
+    <%= form_for :user, :url => users_path do |form| %>
+      <%= form.hidden_field :email, :value => "#{generate_unique_id 'test-account'}@mailinator.com" %>
+      <%= form.hidden_field :password, :value => 'password' %>
+      <%= form.hidden_field :password_confirmation, :value => 'password' %>
+      <div class="submit_field">
+        <%= form.submit "Log in as a new student" %>
+      </div>
+    <% end %>
+
+    <%= form_for :session, :url => session_path do |form| %>
+      <%= form.hidden_field :email, :value => 'student@ncsu.edu' %>
+      <%= form.hidden_field :password, :value => 'password' %>
+      <div class="submit_field">
+        <%= form.submit "Log in as Stu Dent" %>
+      </div>
+    <% end %>
+
+<%
+=begin
+%>
+
+    <%= form_for :session, :url => session_path do |form| %>
+      <div class="text_field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
+      <div class="text_field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+      <div class="submit_field">
+        <%= form.submit "Sign in" %>
+      </div>
+    <% end %>
+
+    <div style="float:left; margin: 0 1em">
+      <%= link_to "Sign up", sign_up_path %>
     </div>
+    <div>
+      <%= link_to "Forgot password?", new_password_path %>
+    </div>
+<%
+=end
+%>
+  </div>
+
+  <div class="eightcol last">
+    <h1>A Fresh approach to<br>College Course Registration</h1>
+  </div>
+
+</div>

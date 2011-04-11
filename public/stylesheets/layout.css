@@ -83,7 +83,7 @@ section header h1 {
   margin: 12px 0;
 }
 
-.course-list .button p,form {
+.course-list .button p,.course-list .button form {
   display: inline-block;
 }
 
@@ -151,6 +151,10 @@ section header h1 {
   box-shadow: 0 -1px 0 0 #a3a3a3;
   -moz-box-shadow: 0 -1px 0 0 #a3a3a3;
   -webkit-box-shadow: 0 -1px 0 0 #a3a3a3;
+}
+
+#error, #old-error {
+  color: #B00;
 }
 
 /* Layout for mobile version */

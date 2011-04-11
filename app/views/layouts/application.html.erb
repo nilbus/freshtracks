@@ -33,40 +33,42 @@
   <span style="font-size: 60px; color: #C00; font-weight: bold; font-family: ubuntu, helvetica, sans-serif"><br>FreshTracks</span>
 </header>
 
-<%
-if(params[:action] == "index")
-  case params[:controller]
-    when "courses"
-      @selected_tab = 'tab1'
-    when "degree_requirements"
-      @selected_tab = 'tab2'
-    when "wishlist_sections"
-      @selected_tab = 'tab3'
+<% if signed_in? %>
+  <%
+  if(params[:action] == "index")
+    case params[:controller]
+      when "courses"
+        @selected_tab = 'tab1'
+      when "degree_requirements"
+        @selected_tab = 'tab2'
+      when "wishlist_sections"
+        @selected_tab = 'tab3'
+    end
   end
-end
-%>
+  %>
 
-<% if session[:semester] %>
-  <div class="right-align">
-  Semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
-  </div>
+  <% if session[:semester] %>
+    <div class="right-align">
+    Semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
+    </div>
+  <% end %>
+
+  <nav>
+    <ul>
+      <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"' : '' %>>
+      <%= link_to "Search", courses_path %>
+      </li>
+      <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"' : '' %>>
+      <%= link_to degree_requirements_path do  %>
+        <nobr>Degree Requirements</nobr>
+      <% end %>
+      </li>
+      <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"' : '' %>>
+      <%= link_to "Wishlist", wishlist_sections_path %>
+      </li>
+    </ul>
+  </nav>
 <% end %>
-
-<nav>
-  <ul>
-    <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"' : '' %>>
-    <%= link_to "Search", courses_path %>
-    </li>
-    <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"' : '' %>>
-    <%= link_to degree_requirements_path do  %>
-      <nobr>Degree Requirements</nobr>
-    <% end %>
-    </li>
-    <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"' : '' %>>
-    <%= link_to "Wishlist", wishlist_sections_path %>
-    </li>
-  </ul>
-</nav>
 
 <section class="container">
 <%= yield %>

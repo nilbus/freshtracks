@@ -3,7 +3,7 @@
   registered_section_ids ||= []
 %>
 
-<div class="row <%= section.code %>">
+<div class="row <%= section.code %>" id="section-<%= section.id %>">
   <div class="threecol first"><p><%=section.professor%></p></div>
   <div class="twocol"><p><%=section.room%></p></div>
 
