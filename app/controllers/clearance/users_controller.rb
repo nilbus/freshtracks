@@ -29,6 +29,6 @@ class Clearance::UsersController < ApplicationController
   end
 
   def url_after_create
-    '/'
+    home_url
   end
 end

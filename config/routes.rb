@@ -11,6 +11,8 @@ Freshtracks::Application.routes.draw do
 
   resources :registered_sections
   resources :sections
-  match '/' => 'courses#index'
+
+  resource :home, :only => 'show', :controller => 'home'
+  match '/' => 'home#index'
 
 end
