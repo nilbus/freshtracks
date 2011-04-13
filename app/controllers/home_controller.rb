@@ -4,11 +4,11 @@ class HomeController < ApplicationController
   skip_before_filter :choose_semester
   skip_before_filter :load_schedule
 
-  def index
+  def index # splash page
     redirect_to home_url if signed_in?
   end
 
-  def show
+  def show # default page for logged in users
     redirect_to courses_url
   end
 end
