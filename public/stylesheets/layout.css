@@ -173,6 +173,10 @@ section header h1 {
   margin: 0 auto 20px auto;
 }
 
+.landing ul {
+  padding-left: 20px;
+}
+
 .roundbox {
   border: 1px solid #d3d3d3;
   background-color: #eaeaea;
