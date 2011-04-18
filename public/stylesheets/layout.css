@@ -107,6 +107,11 @@ section header h1 {
   text-shadow: 0 1px #eeeeee;
 }
 
+.course-list .course-list {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
 .course-code, .group-code {
   color: #656565;
   font-family: Verdana;
@@ -159,6 +164,13 @@ section header h1 {
 
 .landing .row {
   margin-top: 30px;
+}
+
+.landing img{
+  border: 1px solid #4477CC;
+  border-radius: 0;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
 .roundbox {
