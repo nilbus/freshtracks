@@ -2,9 +2,51 @@
   <div class="row">
     <div class="twelvecol">
       <h2>
-        FreshTracks is a fresh approach to college course registration.
-        Add, drop, wishlist, and search for classes with a single click.
+        FreshTracks is a fresh approach to college course registration. <%'s/registration/scheduling/'%>
+        <%'better slogan'%>
+        Add, drop, wishlist, and search for classes.
       </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="fourcol">
+      <div class="roundbox">
+        <h1>
+          Intuitive
+        </h1>
+        <p>
+          Our number one goal is to make FreshTracks easy to learn and easy to use.
+          You won't need to take a class to figure it out.
+        </p>
+      </div>
+    </div>
+
+    <div class="fourcol">
+      <div class="roundbox">
+        <h1>
+          Cost Effective
+        </h1>
+        <p>
+          We <strong>dynamically scale</strong> the number of servers to keep up during peak registration periods.
+          By using fewer resources the rest of the year, you only pay for what you need.
+        </p>
+      </div>
+    </div>
+
+    <div class="fourcol last">
+      <div class="roundbox">
+        <h1>
+          Seamless
+        </h1>
+        <p>
+          <%'
+          We recognize that every school has a different, existing system for managing courses.
+          <br>
+          '%>
+          We built FreshTracks to be agile and adaptable to your environment, and we will work with you to <strong>integrate</strong> FreshTracks with your other systems.
+        </p>
+      </div>
     </div>
   </div>
 
@@ -16,13 +58,22 @@
         </h1>
         <ul>
           <li>
-            most colleges make registration too hard by developing their own or buying a registration system that is easier to make than it is to use. We put the students and professors first, and make registering with FreshTracks as easy as possible.
+            Students deserve an intuitive interface for scheduling and registering for classes.
+            <br>
+            We developed FreshTracks with an eye to usability, working closely with students.
+            <%'We put students and professors first, and make registering with FreshTracks easy. Many colleges develop their own or buy a registration system that was easier to make than it is to use. '%>
           </li>
+          <%"
           <li>
             you shouldn't have to re-learn how to register for classes every semester. Using FreshTracks, it's quick and easy to find what you need to do and get it done; no arcane rituals required.
           </li>
+          "%>
           <li>
-            in simplicity. FreshTracks won't handle financial aid or tuition, housing, or updating personal information. We make registration quick, and that's it.
+            It's best to stay focused and simple.
+            <%'reword?'%>
+            FreshTracks won't handle tuition, housing or homework.
+            We make registration quick, and that's it.
+            <%'reword?'%>
           </li>
         </ul>
       </div>
@@ -34,7 +85,9 @@
           Try our live demo
         </h1>
         <p>
-          <!-- As a student in our demo system,  -->
+          Search for classes by name, or sign up for required classes.
+          <br>
+          Organize your schedule on the Wishlist before your registration date.
         </p>
 
         <%= form_for :user, :url => users_path do |form| %>
@@ -65,7 +118,8 @@
         </h1>
         <img src="/images/landing_degree_audit.png" alt="Select required single classes, or see all the options for a elective category." width=395 height=186 />
         <p>
-          FreshTracks makes it easy to find what you need to know. It knows your plan of work and shows you all the classes you need to take to fulfill the requirements for your degree, from single classes to broad elective requirements.
+          Freshtracks shows the classes needed to fulfill requirements.
+          These expand, and you can register from the same page.
         </p>
       </div>
     </div>
@@ -74,7 +128,8 @@
       <div class="roundbox">
         <h1>Plan ahead</h1>
         <p>
-          Before you have to add anything your schedule, FreshTracks has an integrated wishlist that lets you plan out your schedule before your registration date. When the time comes, it makes it one click to add all the classes to your schedule. Never be surprised on your registration date again.
+          FreshTracks has an integrated wishlist that lets you plan out your schedule before the registration date.
+          When the time comes, it's one click to add all the classes to your schedule.
         </p>
 
         <img src="/images/landing_wishlist.png" width=571 height=167 alt="Easily add things to your schedule from your wishlist one at a time or all together." />
@@ -83,27 +138,6 @@
   </div><!--row-->
 
   <div class="row">
-    <div class="sevencol">
-      <div class="roundbox">
-          <h1>
-            A perfect fit
-        </h1>
-        <p>
-          FreshTracks doesn't just save students time, it saves administrators time and money.
-          <ul>
-            <li>
-              The system is built on Heroku's hosting technology, which allows us to dynamically scale the available horsepower behind FreshTracks. This means you can have ten servers handling student requests during registration, two servers for the rest of the year, and a scant single server over the summer or during breaks, when the system is getting hardly any use. Never buy expensive servers that sit unused for most of the year again.
-            </li>
-            <li>
-              We recognize that every school has a different, existing system for managing courses, so we built FreshTracks to be agile and adaptable to your environment. 
-            </li>
-            <li>
-              FreshTracks isn't stopping. Once you're using it, we keep working on it, meaning that it'll keep getting better. But don't worry, we'll never lose sight of keeping the system fast, simple, and easy.
-            </li>
-          </ul>
-        </p>
-      </div>
-    </div>
 
     <div class="fivecol last">
       <div class="roundbox">
