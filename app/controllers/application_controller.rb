@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
        session[:semester].nil? && 
        !choosing_semester? && 
        !request.xhr? # don't redirect on AJAX req's
-  	     redirect_to :controller => :semesters, :action => :index
+  	     redirect_to semesters_path
   	end
   end
 
