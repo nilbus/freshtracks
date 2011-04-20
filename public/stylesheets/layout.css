@@ -171,7 +171,7 @@ section header h1 {
   border: 1px solid #555;
   border-radius: 0;
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 15px auto;
 }
 
 .landing ul {
@@ -183,6 +183,10 @@ section header h1 {
   background-color: #eaeaea;
   border-radius: 10px;
   padding: 10px;
+}
+
+.roundbox p {
+  margin: 10px 0 0 0;
 }
 
 ul {
