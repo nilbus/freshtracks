@@ -11,7 +11,11 @@ class Clearance::UsersController < ApplicationController
 
   def create
     @user = ::User.new params[:user]
+
     if @user.save
+
+      @user.setup_test_user
+
       flash_notice_after_create
       sign_in(@user)
       redirect_to(url_after_create)
