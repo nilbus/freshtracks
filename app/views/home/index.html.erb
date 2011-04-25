@@ -2,8 +2,7 @@
   <div class="row">
     <div class="twelvecol">
       <h2>
-        FreshTracks is a fresh approach to college course registration. <%'s/registration/scheduling/'%>
-        <%'better slogan'%>
+        A fresh approach to college course registration. <%'s/registration/scheduling/'%>
         Add, drop, wishlist, and search for classes.
       </h2>
     </div>
@@ -56,11 +55,6 @@
         <h1>
           Try our live demo
         </h1>
-        <p>
-          Search for classes by name, or sign up for required classes.
-          <br>
-          Organize your schedule on the Wishlist before your registration date.
-        </p>
 
         <%= form_for :user, :url => users_path do |form| %>
           <%= form.hidden_field :email, :value => "#{generate_unique_id 'test-account'}@mailinator.com" %>
@@ -119,7 +113,7 @@
           When the time comes, it's one click to add all the classes to your schedule.
         </p>
 
-        <img src="/images/landing_wishlist.png" width=571 height=167 alt="Easily add things to your schedule from your wishlist one at a time or all together." />
+        <img src="/images/landing_wishlist.png" alt="Add things to your schedule from your wishlist one at a time or all together." />
       </div>
     </div>
   </div><!--row-->
@@ -130,7 +124,7 @@
         <h1>
           Know your options
         </h1>
-        <img src="/images/landing_degree_audit_wide.png" alt="Select required single classes, or see all the options for a elective category." width=566 height=191 />
+        <img src="/images/landing_degree_audit_wide.png" alt="Select required single classes, or see all the options for a elective category." />
         <p>
           Freshtracks shows the classes needed to fulfill requirements.
           These expand, and you can register from the same page.
@@ -142,7 +136,7 @@
       <div class="roundbox">
         <h1>Find classes you want</h1>
 
-        <img src="/images/landing_search.png" width=397 height=246 alt="Search for classes and register all from the same page." />
+        <img src="/images/landing_search.png" alt="Search for classes and register from the same page." />
 
         <p>
           For browsing the course catalog, FreshTracks lets you easily search for classses, and add them to your wishlist or schedule, all from the same page. Now you can finally find that perfect class to fill your last elective.

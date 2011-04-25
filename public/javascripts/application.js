@@ -152,3 +152,19 @@ function appendError(container, error_message) {
   $(container).append($("<div id='error'>" + error_message + "</div>").hide());
   $('#error').slideDown('fast');
 }
+
+Array.prototype.max = function() { return Math.max.apply(null, this) }
+var alignRowHeights = function() {
+  $('.row').each(function(i, el) {
+    var boxes = $(el).find('.roundbox')
+    boxes.height('');
+    if ($(window).width() < 767) return;
+    var maxHeight = $.makeArray(boxes.map(function(i, el) {
+      return $(el).height()
+    })).max()
+    boxes.height(maxHeight);
+  });
+};
+$(window).resize(alignRowHeights);
+$(document).ready(alignRowHeights);
+$(window).load(alignRowHeights);
