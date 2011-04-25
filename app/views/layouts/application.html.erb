@@ -54,16 +54,16 @@
   <% end %>
 
   <nav>
-    <ul>
-      <li class="tab"<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"' : '' %>>
+    <ul class="row" >
+      <li class="tab "<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"'.html_safe : '' %>>
       <%= link_to "Search", courses_path %>
       </li>
-      <li class="tab"<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"' : '' %>>
+      <li class="tab "<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"'.html_safe : '' %>>
       <%= link_to degree_requirements_path do  %>
         <nobr>Degree Requirements</nobr>
       <% end %>
       </li>
-      <li class="tab"<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"' : '' %>>
+      <li class="tab "<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"'.html_safe : '' %>>
       <%= link_to "Wishlist", wishlist_sections_path %>
       </li>
     </ul>
