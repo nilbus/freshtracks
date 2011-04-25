@@ -141,6 +141,31 @@ section header h1 {
   text-shadow: 0 1px white;
 }
 
+.course_buttons {
+  background-color: #b1b1b1;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: inset 0px 1px 1px #555, 0px 1px 1px #eee;
+  width: 250px;
+  margin-top: 7px;
+  padding: 4px 12px 6px 12px;
+}
+
+.course_buttons em {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #444;
+  display: block;
+  float: left;
+  margin-top: 1px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.course_buttons select {
+  width: 180px;
+  margin-left: 10px;
+}
+
 .course-count, .course-grade {
   color: #8e8e8e;
   font-family: Verdana;
