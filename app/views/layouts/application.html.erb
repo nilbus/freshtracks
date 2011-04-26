@@ -52,26 +52,30 @@
     Semester: <%= Semester.find(session[:semester]).name %> (<%= link_to "Change semester", semesters_path%>) | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
     </div>
   <% end %>
-
-  <nav>
-    <ul class="row" >
-      <li class="tab "<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"'.html_safe : '' %>>
-      <%= link_to "Search", courses_path %>
-      </li>
-      <li class="tab "<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"'.html_safe : '' %>>
-      <%= link_to degree_requirements_path do  %>
-        <nobr>Degree Requirements</nobr>
-      <% end %>
-      </li>
-      <li class="tab "<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"'.html_safe : '' %>>
-      <%= link_to "Wishlist", wishlist_sections_path %>
-      </li>
-    </ul>
-  </nav>
 <% end %>
 
 <section class="container">
-<%= yield %>
+  <div class="row">
+    <div class="twelvecol">
+      <nav>
+        <ul>
+          <li class="tab "<%= ( @selected_tab == 'tab1' ) ? ' id="selected-tab"'.html_safe : '' %>>
+            <%= link_to "Class Search", courses_path %>
+            <hr class="nav-divider">
+          </li>
+          <li class="tab "<%= ( @selected_tab == 'tab2' ) ? ' id="selected-tab"'.html_safe : '' %>>
+            <%= link_to "Degree Requirements", degree_requirements_path %>
+            <hr class="nav-divider">
+          </li>
+          <li class="tab "<%= ( @selected_tab == 'tab3' ) ? ' id="selected-tab"'.html_safe : '' %>>
+            <%= link_to "Wishlist", wishlist_sections_path %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <%= yield %>
 </section><!--container-->
 </body>
 </html>

@@ -11,29 +11,53 @@ body>header {
   width: 100%;
 }
 
-nav ul {
-  display: inline;
-  list-style: none;
+nav {
+  padding: 5px;
 }
 
-nav ul a {
-  font-size: 16px;
+nav ul {
+  border: 3px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #7F7F7F;
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 25px 10px;
+
+  /* Generated ith http://www.colorzilla.com/gradient-editor/ */
+  background: #E51414; /* old browsers */
+  background: -moz-linear-gradient(top, #E51414 2%, #CC0000 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#E51414), color-stop(100%,#CC0000)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E51414', endColorstr='#CC0000',GradientType=0 ); /* ie */
+  background: -o-linear-gradient(top, #E51414 2%,#CC0000 100%); /* opera */
 }
 
 nav ul > li {
-	background: #f7f3d9;
-	border: 1px #000 solid;
-	display: inline;
+	display: inline-block;
+  margin: 0 20px;
 }
 
-nav ul > li:hover,
-nav ul > li#selected-tab {
-	border: 2px #900 solid;
-  margin: 1px;
+nav ul a {
+  color: white;
+  font-family: Verdana;
+  font-size: 25px;
+  font-weight: normal;
 }
 
-nav ul.tab-list > li#selected-tab {
-	border-bottom: none;
+nav ul a:hover {
+  color: #F8D3D3;
+}
+
+nav hr {
+  background-color: #F8D3D3;
+  border: none;
+  display: inline-block;
+  height: 50px;
+  left: 20px;
+  margin: -25px 0;
+  position: relative;
+  top: -8px;
+  width: 2px;
 }
 
 /*
