@@ -105,6 +105,12 @@ section header h1 {
   -webkit-box-shadow: 0 1px 0 0 #f7f7f7;
 }
 
+.course-list>:last-child>.row.main {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
 .course-list {
   background-color: #eaeaea;
   border: 1px solid #d3d3d3;
