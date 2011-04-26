@@ -18,7 +18,11 @@ nav {
 nav ul {
   border: 3px solid white;
   border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
   box-shadow: 0 0 5px #7F7F7F;
+  -moz-box-shadow: 0 0 5px #7F7F7F;
+  -webkit-box-shadow: 0 0 5px #7F7F7F;
   display: inline-block;
   list-style: none;
   margin: 0;
@@ -45,12 +49,15 @@ nav ul a {
 }
 
 nav ul a:hover {
-  color: #F8D3D3;
+  color: #FEE;
 }
 
 nav hr {
   background-color: #F8D3D3;
   border: none;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
   display: inline-block;
   height: 50px;
   left: 20px;
@@ -102,6 +109,8 @@ section header h1 {
   background-color: #eaeaea;
   border: 1px solid #d3d3d3;
   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
 .course-list p {
@@ -167,7 +176,11 @@ section header h1 {
 
 .course_buttons {
   background-color: #b1b1b1;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  box-shadow: inset 0px 1px 1px #555, 0px 1px 1px #eee;
+  -moz-box-shadow: inset 0px 1px 1px #555, 0px 1px 1px #eee;
   -webkit-box-shadow: inset 0px 1px 1px #555, 0px 1px 1px #eee;
   width: 250px;
   margin-top: 7px;
@@ -219,6 +232,8 @@ section header h1 {
 .landing img {
   border: 1px solid #555;
   border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
   display: block;
   margin: 15px auto;
 }
@@ -231,6 +246,8 @@ section header h1 {
   border: 1px solid #d3d3d3;
   background-color: #eaeaea;
   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
   padding: 10px;
 }
 
