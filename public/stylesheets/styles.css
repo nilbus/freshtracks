@@ -1,8 +1,17 @@
-/* Layout for desktop version */
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+
+a {
+  color: #C00;
+}
 
 body {
   background: #f4f4f4 url('images/gray_texture_1.jpg');
   color: #2D3335;
+  font-size: 16px;
+  line-height: normal;
 }
 
 body>header { 
@@ -11,7 +20,26 @@ body>header {
   width: 100%;
 }
 
+body>header h1 {
+  color: #C00; font-weight: bold;
+  display: inline-block;
+  font-family: ubuntu, helvetica, sans-serif;
+  font-size: 60px;
+  left: 3px;
+  margin: 0;
+  position: absolute;
+  top: 16px;
+}
+
+body>header p {
+  color: #EEE;
+  margin: 55px 15px 0 0;
+  text-align: right;
+  vertical-align: text-bottom;
+}
+
 nav {
+  margin-top: 15px;
   padding: 5px;
 }
 
@@ -265,7 +293,9 @@ ul {
   padding-left: 40px;
 }
 
-/* Layout for mobile version */
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
 
 @media handheld, only screen and (max-width: 767px) {
 
@@ -283,8 +313,9 @@ ul {
 
 }
 
-
-/* Provide higher res assets for iPhone 4 */
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { 
 
