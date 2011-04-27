@@ -4,7 +4,7 @@
 
 fa09csc116_001:
   course: csc116
-  semester: fall2009
+  semester: spring2011
   room: EB2 1231
   professor: Jamison
   number: "001"
@@ -15,7 +15,7 @@ fa09csc116_001:
 
 fa09csc116_002:
   course: csc116
-  semester: fall2009
+  semester: spring2011
   room: EB2 1231
   professor: Brian May
   number: "002"
@@ -26,7 +26,7 @@ fa09csc116_002:
 
 fa09csc116_003:
   course: csc116
-  semester: fall2009
+  semester: spring2011
   room: EB1 1006
   number: "003"
   professor: Michael Scott
@@ -37,7 +37,7 @@ fa09csc116_003:
 
 fa09csc116_004:
   course: csc116
-  semester: fall2009
+  semester: spring2011
   room: EB2 1231
   professor: Bob Dylan
   number: "004"
@@ -48,7 +48,7 @@ fa09csc116_004:
 
 fa09csc226_001:
   course: csc226
-  semester: fall2009
+  semester: spring2011
   room: EB2 2235
   number: "001"
   professor: Malcolm Reynolds
@@ -59,7 +59,7 @@ fa09csc226_001:
 
 fa09csc226_002:
   course: csc226
-  semester: fall2009
+  semester: spring2011
   room: EB2 1234
   number: "002"
   professor: Jayne Cobb
@@ -70,7 +70,7 @@ fa09csc226_002:
 
 fa09csc316_001:
   course: csc316
-  semester: fall2009
+  semester: spring2011
   room: EB1 1111
   number: "001"
   professor: Fwiffo Spathi
@@ -81,7 +81,7 @@ fa09csc316_001:
 
 fa09csc316_002:
   course: csc316
-  semester: fall2009
+  semester: spring2011
   room: EB2 2222
   number: "002"
   professor: Sauron
@@ -92,7 +92,7 @@ fa09csc316_002:
 
 fa09csc326_001:
   course: csc326
-  semester: fall2009
+  semester: spring2011
   room: EB1 2222
   number: "001"
   professor: Harper Lee
@@ -103,7 +103,7 @@ fa09csc326_001:
 
 fa09csc333_001:
   course: csc333
-  semester: fall2009
+  semester: spring2011
   room: EB1 1045
   number: "001"
   professor: Shusaku Endo
@@ -114,7 +114,7 @@ fa09csc333_001:
 
 fa09eng101_001:
   course: eng101
-  semester: fall2009
+  semester: spring2011
   room: WI 106
   number: "001"
   professor: Bob Woodward
@@ -125,7 +125,7 @@ fa09eng101_001:
 
 fa09eng101_002:
   course: eng101
-  semester: fall2009
+  semester: spring2011
   room: DAB 202
   number: "002"
   professor: William Shakespeare
@@ -136,7 +136,7 @@ fa09eng101_002:
 
 fa09eng101_003:
   course: eng101
-  semester: fall2009
+  semester: spring2011
   room: WI 102G
   number: "003"
   professor: JRR Tolkien
@@ -147,7 +147,7 @@ fa09eng101_003:
 
 fa09hi208_001:
   course: hi208
-  semester: fall2009
+  semester: spring2011
   room: HA 123
   number: "001"
   professor: El Cid
@@ -158,7 +158,7 @@ fa09hi208_001:
 
 fa09hi208_002:
   course: hi208
-  semester: fall2009
+  semester: spring2011
   room: WI 150
   number: "002"
   professor: Peter Abelard
@@ -169,7 +169,7 @@ fa09hi208_002:
 
 fa09hi208_003:
   course: hi208
-  semester: fall2009
+  semester: spring2011
   room: HA 111
   number: "003"
   professor: Frederick Barbarossa
@@ -180,7 +180,7 @@ fa09hi208_003:
 
 fa09hi210_001:
   course: hi210
-  semester: fall2009
+  semester: spring2011
   room: HA 128
   number: "001"
   professor: Otto von Bismarck
@@ -191,7 +191,7 @@ fa09hi210_001:
 
 fa09csc440_001:
   course: csc440
-  semester: fall2009
+  semester: spring2011
   room: EB2 1984
   professor: Freddie Mercury
   number: "001"
@@ -202,7 +202,7 @@ fa09csc440_001:
 
 fa09csc454_001:
   course: csc454
-  semester: fall2009
+  semester: spring2011
   room: EB1 1029
   professor: Darth Vader
   number: "001"
@@ -213,7 +213,7 @@ fa09csc454_001:
 
 fa09csc405_001:
   course: csc405
-  semester: fall2009
+  semester: spring2011
   room: EB2 1228
   professor: Groucho Marx
   number: "001"
@@ -227,7 +227,7 @@ fa09csc405_001:
 
 sp10csc216_001:
   course: csc216
-  semester: spring2010
+  semester: fall2011
   room: EB2 1231
   professor: Jamison
   number: "001"
@@ -238,7 +238,7 @@ sp10csc216_001:
 
 sp10csc216_002:
   course: csc216
-  semester: spring2010
+  semester: fall2011
   room: EB2 1231
   professor: Brian May
   number: "002"
@@ -249,7 +249,7 @@ sp10csc216_002:
 
 sp10csc216_003:
   course: csc216
-  semester: spring2010
+  semester: fall2011
   room: EB1 1006
   number: "003"
   professor: Michael Scott
@@ -260,7 +260,7 @@ sp10csc216_003:
 
 sp10csc216_004:
   course: csc216
-  semester: spring2010
+  semester: fall2011
   room: EB2 1231
   professor: Bob Dylan
   number: "004"
@@ -271,7 +271,7 @@ sp10csc216_004:
 
 sp10csc226_001:
   course: csc226
-  semester: spring2010
+  semester: fall2011
   room: EB2 2235
   number: "001"
   professor: Malcolm Reynolds
@@ -282,7 +282,7 @@ sp10csc226_001:
 
 sp10csc226_002:
   course: csc226
-  semester: spring2010
+  semester: fall2011
   room: EB2 1234
   number: "002"
   professor: Jayne Cobb
@@ -293,7 +293,7 @@ sp10csc226_002:
 
 sp10csc316_001:
   course: csc316
-  semester: spring2010
+  semester: fall2011
   room: EB1 1111
   number: "001"
   professor: Fwiffo Spathi
@@ -304,7 +304,7 @@ sp10csc316_001:
 
 sp10csc316_002:
   course: csc316
-  semester: spring2010
+  semester: fall2011
   room: EB2 2222
   number: "002"
   professor: Sauron
@@ -315,7 +315,7 @@ sp10csc316_002:
 
 sp10csc326_001:
   course: csc326
-  semester: spring2010
+  semester: fall2011
   room: EB1 2222
   number: "001"
   professor: Harper Lee
@@ -326,7 +326,7 @@ sp10csc326_001:
 
 sp10csc333_001:
   course: csc333
-  semester: spring2010
+  semester: fall2011
   room: EB1 1045
   number: "001"
   professor: Shusaku Endo
@@ -337,7 +337,7 @@ sp10csc333_001:
 
 sp10eng101_001:
   course: eng101
-  semester: spring2010
+  semester: fall2011
   room: WI 106
   number: "001"
   professor: Bob Woodward
@@ -348,7 +348,7 @@ sp10eng101_001:
 
 sp10eng101_002:
   course: eng101
-  semester: spring2010
+  semester: fall2011
   room: DAB 202
   number: "002"
   professor: William Shakespeare
@@ -359,7 +359,7 @@ sp10eng101_002:
 
 sp10eng101_003:
   course: eng101
-  semester: spring2010
+  semester: fall2011
   room: WI 102G
   number: "003"
   professor: JRR Tolkien
@@ -370,7 +370,7 @@ sp10eng101_003:
 
 sp10hi208_001:
   course: hi208
-  semester: spring2010
+  semester: fall2011
   room: HA 123
   number: "001"
   professor: El Cid
@@ -381,7 +381,7 @@ sp10hi208_001:
 
 sp10hi208_002:
   course: hi208
-  semester: spring2010
+  semester: fall2011
   room: WI 150
   number: "002"
   professor: Peter Abelard
@@ -392,7 +392,7 @@ sp10hi208_002:
 
 sp10hi208_003:
   course: hi208
-  semester: spring2010
+  semester: fall2011
   room: HA 111
   number: "003"
   professor: Frederick Barbarossa
@@ -403,7 +403,7 @@ sp10hi208_003:
 
 sp10hi210_001:
   course: hi210
-  semester: spring2010
+  semester: fall2011
   room: HA 128
   number: "001"
   professor: Otto von Bismarck
@@ -414,7 +414,7 @@ sp10hi210_001:
 
 sp10csc440_001:
   course: csc440
-  semester: spring2010
+  semester: fall2011
   room: EB2 1984
   professor: Freddie Mercury
   number: "001"
@@ -425,7 +425,7 @@ sp10csc440_001:
 
 sp10csc454_001:
   course: csc454
-  semester: spring2010
+  semester: fall2011
   room: EB1 1029
   professor: Darth Vader
   number: "001"
@@ -436,7 +436,7 @@ sp10csc454_001:
 
 sp10csc405_001:
   course: csc405
-  semester: spring2010
+  semester: fall2011
   room: EB2 1228
   professor: Groucho Marx
   number: "001"

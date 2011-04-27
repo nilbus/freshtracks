@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
     csc116 = Course.where({:number => "116", :subject => "CSC"}).first
     completed.course = csc116
     completed.degree_requirement = DegreeRequirement.where({:required_id => csc116.id, :required_type => "Course"}).first
-    completed.semester = Semester.all.first
+    completed.semester = Semester.where(:name => "Fall 2010").first
 
     completed.save
   end
