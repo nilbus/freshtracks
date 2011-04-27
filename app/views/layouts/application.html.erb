@@ -32,7 +32,7 @@
       <div class="fourcol last">
         <% if signed_in? && session[:semester] %>
           <p>
-            Semester: <%= link_to Semester.find(session[:semester]).name, semesters_path%> | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
+            Semester: <%= link_to @current_semester.name, semesters_path%> | <%= link_to "Sign out", '/sign_out', :method => :delete %> 
           </p>
         <% end %>
       </div>

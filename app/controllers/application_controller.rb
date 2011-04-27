@@ -11,12 +11,18 @@ class ApplicationController < ActionController::Base
   before_filter :load_schedule
 
   def choose_semester
-    if signed_in? && 
-       session[:semester].nil? && 
-       !choosing_semester? && 
-       !request.xhr? # don't redirect on AJAX req's
-  	     redirect_to semesters_path
-  	end
+    if signed_in? && !choosing_semester? && !request.xhr?
+      if session[:semester].nil?
+        redirect_to semesters_path
+      else
+        begin
+          @current_semester = Semester.find(session[:semester])
+        rescue
+          session[:semester] = nil
+          redirect_to semesters_path
+        end
+      end
+    end
   end
 
   def choosing_semester?
