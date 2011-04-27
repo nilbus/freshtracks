@@ -9,6 +9,7 @@
 		section_list = @registered_sections
 		title = "Current Schedule"
 		extra_link = link_to "View Graphical Schedule", registered_sections_path, :target => '_blank' 
+		extra_link = '' # View Graphical Schedule is not yet implemented
 		errors = (flash[:registered_section] || {})	
 	end	
 %>
