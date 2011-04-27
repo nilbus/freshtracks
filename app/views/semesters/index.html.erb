@@ -1,12 +1,21 @@
-<div style="width:25em;">
-<center>
-<h1>Choose a semester</h1>
-<% next_semester = @semesters.select{|s| s.name == "Fall 2009"}.first
+<div class="row">
+  <div class="threecol last">
+    <h1>Choose a semester</h1>
+  </div>
+</div>
+<%
+  next_semester = @semesters.select{|s| s.name == "Fall 2009"}.first
   current_semester = @semesters.select{|s| s.name == "Spring 2010" }.first
-  %>
-<%= link_to image_tag("next_semester.png", :border => 0), next_semester, :id => 'next_semester' %><br/>
-(<%= next_semester.name %>)<br/><br/>
-<%= link_to image_tag("this_semester.png", :border => 0), current_semester, :id => 'this_semester' %><br/>
-(<%= current_semester.name %>)<br/>
-</center>
+%>
+<div class="row">
+  <div class="threecol last">
+    <%= link_to image_tag("next_semester.png", :border => 0), next_semester, :id => 'next_semester' %><br/>
+    (<%= next_semester.name %>)<br/><br/>
+  </div>
+</div>
+<div class="row">
+  <div class="threecol last">
+    <%= link_to image_tag("this_semester.png", :border => 0), current_semester, :id => 'this_semester' %><br/>
+    (<%= current_semester.name %>)<br/>
+  </div>
 </div>

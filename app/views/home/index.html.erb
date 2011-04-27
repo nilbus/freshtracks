@@ -55,25 +55,17 @@
         <h1>
           Try our live demo
         </h1>
-
-        <%= form_for :user, :url => users_path do |form| %>
-          <%= form.hidden_field :email, :value => "#{generate_unique_id 'test-account'}@mailinator.com" %>
-          <%= form.hidden_field :password, :value => 'password' %>
-          <%= form.hidden_field :password_confirmation, :value => 'password' %>
-          <div class="submit_field">
-            <%= form.submit "Log in as a new student" %>
-          </div>
-        <% end %>
-
-        <!--
-        <%= form_for :session, :url => session_path do |form| %>
-          <%= form.hidden_field :email, :value => 'student@ncsu.edu' %>
-          <%= form.hidden_field :password, :value => 'password' %>
-          <div class="submit_field">
-            <%= form.submit "Log in as Stu Dent" %>
-          </div>
-        <% end %>
-        -->
+        <nav><ul><li>
+          <%= form_for :user, :url => users_path do |form| %>
+            <%= form.hidden_field :email, :value => "#{generate_unique_id 'test-account'}@mailinator.com" %>
+            <%= form.hidden_field :password, :value => 'password' %>
+            <%= form.hidden_field :password_confirmation, :value => 'password' %>
+            <%= link_to_function 'Log in as a student', "$('form').last().submit()" %>
+          <% end %>
+        </li></ul></nav>
+        <p>
+          When you log in as a student, pick a semester and start adding classes to your wishlist. Use the wishlist to organize your class times, and then add them to your schedule. Look at your Degree Requirements to see what classes you still need to take.
+        </p>
       </div>
     </div>
   </div><!--row-->
