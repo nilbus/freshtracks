@@ -258,6 +258,11 @@ section header h1 {
 
 #error, #old-error {
   color: #B00;
+  font-size: 14px;
+}
+
+.error {
+  color: #B00;
 }
 
 .landing .row {

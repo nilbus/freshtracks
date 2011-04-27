@@ -39,13 +39,13 @@
           course = section.course
           unique_id = generate_unique_id course.id
         %>
-        <div class="<%= "#{course.code} #{section.code}" %>">
+        <div class="<%= "#{course.code} #{section.code}"%>" id="section-<%= section.id %>">
           <div class="row main" id="<%= unique_id %>main" uid="<%= unique_id %>">
             <div class="twocol first course-code"><p><%= course.code %></p></div>
             <div class="fivecol course-name"><p><%= course.name %></p></div>
             <div class="threecol course-time"><p><%= section.meeting_times %></p></div>
             <div class="twocol last course-buttons">
-              <p class="button">
+              <div class="button">
                 <% if options[:schedule] %>
                   <%= form_for reg_section, :html => { :method => :delete } do |f| %>
                     <%= f.submit 'Remove', :class => 'rowRemover', :id => nil %>
@@ -55,14 +55,13 @@
                   <%= form_for reg_section, :html => { :method => :delete } do |f| %>
                     <%= f.submit 'Remove', :class => 'rowRemover', :id => nil %>
                   <% end %>
-                   
-                    
+                  <br>
                   <%= form_for RegisteredSection.new, :html => { :id => nil, :class => 'newRegisteredSection' } do |f| %>
                     <%= render :partial => 'registered_sections/add_button', :locals => { :section_id => section.id } %>
                   <% end %>
                 <% end %>
                 
-              </p>
+              </div>
             </div>
           
           </div><!--main-->
