@@ -38,6 +38,10 @@ body>header p {
   vertical-align: text-bottom;
 }
 
+figure {
+  margin: 0;
+}
+
 nav {
   margin-top: 15px;
   padding: 5px;
