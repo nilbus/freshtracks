@@ -84,7 +84,7 @@ fa09csc316_002:
   semester: spring2011
   room: EB2 2222
   number: "002"
-  professor: Sauron
+  professor: Elias Mann 
   days: TH
   begin_time: 2009-11-17 11:45:00
   end_time: 2009-11-17 13:00:00
@@ -307,7 +307,7 @@ sp10csc316_002:
   semester: fall2011
   room: EB2 2222
   number: "002"
-  professor: Sauron
+  professor: Elias Mann
   days: TH
   begin_time: 2009-11-17 11:45:00
   end_time: 2009-11-17 13:00:00
@@ -427,7 +427,7 @@ sp10csc454_001:
   course: csc454
   semester: fall2011
   room: EB1 1029
-  professor: Darth Vader
+  professor: Rick Astley
   number: "001"
   days: TH
   begin_time: 2009-11-17 14:30:00
