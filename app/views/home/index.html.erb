@@ -15,7 +15,7 @@
           Intuitive
         </h1>
         <p>
-          Our number one goal is to make FreshTracks easy to learn and easy to use.
+          Our number one goal is to make FreshTracks simple to learn and easy to use.
           You won't need to take a class to figure it out.
         </p>
       </div>
@@ -60,11 +60,14 @@
             <%= form.hidden_field :email, :value => "#{generate_unique_id 'test-account'}@mailinator.com" %>
             <%= form.hidden_field :password, :value => 'password' %>
             <%= form.hidden_field :password_confirmation, :value => 'password' %>
-            <%= link_to_function 'Log in as a student', "$('form').last().submit()" %>
+            <%= link_to_function 'Start the Demo', "$('form').last().submit()" %>
           <% end %>
         </li></ul></nav>
         <p>
-          When you log in as a student, pick a semester and start adding classes to your wishlist. Use the wishlist to organize your class times, and then add them to your schedule. Look at your Degree Requirements to see what classes you still need to take.
+          In this demo, you'll be logged in as a student. Choose a semester and start adding classes to your wishlist. Use the wishlist to organize your class times, and then add them to your schedule. Look at your Degree Requirements to see what classes you still need to take.
+        </p>
+        <p>
+          It's still a work in progress &mdash; not all features are here yet &mdash; but you'll get a feel for how nice it is to use.
         </p>
       </div>
     </div>
